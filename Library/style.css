@@ -9,3 +9,13 @@ body {
     justify-content: center;
     align-items: flex-start;
 }
+
+header {
+    width: 1440px;
+    height: 90px;
+    background: #0C0C0E;
+}
+
+h1 {
+    color: white;
+}
