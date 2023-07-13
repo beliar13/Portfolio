@@ -19,3 +19,9 @@ header {
 h1 {
     color: white;
 }
+
+.welcome {
+    width: 1440px;
+    height: 600px;
+    background: url(./img/Welcome.png), lightgray 50% / cover no-repeat;
+}
