@@ -29,3 +29,11 @@ h1 {
 .welcome-text {
     text-transform: uppercase;
 }
+
+.welcome-sign-bg {
+    width: 600px;
+    height: 220px;
+    background: #0C0C0E;
+    margin: 220px 840px 160px 0px;
+
+}
