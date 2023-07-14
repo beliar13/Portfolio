@@ -1,3 +1,6 @@
+* {
+    margin: 0 auto;
+}
 @font-face {
     font-family: 'forumregular';
     src: url('forum-regular-webfont.woff2') format('woff2'),
