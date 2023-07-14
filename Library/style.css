@@ -25,3 +25,7 @@ h1 {
     height: 600px;
     background: url(./img/Welcome.png), lightgray 50% / cover no-repeat;
 }
+
+.welcome-text {
+    text-transform: uppercase;
+}
