@@ -55,23 +55,55 @@ h1 {
     width: 1440px;
     height: 837px;
     background: #FFF;
-    border: black;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
 }
 
-.about-title {
+.about-heading {
     width: 106px;
-    height: 61px;
-    flex-shrink: 0;
-    margin: 20px 667px 756px 667px;
-}
-.about-title-text {
-    color: #0C0C0E;
+    height: 40px;
     font-family: "Forum";
-    font-size: 40px;
     font-style: normal;
-    font-weight: 400;
     line-height: 40px; /* 100% */
     letter-spacing: 2px;
     text-transform: capitalize;
+    margin-top: 20px;
+    text-align: center;
+    color: #0C0C0E;
+    margin-left: 667px;
 }
+
+.about-heading-text {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.about-line {
+    margin-left: 695px;
+    margin-top: 20px;
+    width: 50px;
+    height: 1px;
+    background-color: #0C0C0E;
+}
+
+.about-description {
+    width: 1440px;
+    margin-top: 40px;
+    height: 40px;
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-style: normal;
+    line-height: 40px; /* 200% */
+    background-color: red;
+}
+
+.about-description-text {
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 0;
+}
+
 /*About - end*/
