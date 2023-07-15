@@ -106,4 +106,26 @@ h1 {
     margin-top: 0;
 }
 
+.about-carousel {
+    display: flex;
+    gap: 25px;
+}
+
+.carousel-item1 {
+    width: 450px;
+    height: 560px;
+    background: url(./img/carousel-image-1.png) no-repeat;
+}
+
+.carousel-item2 {
+    width: 450px;
+    height: 560px;
+    background: url(./img/carousel-image-2.png) no-repeat;
+}
+
+.carousel-item3 {
+    width: 450px;
+    height: 560px;
+    background: url(./img/carousel-image-3.png) no-repeat;
+}
 /*About - end*/
