@@ -41,7 +41,7 @@ h1 {
     color: #FFF;
     text-align: center;
     text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    font-family: Forum;
+    font-family: "Forum";
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
@@ -66,7 +66,7 @@ h1 {
 }
 .about-title-text {
     color: #0C0C0E;
-    font-family: Forumregular;
+    font-family: "Forum";
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
