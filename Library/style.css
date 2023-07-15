@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
 body {
     display: flex;
     width: 1440px;
@@ -12,11 +16,61 @@ header {
     width: 1440px;
     height: 90px;
     background: #0C0C0E;
+    display: flex;
+    align-items: center;
 }
 
-h1 {
+.header-text {
+    width: 294px;
     color: white;
+    font-family: "Forum";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+    margin-left: 20px;
 }
+
+/*Navigation - start*/
+.navigation-area {
+	margin-left: 454px;
+	margin-top: 20px;
+}
+
+.navigation-menu {
+    display: flex;
+    flex-direction: row;
+	gap: 30px;
+	color: white;
+	list-style: none;
+	padding-inline-start: 0;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+.navigation-menu-link {
+	padding-top: 0;
+	color: #FFF;
+	font-family: "Inter";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 50px; /* 250% */
+}
+
+.nav-links {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+.nav-links:hover {
+    transition-duration: 250ms;
+    transition-delay: 250ms;
+    scale: 1.1;
+}
+/*Navigation - end*/
+
 /*Welcome - start*/
 .welcome {
     display: flex;
