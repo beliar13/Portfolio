@@ -40,7 +40,7 @@ h1 {
     height: 150px;
     color: #FFF;
     text-align: center;
-    text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Forum";
     font-size: 40px;
     font-style: normal;
@@ -109,11 +109,13 @@ h1 {
 .about-carousel {
     display: flex;
     gap: 25px;
+    padding-top: 20px;
 }
 
 .carousel-item1 {
     width: 450px;
     height: 560px;
+    margin-left: 20px;
     background: url(./img/carousel-image-1.png) no-repeat;
 }
 
@@ -126,6 +128,33 @@ h1 {
 .carousel-item3 {
     width: 450px;
     height: 560px;
+    margin-right: 20px;
     background: url(./img/carousel-image-3.png) no-repeat;
+}
+
+.carousel-pagination {
+    display: flex;
+    margin-top: 35px;
+    margin-left: 681px;
+}
+
+.carousel-pagination-button.active {
+    background-color:#BB945F;
+}
+
+.carousel-pagination-button {
+    width: 16px;
+    height: 16px;
+    background-color:#0C0C0E;
+    border-radius: 50%;
+}
+
+.a-carousel {
+    display: flex;
+    width: 26px;
+    height: 26px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 /*About - end*/
