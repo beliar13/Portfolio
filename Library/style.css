@@ -260,4 +260,49 @@ header {
 	margin-block-start: 0px;
 	margin-block-end: 0;
 }
+
+.favorites-form {
+	display: flex;
+	align-self: flex-start;
+	margin-left: 15px;
+	margin-top: 40px;
+	align-items: center;
+	gap: 73px;
+}
+
+.label-text {
+	color: #000;
+	font-family: Inter;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin-left: 20px;
+	align-content: center;
+}
+
+.label-text.active {
+	font-weight: 700;
+}
+
+.favorites-checkbox {
+	accent-color: rgb(0, 0, 0);
+	width: 17px;
+	height: 17px;
+}
+ .checkbox-container {
+	 width: 120px;
+	 display: flex;
+	 align-content: center;
+	 align-items: center;
+ }
+
+ .checkbox-container:nth-child(3n) {
+	 position: relative;
+	 left: -1px;
+ }
+
+  .checkbox-container:nth-child(4n) {
+	margin-left: 8px;
+ }
 /*Favorites - end*/
