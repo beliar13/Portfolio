@@ -80,34 +80,43 @@ header {
 /*Welcome - start*/
 .welcome {
     display: flex;
-    align-items: center;
-    padding: 220px 840px 160px 0px;
+	width: 1440px;
+	height: 600px;
     background: url(./img/Welcome.png), lightgray 50% / cover no-repeat;
 }
 
 .welcome-sign-bg {
     display: flex;
+	flex-direction: column;
     justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
     background: #0C0C0E;
-    padding: 35px 40px;
-}
-
-.welcome-text {
-    width: 520px;
-    flex-shrink: 0;
-    height: 150px;
-    color: #FFF;
+	margin-top: 220px;
+	height: 220px;
+	width: 600px;
+	flex-shrink: 0;
+	color: #FFF;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Forum";
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 50px;
+	line-height: 50px;
     letter-spacing: 3px;
     text-transform: uppercase;
+	font-style: normal;
+}
+
+.welcome-text {
+	font-size: 40px;
+    font-weight: 400;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	position: relative;
+	right: 5px;
+}
+.welcome-ttbl {
+	margin-block-start: 0;
+		font-size: 40px;
+
+		margin-block-end: 0;
 }
  /*Welcome end*/
 /*About - start*/
