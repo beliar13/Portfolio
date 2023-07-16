@@ -402,4 +402,27 @@ header {
 .book-desc-font {
     margin-block-start: 20px;
 }
+.purchase-button {
+    display: flex;
+    width: 75px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 15px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+}
+.purchase-button.active {
+    border: 1px solid #BB945F;
+}
 /*Favorites - end*/
