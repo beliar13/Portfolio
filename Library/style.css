@@ -364,6 +364,7 @@ header {
     font-weight: 700;
     margin-block-start: 0;
     margin-block-end: 0;
+    font-size: 15px;
  }
  .book-author {
     color: #000;
