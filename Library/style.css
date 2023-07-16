@@ -127,7 +127,7 @@ header {
 }
  /*Welcome end*/
 /*About - start*/
-.aboutsection {
+.about-section {
     width: 1440px;
     height: 837px;
     background: #FFF;
@@ -136,8 +136,8 @@ header {
     align-items: center;
 }
 
-.about-heading {
-    width: 106px;
+.heading-block {
+
     height: 40px;
     font-family: "Forum";
     font-style: normal;
@@ -149,13 +149,13 @@ header {
     color: #0C0C0E;
 }
 
-.about-heading-text {
+.heading-text {
     font-size: 40px;
     font-weight: 400;
     margin-top: 0;
 }
 
-.about-line {
+.heading-line {
     margin-top: 20px;
     width: 50px;
     height: 1px;
@@ -164,7 +164,7 @@ header {
 
 .about-description {
     width: 1440px;
-    margin-top: 40px;
+    margin-top: 60px;
     height: 40px;
     color: #000;
     text-align: center;
@@ -230,3 +230,13 @@ header {
     cursor: pointer;
 }
 /*About - end*/
+/*Favorites - start*/
+.favorites-section {
+    width: 1440px;
+    height: 1439px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*Favorites - end*/
