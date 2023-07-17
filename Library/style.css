@@ -185,24 +185,9 @@ header {
     padding-top: 20px;
 }
 
-.carousel-item1 {
+.carousel-item {
     width: 450px;
     height: 560px;
-    margin-left: 20px;
-    background: url(./img/carousel-image-1.png) no-repeat;
-}
-
-.carousel-item2 {
-    width: 450px;
-    height: 560px;
-    background: url(./img/carousel-image-2.png) no-repeat;
-}
-
-.carousel-item3 {
-    width: 450px;
-    height: 560px;
-    margin-right: 20px;
-    background: url(./img/carousel-image-3.png) no-repeat;
 }
 
 .carousel-pagination {
