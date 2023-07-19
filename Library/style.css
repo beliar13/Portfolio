@@ -408,9 +408,12 @@ header {
     border-radius: 2px;
     border: 1px solid #0C0C0E;
     flex-shrink: 0;
+    background: #FFF;
 }
-.purchase-button.active {
+.purchase-button:disabled {
     border: 1px solid #BB945F;
+    background: #FFF;
+    color:#BB945F;
 }
 
 .book-cover {
