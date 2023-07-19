@@ -266,15 +266,16 @@ header {
 	align-content: center;
 }
 
-.label-text.active {
-	font-weight: 700;
-}
-
 .favorites-checkbox {
 	accent-color: rgb(0, 0, 0);
 	width: 17px;
 	height: 17px;
 }
+
+.favorites-checkbox:checked + label {
+    font-weight: 700;
+}
+
  .checkbox-container {
 	 width: 120px;
 	 display: flex;
