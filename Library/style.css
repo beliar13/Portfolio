@@ -373,7 +373,7 @@ header {
  }
 
  .book-description {
-    width: 355px;
+    width: 357px;
     height: 340px;
     margin-left: 20px;
     color: #000;
@@ -429,8 +429,8 @@ header {
 	height: 300px;
 	flex-shrink:0;
 	position: relative;
-	top: -286px;
-	left: 390px;
+	top: -284px;
+	left: 388px;
 }
 /*Favorites - end*/
 /*Coffee shop - start*/
@@ -527,7 +527,7 @@ header {
     margin-bottom: 20px;
 }
 
-.drinks-prices {
+.menu-prices {
     display: flex;
     flex-direction: column;
     color: #000;
@@ -566,3 +566,65 @@ header {
     text-align: right;
 }
 /*Coffee shop - end*/
+/*Contacts - start*/
+.contacts {
+    width: 1440px;
+    height: 575px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 198px;
+    padding: 40px 20px;
+}
+
+.contacts-map {
+    width: 696px;
+    height: 414px;
+}
+
+.contacts-phones {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-font-bold {
+    color: #000;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2.4px;
+    text-transform: capitalize;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    text-align: left;
+}
+
+.contacts-font-normal {
+    color: #000;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.phones-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+/*Contacts - end*/
