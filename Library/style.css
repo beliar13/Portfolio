@@ -628,3 +628,42 @@ header {
     margin-bottom: 40px;
 }
 /*Contacts - end*/
+/*Card - start*/
+.digital-library-card {
+    width: 1440px;
+    height: 614px;
+    display: flex;
+    flex-direction: column;
+    background: #FFF;
+    align-items: center;
+}
+
+.card-wrapper {
+    display: flex;
+
+}
+
+.find-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.find-your-card {
+    color: #000;
+    font-family: "Inter";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    margin-top: 40px;
+}
+
+.card-out {
+    width: 600px;
+    height: 386px;
+    flex-shrink: 0;
+    border: 3px solid #BB945F;
+    background: #FFF;
+}
+/*Card - end*/
