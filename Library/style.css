@@ -990,4 +990,18 @@ footer {
     color: inherit;
     text-decoration: none;
 }
+
+.github-profile > a:hover {
+    position: relative;
+    right: 200px;
+}
+
+.course-name > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-name > a:hover {
+    scale: 1.05;
+}
 /*Footer - end*/
