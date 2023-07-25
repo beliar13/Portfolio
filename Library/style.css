@@ -206,6 +206,10 @@ header {
     border-radius: 50%;
 }
 
+.carousel-pagination-button:hover {
+    cursor: pointer;
+}
+
 .a-carousel {
     display: flex;
     width: 26px;
@@ -266,6 +270,10 @@ header {
 	align-content: center;
 }
 
+.label-text:hover {
+    cursor: pointer;
+}
+
 .favorites-checkbox {
 	accent-color: rgb(0, 0, 0);
 	width: 17px;
@@ -276,6 +284,9 @@ header {
     font-weight: 700;
 }
 
+.favorites-checkbox:hover {
+    cursor: pointer;
+}
  .checkbox-container {
 	 width: 120px;
 	 display: flex;
@@ -300,6 +311,7 @@ header {
     top: -1px;
  }
 
+
  .book-card {
     flex-shrink: 0;
     width: 550px;
@@ -315,6 +327,9 @@ header {
     margin-left: 260px;
  }
 
+ .book-card:nth-child(1n+5) {
+    display: none;
+ }
  .staff-picks {
     color: #000;
     font-family: "Forum";
@@ -594,6 +609,11 @@ header {
     flex-direction: column;
 }
 
+.mailphone {
+    text-decoration: none;
+    color: inherit;
+}
+
 .contacts-font-bold {
     color: #000;
     font-family: "Inter";
@@ -726,6 +746,9 @@ header {
     padding-left: 19px;
 }
 
+input:invalid {
+    border: red solid 1px;
+}
 .check-card {
     display: inline-flex;
     padding: 10px 40px;
