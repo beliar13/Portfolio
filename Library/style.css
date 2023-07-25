@@ -858,6 +858,8 @@ footer {
     gap: 15px;
     margin-left: 20px;
     margin-top: 19px;
+    list-style: none;
+	padding-inline-start: 0;
 }
 
 .geo-address-url {
@@ -902,7 +904,7 @@ footer {
     width: 1400px;
     height: 1px;
     background: #FFF;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 19px;
 }
 
