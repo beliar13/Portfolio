@@ -238,7 +238,7 @@ header {
 	height: 24px;
 	margin-top: 40px;
 	align-self: flex-start;
-	margin-left: 20px;
+	margin-left: 19px;
 	color: #000;
 	text-align: center;
 	font-family: "Inter";
@@ -257,10 +257,10 @@ header {
 .favorites-form {
 	display: flex;
 	align-self: flex-start;
-	margin-left: 15px;
-	margin-top: 40px;
+	margin-left: 10px;
+	margin-top: 36px;
 	align-items: center;
-	gap: 73px;
+	gap: 76px;
 }
 
 .label-text {
@@ -270,8 +270,11 @@ header {
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
-	margin-left: 20px;
-	align-content: center;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	gap: 15px;
 }
 
 .label-text:hover {
@@ -284,45 +287,30 @@ header {
 	height: 17px;
 }
 
-.favorites-checkbox:checked + label {
+.favorites-checkbox:checked + .label-text-word {
     font-weight: 700;
+	letter-spacing: 1.2px;
 }
 
 .favorites-checkbox:hover {
     cursor: pointer;
 }
- .checkbox-container {
-	 width: 120px;
-	 display: flex;
-	 align-content: center;
-	 align-items: center;
- }
-
- .checkbox-container:nth-child(3n) {
-	 position: relative;
-	 left: -1px;
- }
-
-  .checkbox-container:nth-child(4n) {
-	margin-left: 8px;
- }
 
  .season-book-wrapper {
     display: flex;
     flex-wrap: wrap;
     margin-left: 20px;
-    position: relative;
-    top: -1px;
+
  }
 
 
  .book-card {
     flex-shrink: 0;
-    width: 550px;
-    height: 555px;
+    width: 548px;
+    height: 553px;
     border: 1px solid #000;
     background: #FFF;
-    margin-top: 40px;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
  }
