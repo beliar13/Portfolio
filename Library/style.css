@@ -994,8 +994,9 @@ footer {
 }
 
 .github-profile > a:hover {
-    position: relative;
-    right: 200px;
+    transition-duration: 250ms;
+    transition-delay: 250ms;
+    scale: 0.5;
 }
 
 .course-name > a {
@@ -1004,6 +1005,8 @@ footer {
 }
 
 .course-name > a:hover {
+    transition-duration: 250ms;
+    transition-delay: 250ms;
     scale: 1.05;
 }
 /*Footer - end*/
