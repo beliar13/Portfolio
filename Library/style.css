@@ -296,6 +296,10 @@ header {
     cursor: pointer;
 }
 
+.checkbox-container:nth-child(4) {
+    margin-left: 0;
+}
+
  .season-book-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -322,6 +326,16 @@ header {
  .book-card:nth-child(1n+5) {
     display: none;
  }
+
+ .book-card:nth-child(3) {
+    margin-top: 39px;
+ }
+
+ .book-card:nth-child(4) {
+    margin-top: 39px;
+ }
+
+
  .staff-picks {
     color: #000;
     font-family: "Forum";
@@ -436,7 +450,7 @@ header {
 	height: 300px;
 	flex-shrink:0;
 	position: relative;
-	top: -284px;
+	top: -286px;
 	left: 388px;
 }
 /*Favorites - end*/
