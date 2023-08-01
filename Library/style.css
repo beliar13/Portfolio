@@ -356,6 +356,7 @@ header {
     margin-left: 20px;
     position: relative;
     top: -1px;
+    flex-shrink: 0;
  }
 
  .book-name {
