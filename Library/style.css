@@ -438,6 +438,7 @@ header {
     border-radius: 2px;
     border: 1px solid #BB945F;
     background: #BB945F;
+    transition: all 0.3s ease-out;
 }
 
 .purchase-button:disabled {
@@ -778,6 +779,7 @@ input:invalid {
     border-radius: 2px;
     border: 1px solid #BB945F;
     background: #BB945F;
+    transition: all 0.3s ease-out;
 }
 
 .get-card {
@@ -844,6 +846,7 @@ input:invalid {
     border-radius: 2px;
     border: 1px solid #BB945F;
     background: #BB945F; 
+    transition: all 0.3s ease-out;
 }
 
 /*Card - end*/
@@ -998,6 +1001,7 @@ footer {
     transition-duration: 250ms;
     transition-delay: 250ms;
     scale: 0.5;
+    transition: all 0.3s ease-out;
 }
 
 .course-name > a {
@@ -1009,5 +1013,6 @@ footer {
     transition-duration: 250ms;
     transition-delay: 250ms;
     scale: 1.05;
+    transition: all 0.3s ease-out;
 }
 /*Footer - end*/
