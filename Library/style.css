@@ -488,7 +488,9 @@ main {
 }
 
 .shop-description {
-    width: 1400px;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
     color: #000;
     text-align: center;
     font-family: "Inter";
@@ -1103,6 +1105,53 @@ footer {
     .book-card:nth-child(even) {
         margin-left: 0;
      }
+    
+    .coffee-shop {
+        height: auto;
+    } 
 
+    .menu-wrapper {
+        flex-direction: column;
+        gap: 0;
+        
+    } 
+    .menu-drinks {
+        align-self: flex-start;
+    }
+
+    .contacts {
+        height: auto;
+    }
+
+    .contacts-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .digital-library-card {
+        height: auto;
+    }
+
+    .card-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .get-card {
+        align-items: center;
+    }
+
+    .get-card-info {
+        text-align: center;
+        width: auto;
+        margin-right: 84px;
+        margin-left: 84px;
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .sign-login-wrapper {
+        padding-bottom: 49px;
+    }
   }
 /*Media 1024 - end*/
