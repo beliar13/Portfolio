@@ -955,17 +955,17 @@ footer {
 }
 
 .footer-line {
-    width: 1400px;
+    width: auto;
     height: 1px;
     background: #FFF;
-    margin-top: 20px;
-    margin-left: 19px;
+    margin: 20px 20px 0 20px;
 }
 
 .year-course-github-wrapper {
     display: flex;
     margin-top: 44px;
     align-items: baseline;
+    justify-content: space-between;
 }
 
 .course-year {
@@ -979,12 +979,11 @@ footer {
     font-weight: 400;
     line-height: 20px; /* 100% */
     letter-spacing: 2px;
-    margin-left: 20px;
+    padding-left: 20px;
     margin-top: -1px;
 }
 
 .course-name {
-    width: 300px;
     height: 22px;
     color: #FFF;
     text-align: center;
@@ -996,7 +995,7 @@ footer {
     letter-spacing: 1.9px;
     display: flex;
     flex-shrink: 0;
-    margin-left: 495px;
+    padding-left: 43px;
 }
 
 .github-profile {
@@ -1010,7 +1009,7 @@ footer {
     font-weight: 400;
     line-height: 20px; /* 200% */
     letter-spacing: 2px;
-    margin-left: 448px;
+    padding-right: 10px;
 }
 
 .github-profile > a {
