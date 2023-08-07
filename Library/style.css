@@ -206,7 +206,27 @@ main {
     align-items: center;
 }
 
-.carousel-item:nth-child(1n+4) {
+.swap-left {
+    width: 50px;
+    height: 560px;
+    display: none;
+    align-items: center;
+    background: url('img/icons/Arrow2.svg') no-repeat;
+    background-position: center;
+    justify-content: center;
+}
+
+.swap-right {
+    width: 50px;
+    height: 560px;
+    display: none;
+    align-items: center;
+    background: url('img/icons/Arrow1.svg') no-repeat;
+    background-position: center;
+    justify-content: center;
+}
+
+.carousel-item:nth-child(1n+5) {
     display: none;
 }
 
@@ -510,6 +530,16 @@ main {
     padding-top: 20px;
 }
 
+.drinks-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.deserts-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .menu-sign {
     color: #BB945F;
     font-family: "Forum";
@@ -521,6 +551,12 @@ main {
     text-transform: capitalize;
     margin-block-start: 0;
     margin-block-end: 0;
+    padding-top: 20px;
+    padding-left: 17px;
+}
+
+.desserts-sign {
+    padding-left: 148px;    
 }
 
 .menu-wrapper {
@@ -1062,42 +1098,29 @@ footer {
     .welcome {
         background: url(./img/Welcome-768.png), lightgray 50% / cover no-repeat;
     }
-
+   
+    .swap-left {
+        display: flex;
+    }
     .carousel-item {
-        position: relative;
-        left: -44px;
-    }
-
-    .carousel-item::before {
-        content: "";
         display: flex;
-        height: 23px;
-        width: 14px;
-        flex-shrink: 0;
-        margin-right: 44px;
-        background: url('./img/icons/Arrow2.svg');
-        background-repeat: no-repeat;
     }
-    .carousel-item::after {
-        content: "";
-        display: flex;
-        height: 23px;
-        width: 14px;
-        flex-shrink: 0;
-        margin-left: 44px;
-        background: url('./img/icons/Arrow1.svg');
-        background-repeat: no-repeat;
-    }
-    .carousel-item:nth-child(1n+2) {
+    .carousel-item:nth-child(1n+3) {
         display: none;
     }
-    .a-carousel:nth-child(1n+4) {
-        display: inline-flex;
+
+    .swap-right {
+        display: flex;
     }
 
     .favorites-section {
         height: auto;
     }
+
+    .favorites-form {
+        align-self: center;
+    }
+
     .season-book-wrapper {
         flex-direction: column;
         align-items: center;
@@ -1113,10 +1136,115 @@ footer {
     .menu-wrapper {
         flex-direction: column;
         gap: 0;
-        
     } 
-    .menu-drinks {
-        align-self: flex-start;
+    .drinks-wrapper {
+        position: relative;
+        left: -260px;
+    }
+    .deserts-wrapper {
+        position: relative;
+        right: -260px;
+    }
+
+    .contacts {
+        height: auto;
+    }
+
+    .contacts-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .digital-library-card {
+        height: auto;
+    }
+
+    .card-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .get-card {
+        align-items: center;
+    }
+
+    .get-card-info {
+        text-align: center;
+        width: auto;
+        margin-right: 84px;
+        margin-left: 84px;
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .sign-login-wrapper {
+        padding-bottom: 49px;
+    }
+  }
+/*Media 1024 - end*/
+
+@media screen and (max-width: 768px) {
+    .page-wrapper {
+        width: 768px;
+    }
+
+    main {
+        width: 768px;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+
+    .navigation-area {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    .welcome {
+        background: url(./img/Welcome-768.png), lightgray 50% / cover no-repeat;
+    }
+    .about-description {
+        width: auto;
+        padding: 0 30px 42px 30px;
+    }
+
+    .about-carousel {
+        padding-top: 18px;
+    }
+
+    .favorites-section {
+        height: auto;
+    }
+
+    .favorites-form {
+        align-self: center;
+    }
+    
+    .season-book-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .book-card:nth-child(even) {
+        margin-left: 0;
+     }
+    
+    .coffee-shop {
+        height: auto;
+    } 
+
+    .menu-wrapper {
+        flex-direction: column;
+        gap: 0;
+    } 
+    .drinks-wrapper {
+        position: relative;
+        left: -132px;
+    }
+    .deserts-wrapper {
+        position: relative;
+        right: -132px;
     }
 
     .contacts {
