@@ -207,23 +207,23 @@ main {
 }
 
 .swap-left {
-    width: 50px;
+    width: 55px;
     height: 560px;
     display: none;
     align-items: center;
-    background: url('img/icons/Arrow2.svg') no-repeat;
-    background-position: center;
     justify-content: center;
 }
 
 .swap-right {
-    width: 50px;
+    width: 55px;
     height: 560px;
     display: none;
     align-items: center;
-    background: url('img/icons/Arrow1.svg') no-repeat;
-    background-position: center;
     justify-content: center;
+}
+
+.swap-arrow {
+    padding-top: 42px;
 }
 
 .carousel-item:nth-child(1n+5) {
@@ -232,7 +232,7 @@ main {
 
 .carousel-pagination {
     display: flex;
-    margin-top: 35px;
+    padding-top: 35px;
 }
 
 .carousel-pagination-button.active {
@@ -1109,6 +1109,10 @@ footer {
         display: none;
     }
 
+    .a-carousel:nth-child(1n+5) {
+        display: flex;
+    }
+
     .swap-right {
         display: flex;
     }
@@ -1152,7 +1156,7 @@ footer {
 
     .contacts-wrapper {
         flex-direction: column;
-        gap: 0;
+        gap: 100px;
     }
 
     .digital-library-card {
@@ -1214,17 +1218,38 @@ footer {
         padding-top: 18px;
     }
 
+    .carousel-pagination {
+        padding-top: 20px;
+    }
+    
     .favorites-section {
         height: auto;
+        padding-top: 24px;
     }
 
     .favorites-form {
-        align-self: center;
+        align-self: flex-start;
     }
-    
+    .checkbox-container:nth-child(4) {
+        padding-left: 5px;
+    }
     .season-book-wrapper {
         flex-direction: column;
         align-items: center;
+        margin-left: -40px;
+        padding-top: 34px;
+        gap: 40px;
+    }
+
+    .book-card {
+        margin-top: 0;
+    }
+    .book-card:nth-child(3) {
+        margin-top: 0;
+    }
+
+    .book-card:nth-child(4) {
+        margin-top: 0;
     }
     .book-card:nth-child(even) {
         margin-left: 0;
@@ -1234,10 +1259,24 @@ footer {
         height: auto;
     } 
 
+    #coffeeshop {
+        padding-top: 41px;
+    }
+
+    .line-shop {
+        margin-top: 60px;
+    }
+
+    .shop-description {
+        padding-left: 18px;
+        padding-right: 20px;
+    }
+
     .menu-wrapper {
         flex-direction: column;
         gap: 0;
     } 
+
     .drinks-wrapper {
         position: relative;
         left: -132px;
@@ -1247,17 +1286,58 @@ footer {
         right: -132px;
     }
 
+    .menu-sign {
+        padding-left: 10px;
+    }
+
+    .drinks-menu-item {
+        margin-left: 0;
+        padding-left: 9px;
+    }
+
+    .desserts-sign {
+        padding-top: 0;
+        padding-left: 156px;
+    }
+
+    .desserts-menu-item {
+        padding-left: 12px;
+        margin-left: 0;
+    }
+
     .contacts {
         height: auto;
     }
 
     .contacts-wrapper {
         flex-direction: column;
-        gap: 0;
+        gap: 82px;
+        width: 723px;
+    }
+
+    .contacts-map {
+        padding-left: 13px;
     }
 
     .digital-library-card {
         height: auto;
+    }
+
+    #librarycard {
+        padding-left: 2px;
+    }
+
+    .find-your-card {
+        margin-left: 0;
+    }
+
+    .card-title {
+        padding-left: 20px;
+        margin-left: 0;
+    }
+    .get-reader-card {
+        margin-top: 0;
+        padding-top: 20px;
     }
 
     .card-wrapper {
@@ -1274,12 +1354,12 @@ footer {
         width: auto;
         margin-right: 84px;
         margin-left: 84px;
-        padding-left: 120px;
-        padding-right: 120px;
+        margin-top: 0;
+        padding: 37px 2px 7px 2px;
     }
 
     .sign-login-wrapper {
-        padding-bottom: 49px;
+        padding-bottom: 40px;
     }
   }
 /*Media 1024 - end*/
