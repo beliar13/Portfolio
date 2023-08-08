@@ -16,8 +16,8 @@ html {
     margin: 0 auto;
 }
 
-header {
-    width: 1440px;
+.header {
+    width: 100%;
     height: 90px;
     background: #0C0C0E;
     display: flex;
@@ -34,12 +34,16 @@ header {
     line-height: 50px; /* 166.667% */
     letter-spacing: 0.6px;
     margin-left: 20px;
+    flex-shrink: 0;
 }
 
 /*Navigation - start*/
 .navigation-area {
-	margin-left: 454px;
-	margin-top: 20px;
+	padding: 35px 0px 0px 454px;
+}
+
+.nav-active {
+    display: flex;
 }
 
 .navigation-menu {
@@ -50,7 +54,7 @@ header {
 	list-style: none;
 	padding-inline-start: 0;
 	margin-top: 0;
-	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 .navigation-menu-link {
 	padding-top: 0;
@@ -60,6 +64,7 @@ header {
 	font-style: normal;
 	font-weight: 400;
 	line-height: 50px; /* 250% */
+    flex-shrink: 0;
 }
 
 .nav-links {
@@ -74,24 +79,53 @@ header {
     scale: 1.1;
 }
 /*Navigation - end*/
+.profile-burger {
+    display: flex;
+    align-items: center;
+}
 
 .profile-logo {
     width: 28px;
     height: 28px;
-    margin-left: 40px;
+    padding-left: 40px;
 }
 
+.burger-collapse {
+    display:none;
+    width: 45px;
+    height: 32px;
+    background: url('./img/icons/burger.svg') no-repeat;
+    background-position: center;
+    margin-left: 40px;
+    margin-right: 20px;
+    align-self: center;
+}
+
+.burger-expand {
+    background: url('./img/icons/burger-cross.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 32px;
+    height: 32px;
+    margin-left: 40px;
+    margin-right: 20px;
+    padding-left: 13px;
+}
+
+main {
+    width: 100%;
+}
 /*Welcome - start*/
 .welcome {
     display: flex;
     flex-direction: column;
-	width: 1440px;
+	width: 100%;
 	height: 600px;
     background: url(./img/Welcome.png), lightgray 50% / cover no-repeat;
 }
 
 .overlay {
-	width: 1440px;
+	width: 100%;
 	height: 300px;
 	background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%);
 }
@@ -132,7 +166,7 @@ header {
  /*Welcome end*/
 /*About - start*/
 .about-section {
-    width: 1440px;
+    width: 100%;
     height: 837px;
     background: #FFF;
     display: flex;
@@ -167,7 +201,7 @@ header {
 }
 
 .about-description {
-    width: 1440px;
+    width: 100%;
     margin-top: 40px;
     height: 40px;
     color: #000;
@@ -192,11 +226,37 @@ header {
 .carousel-item {
     width: 450px;
     height: 560px;
+    display: flex;
+    align-items: center;
+}
+
+.swap-left {
+    width: 55px;
+    height: 560px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.swap-right {
+    width: 55px;
+    height: 560px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.swap-arrow {
+    padding-top: 42px;
+}
+
+.carousel-item:nth-child(1n+5) {
+    display: none;
 }
 
 .carousel-pagination {
     display: flex;
-    margin-top: 35px;
+    padding-top: 35px;
 }
 
 .carousel-pagination-button.active {
@@ -222,10 +282,15 @@ header {
     justify-content: center;
     cursor: pointer;
 }
+
+.a-carousel:nth-child(1n+4) {
+    display: none;
+}
+
 /*About - end*/
 /*Favorites - start*/
 .favorites-section {
-    width: 1440px;
+    width: 100%;
     height: 1439px;
     background-color: #FFF;
     display: flex;
@@ -458,7 +523,7 @@ header {
 /*Favorites - end*/
 /*Coffee shop - start*/
 .coffee-shop {
-    width: 1440px;
+    width: 100%;
     height: 841px;
     background-color: #FFF;
     display: flex;
@@ -467,7 +532,9 @@ header {
 }
 
 .shop-description {
-    width: 1400px;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
     color: #000;
     text-align: center;
     font-family: "Inter";
@@ -487,6 +554,16 @@ header {
     padding-top: 20px;
 }
 
+.drinks-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.deserts-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .menu-sign {
     color: #BB945F;
     font-family: "Forum";
@@ -498,6 +575,12 @@ header {
     text-transform: capitalize;
     margin-block-start: 0;
     margin-block-end: 0;
+    padding-top: 20px;
+    padding-left: 17px;
+}
+
+.desserts-sign {
+    padding-left: 148px;    
 }
 
 .menu-wrapper {
@@ -591,7 +674,7 @@ header {
 /*Coffee shop - end*/
 /*Contacts - start*/
 .contacts {
-    width: 1440px;
+    width: 100%;
     height: 575px;
     background-color: #FFF;
     display: flex;
@@ -658,7 +741,7 @@ header {
 /*Contacts - end*/
 /*Card - start*/
 .digital-library-card {
-    width: 1440px;
+    width: 100%;
     height: 614px;
     display: flex;
     flex-direction: column;
@@ -852,7 +935,7 @@ input:invalid {
 /*Card - end*/
 /*Footer - start*/
 footer {
-    width: 1440px;
+    width: 100%;
     height: 250px;
     background: #0C0C0E;
     display: flex;
@@ -934,17 +1017,17 @@ footer {
 }
 
 .footer-line {
-    width: 1400px;
+    width: auto;
     height: 1px;
     background: #FFF;
-    margin-top: 20px;
-    margin-left: 19px;
+    margin: 20px 20px 0 20px;
 }
 
 .year-course-github-wrapper {
     display: flex;
     margin-top: 44px;
     align-items: baseline;
+    justify-content: space-between;
 }
 
 .course-year {
@@ -958,12 +1041,11 @@ footer {
     font-weight: 400;
     line-height: 20px; /* 100% */
     letter-spacing: 2px;
-    margin-left: 20px;
+    padding-left: 20px;
     margin-top: -1px;
 }
 
 .course-name {
-    width: 300px;
     height: 22px;
     color: #FFF;
     text-align: center;
@@ -975,7 +1057,7 @@ footer {
     letter-spacing: 1.9px;
     display: flex;
     flex-shrink: 0;
-    margin-left: 495px;
+    padding-left: 43px;
 }
 
 .github-profile {
@@ -989,7 +1071,7 @@ footer {
     font-weight: 400;
     line-height: 20px; /* 200% */
     letter-spacing: 2px;
-    margin-left: 448px;
+    padding-right: 10px;
 }
 
 .github-profile > a {
@@ -1016,3 +1098,361 @@ footer {
     transition: all 0.3s ease-out;
 }
 /*Footer - end*/
+/*Media 1024 - start*/
+
+@media screen and (max-width: 1024px) {
+    .page-wrapper {
+        width: 1024px;
+    }
+
+    main {
+        width: 1024px;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+
+    .navigation-area {
+        display: none;
+    }
+
+    .navigation-menu {
+        flex-direction: column;
+        flex-shrink: 0;
+        align-items: center;
+        width: 332px;
+        z-index: 1;
+        background-color: #000;
+        padding-top: 41px;
+    }
+   
+    .navigation-menu-link:last-child {
+        margin-bottom: 30px;
+    }
+
+    .nav-area-active {
+        display: flex;
+        padding: 0;
+        position: absolute;
+        top: 60px;
+        right: 0;
+    }
+
+    .burger-expand {
+        background: url('./img/icons/burger-cross.svg');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        width: 32px;
+        padding-left: 13px;
+    }
+
+    .burger-collapse {
+        display: block;
+    }
+
+    .navigation-menu-link:last-child {
+        padding-bottom: 80px;
+    }
+
+    .welcome {
+        background: url(./img/Welcome-768.png), lightgray 50% / cover no-repeat;
+    }
+   
+    .swap-left {
+        display: flex;
+    }
+    .carousel-item {
+        display: flex;
+    }
+    .carousel-item:nth-child(1n+3) {
+        display: none;
+    }
+
+    .a-carousel:nth-child(1n+5) {
+        display: flex;
+    }
+
+    .swap-right {
+        display: flex;
+    }
+
+    .favorites-section {
+        height: auto;
+    }
+
+    .favorites-form {
+        align-self: center;
+    }
+
+    .season-book-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .book-card:nth-child(even) {
+        margin-left: 0;
+     }
+    
+    .coffee-shop {
+        height: auto;
+    } 
+
+    .menu-wrapper {
+        flex-direction: column;
+        gap: 0;
+    } 
+    .drinks-wrapper {
+        position: relative;
+        left: -260px;
+    }
+    .deserts-wrapper {
+        position: relative;
+        right: -260px;
+    }
+
+    .contacts {
+        height: auto;
+    }
+
+    .contacts-wrapper {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .digital-library-card {
+        height: auto;
+    }
+
+    .card-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .get-card {
+        align-items: center;
+    }
+
+    .get-card-info {
+        text-align: center;
+        width: auto;
+        margin-right: 84px;
+        margin-left: 84px;
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .sign-login-wrapper {
+        padding-bottom: 49px;
+    }
+  }
+/*Media 1024 - end*/
+/*Media 768 - start*/
+@media screen and (max-width: 768px) {
+    .page-wrapper {
+        width: 768px;
+    }
+
+    main {
+        width: 768px;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+
+    .header-text {
+        flex-shrink: 0;
+    }
+
+    .navigation-area {
+        display: none;
+    }
+
+    .navigation-menu {
+        padding-bottom: 0;
+        flex-direction: column;
+        flex-shrink: 0;
+        align-items: center;
+        width: 332px;
+        z-index: 1;
+        background-color: #000;
+    }
+   
+    .nav-area-active {
+        display: flex;
+        padding: 0;
+        align-self: flex-end;
+    }
+
+    .burger-expand {
+        background: url('./img/icons/burger-cross.svg');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        width: 32px;
+        padding-left: 13px;
+    }
+
+    .burger-collapse {
+        display: block;
+    }
+    .welcome {
+        background: url(./img/Welcome-768.png), lightgray 50% / cover no-repeat;
+    }
+    .about-description {
+        width: auto;
+        padding: 0 30px 42px 30px;
+    }
+
+    .about-carousel {
+        padding-top: 18px;
+    }
+
+    .carousel-pagination {
+        padding-top: 20px;
+    }
+    
+    .favorites-section {
+        height: auto;
+        padding-top: 24px;
+    }
+
+    .favorites-form {
+        align-self: flex-start;
+    }
+    .checkbox-container:nth-child(4) {
+        padding-left: 5px;
+    }
+    .season-book-wrapper {
+        flex-direction: column;
+        align-items: center;
+        margin-left: -40px;
+        padding-top: 34px;
+        gap: 40px;
+    }
+
+    .book-card {
+        margin-top: 0;
+    }
+    .book-card:nth-child(3) {
+        margin-top: 0;
+    }
+
+    .book-card:nth-child(4) {
+        margin-top: 0;
+    }
+    .book-card:nth-child(even) {
+        margin-left: 0;
+     }
+    
+    .coffee-shop {
+        height: auto;
+    } 
+
+    #coffeeshop {
+        padding-top: 41px;
+    }
+
+    .line-shop {
+        margin-top: 60px;
+    }
+
+    .shop-description {
+        padding-left: 18px;
+        padding-right: 20px;
+    }
+
+    .menu-wrapper {
+        flex-direction: column;
+        gap: 0;
+    } 
+
+    .drinks-wrapper {
+        position: relative;
+        left: -132px;
+    }
+    .deserts-wrapper {
+        position: relative;
+        right: -132px;
+    }
+
+    .menu-sign {
+        padding-left: 10px;
+    }
+
+    .drinks-menu-item {
+        margin-left: 0;
+        padding-left: 9px;
+    }
+
+    .desserts-sign {
+        padding-top: 0;
+        padding-left: 156px;
+    }
+
+    .desserts-menu-item {
+        padding-left: 12px;
+        margin-left: 0;
+    }
+
+    .contacts {
+        height: auto;
+    }
+
+    .contacts-wrapper {
+        flex-direction: column;
+        gap: 82px;
+        width: 723px;
+    }
+
+    .contacts-map {
+        padding-left: 13px;
+    }
+
+    .digital-library-card {
+        height: auto;
+    }
+
+    #librarycard {
+        padding-left: 2px;
+    }
+
+    .find-your-card {
+        margin-left: 0;
+    }
+
+    .card-title {
+        padding-left: 20px;
+        margin-left: 0;
+    }
+    .get-reader-card {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+
+    .card-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .get-card {
+        align-items: center;
+    }
+
+    .get-card-info {
+        text-align: center;
+        width: auto;
+        margin-right: 84px;
+        margin-left: 84px;
+        margin-top: 0;
+        padding: 37px 2px 7px 2px;
+    }
+
+    .sign-login-wrapper {
+        padding-bottom: 40px;
+    }
+
+    .course-name {
+        padding-left: 0px;
+    }
+  }
+/*Media 768 - end*/
