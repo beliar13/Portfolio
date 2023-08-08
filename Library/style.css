@@ -34,11 +34,16 @@ html {
     line-height: 50px; /* 166.667% */
     letter-spacing: 0.6px;
     margin-left: 20px;
+    flex-shrink: 0;
 }
 
 /*Navigation - start*/
 .navigation-area {
-	padding: 33px 0px 0px 454px;
+	padding: 35px 0px 0px 454px;
+}
+
+.nav-active {
+    display: flex;
 }
 
 .navigation-menu {
@@ -59,6 +64,7 @@ html {
 	font-style: normal;
 	font-weight: 400;
 	line-height: 50px; /* 250% */
+    flex-shrink: 0;
 }
 
 .nav-links {
@@ -75,6 +81,7 @@ html {
 /*Navigation - end*/
 .profile-burger {
     display: flex;
+    align-items: center;
 }
 
 .profile-logo {
@@ -83,9 +90,26 @@ html {
     padding-left: 40px;
 }
 
-.hamburger {
+.burger-collapse {
     display:none;
-    padding: 3px 20px 0px 40px;
+    width: 45px;
+    height: 32px;
+    background: url('./img/icons/burger.svg') no-repeat;
+    background-position: center;
+    margin-left: 40px;
+    margin-right: 20px;
+    align-self: center;
+}
+
+.burger-expand {
+    background: url('./img/icons/burger-cross.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 32px;
+    height: 32px;
+    margin-left: 40px;
+    margin-right: 20px;
+    padding-left: 13px;
 }
 
 main {
@@ -1092,9 +1116,45 @@ footer {
     .navigation-area {
         display: none;
     }
-    .hamburger {
+
+    .navigation-menu {
+        flex-direction: column;
+        flex-shrink: 0;
+        align-items: center;
+        width: 332px;
+        z-index: 1;
+        background-color: #000;
+        padding-top: 41px;
+    }
+   
+    .navigation-menu-link:last-child {
+        margin-bottom: 30px;
+    }
+
+    .nav-area-active {
+        display: flex;
+        padding: 0;
+        position: absolute;
+        top: 60px;
+        right: 0;
+    }
+
+    .burger-expand {
+        background: url('./img/icons/burger-cross.svg');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        width: 32px;
+        padding-left: 13px;
+    }
+
+    .burger-collapse {
         display: block;
     }
+
+    .navigation-menu-link:last-child {
+        padding-bottom: 80px;
+    }
+
     .welcome {
         background: url(./img/Welcome-768.png), lightgray 50% / cover no-repeat;
     }
@@ -1186,7 +1246,7 @@ footer {
     }
   }
 /*Media 1024 - end*/
-
+/*Media 768 - start*/
 @media screen and (max-width: 768px) {
     .page-wrapper {
         width: 768px;
@@ -1200,10 +1260,39 @@ footer {
         justify-content: space-between;
     }
 
+    .header-text {
+        flex-shrink: 0;
+    }
+
     .navigation-area {
         display: none;
     }
-    .hamburger {
+
+    .navigation-menu {
+        padding-bottom: 0;
+        flex-direction: column;
+        flex-shrink: 0;
+        align-items: center;
+        width: 332px;
+        z-index: 1;
+        background-color: #000;
+    }
+   
+    .nav-area-active {
+        display: flex;
+        padding: 0;
+        align-self: flex-end;
+    }
+
+    .burger-expand {
+        background: url('./img/icons/burger-cross.svg');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        width: 32px;
+        padding-left: 13px;
+    }
+
+    .burger-collapse {
         display: block;
     }
     .welcome {
@@ -1361,5 +1450,9 @@ footer {
     .sign-login-wrapper {
         padding-bottom: 40px;
     }
+
+    .course-name {
+        padding-left: 0px;
+    }
   }
-/*Media 1024 - end*/
+/*Media 768 - end*/
