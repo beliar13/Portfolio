@@ -1121,30 +1121,41 @@ footer {
 
     .navigation-area {
         width: 0px;
-        padding-top: 440px;
+        padding-top: 316px;
+        padding-left: 0px;
     }
 
+    .profile-burger {
+        z-index: 2;
+
+    }
+    .profile-logo {
+        padding-left: 34px;
+    }
     .navigation-menu {
         flex-direction: column;
         padding-left: 0;
         position: relative;
-        right: 159px;
+        right: 157px;
         width: 0px;
         align-items: center;
         background-color: black;
+        z-index: 1;
+        padding-top: 280px;
+        padding-bottom: 100px;
+        overflow: hidden;
     }
 
-    .navigation-menu > li {
-        flex-shrink: 0;
+    .navigation-menu-link {
+        margin-left: -10px;
     }
-
     .nav-hidden {
         width: 0px;
         transition: width 1s ease;
     }
 
     .nav-shown {
-        width: 332px;
+        width: 324px;
         transition: width 1s ease;
     }
 
@@ -1272,32 +1283,41 @@ footer {
 
     .navigation-area {
         width: 0px;
-        padding-top: 440px;
+        padding-top: 316px;
         padding-left: 0px;
     }
 
+    .profile-burger {
+        z-index: 2;
+
+    }
+    .profile-logo {
+        padding-left: 34px;
+    }
     .navigation-menu {
         flex-direction: column;
         padding-left: 0;
         position: relative;
-        right: 159px;
+        right: 157px;
         width: 0px;
         align-items: center;
         background-color: black;
         z-index: 1;
+        padding-top: 280px;
+        padding-bottom: 100px;
+        overflow: hidden;
     }
 
-    .navigation-menu > li {
-        flex-shrink: 0;
+    .navigation-menu-link {
+        margin-left: -10px;
     }
-
     .nav-hidden {
         width: 0px;
         transition: width 1s ease;
     }
 
     .nav-shown {
-        width: 332px;
+        width: 324px;
         transition: width 1s ease;
     }
 
