@@ -38,6 +38,11 @@ html {
 }
 
 /*Navigation - start*/
+.nav-logo-burger-wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .navigation-area {
 	padding: 35px 0px 0px 454px;
 }
@@ -89,6 +94,7 @@ html {
     height: 28px;
     padding-left: 40px;
 }
+
 
 .burger-collapse {
     display:none;
@@ -1114,29 +1120,37 @@ footer {
     }
 
     .navigation-area {
-        display: none;
+        width: 0px;
+        padding-top: 440px;
     }
 
     .navigation-menu {
         flex-direction: column;
-        flex-shrink: 0;
+        padding-left: 0;
+        position: relative;
+        right: 159px;
+        width: 0px;
         align-items: center;
-        width: 332px;
-        z-index: 1;
-        background-color: #000;
-        padding-top: 41px;
-    }
-   
-    .navigation-menu-link:last-child {
-        margin-bottom: 30px;
+        background-color: black;
     }
 
-    .nav-area-active {
-        display: flex;
-        padding: 0;
-        position: absolute;
-        top: 60px;
-        right: 0;
+    .navigation-menu > li {
+        flex-shrink: 0;
+    }
+
+    .nav-hidden {
+        width: 0px;
+        transition: width 1s ease;
+    }
+
+    .nav-shown {
+        width: 332px;
+        transition: width 1s ease;
+    }
+
+    .list-item-hidden {
+        visibility: hidden;
+        transition: 0s ease;
     }
 
     .burger-expand {
@@ -1149,10 +1163,6 @@ footer {
 
     .burger-collapse {
         display: block;
-    }
-
-    .navigation-menu-link:last-child {
-        padding-bottom: 80px;
     }
 
     .welcome {
@@ -1260,28 +1270,40 @@ footer {
         justify-content: space-between;
     }
 
-    .header-text {
-        flex-shrink: 0;
-    }
-
     .navigation-area {
-        display: none;
+        width: 0px;
+        padding-top: 440px;
+        padding-left: 0px;
     }
 
     .navigation-menu {
-        padding-bottom: 0;
         flex-direction: column;
-        flex-shrink: 0;
+        padding-left: 0;
+        position: relative;
+        right: 159px;
+        width: 0px;
         align-items: center;
-        width: 332px;
+        background-color: black;
         z-index: 1;
-        background-color: #000;
     }
-   
-    .nav-area-active {
-        display: flex;
-        padding: 0;
-        align-self: flex-end;
+
+    .navigation-menu > li {
+        flex-shrink: 0;
+    }
+
+    .nav-hidden {
+        width: 0px;
+        transition: width 1s ease;
+    }
+
+    .nav-shown {
+        width: 332px;
+        transition: width 1s ease;
+    }
+
+    .list-item-hidden {
+        visibility: hidden;
+        transition: 0s ease;
     }
 
     .burger-expand {
