@@ -1139,7 +1139,7 @@ footer {
         right: 157px;
         width: 0px;
         align-items: center;
-        background-color: black;
+        background-color: #0C0C0E;
         z-index: 1;
         padding-top: 280px;
         padding-bottom: 100px;
@@ -1301,7 +1301,7 @@ footer {
         right: 157px;
         width: 0px;
         align-items: center;
-        background-color: black;
+        background-color: #0C0C0E;
         z-index: 1;
         padding-top: 280px;
         padding-bottom: 100px;
@@ -1313,12 +1313,12 @@ footer {
     }
     .nav-hidden {
         width: 0px;
-        transition: width 1s ease;
+        transition: width 1s ease-out;
     }
 
     .nav-shown {
         width: 324px;
-        transition: width 1s ease;
+        transition: width 1s ease-in-out;
     }
 
     .list-item-hidden {
