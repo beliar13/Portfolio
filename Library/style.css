@@ -1190,7 +1190,10 @@ footer {
         display: none;
     }
 
-    .a-carousel:nth-child(1n+6) {
+    .a-carousel:nth-child(1n+4) {
+        display: flex;
+    }
+    .a-carousel:nth-child(1n+5) {
         display: flex;
     }
 
