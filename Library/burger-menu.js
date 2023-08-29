@@ -2,6 +2,10 @@ const BURGER = document.getElementById('burger');
 const NAV_LINK = document.getElementById('navigation-area');
 const MENU_LIST = document.getElementById('nav-menu');
 const WHOLE_PAGE = document.getElementById('main');
+const FIRST_BUTTON = document.getElementById('first-btn');
+const SECOND_BUTTON = document.getElementById('second-btn');
+const THIRD_BUTTON = document.getElementById('third-btn');
+const CAROUSEL = document.getElementById('about-carousel');
 
 
 MENU_LIST.querySelectorAll('li').forEach(el => el.classList.add('list-item-hidden'));
@@ -39,4 +43,27 @@ WHOLE_PAGE.addEventListener('click', (event) => {
         MENU_LIST.classList.add('nav-hidden');
         MENU_LIST.querySelectorAll('li').forEach(el => el.classList.add('list-item-hidden'));
     }
+});
+
+
+FIRST_BUTTON.addEventListener('click', (event) => {
+    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-end') & el.classList.add('to-the-left') & el.classList.add('to-the-begining'));
+    SECOND_BUTTON.classList.remove('clicked-btn');
+    THIRD_BUTTON.classList.remove('clicked-btn');
+    FIRST_BUTTON.classList.add('clicked-btn');
+});
+
+SECOND_BUTTON.addEventListener('click', (event) => {
+    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-end') & el.classList.remove('to-the-begining') & el.classList.add('to-the-left'));
+    THIRD_BUTTON.classList.remove('clicked-btn');
+    FIRST_BUTTON.classList.remove('clicked-btn');
+    SECOND_BUTTON.classList.add('clicked-btn');
+});
+
+
+THIRD_BUTTON.addEventListener('click', (event) => {
+    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-left') & el.classList.remove('to-the-begining') & el.classList.add('to-the-end'));
+    SECOND_BUTTON.classList.remove('clicked-btn');
+    FIRST_BUTTON.classList.remove('clicked-btn');
+    THIRD_BUTTON.classList.add('clicked-btn');
 });
