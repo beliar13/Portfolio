@@ -49,7 +49,7 @@ WHOLE_PAGE.addEventListener('click', (event) => {
 
 
 FIRST_BUTTON.addEventListener('click', (event) => {
-    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-end') & el.classList.add('to-the-left') & el.classList.remove('to-the-fourth') & el.classList.remove('.to-the-fifth') & el.classList.add('to-the-begining'));
+    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-end') & el.classList.add('to-the-left') & el.classList.remove('to-the-fourth') & el.classList.remove('to-the-fifth') & el.classList.add('to-the-begining'));
     SECOND_BUTTON.classList.remove('clicked-btn');
     THIRD_BUTTON.classList.remove('clicked-btn');
     FOURTH_BUTTON.classList.remove('clicked-btn');
@@ -58,7 +58,7 @@ FIRST_BUTTON.addEventListener('click', (event) => {
 });
 
 SECOND_BUTTON.addEventListener('click', (event) => {
-    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-end') & el.classList.remove('to-the-begining') & el.classList.remove('to-the-fourth') & el.classList.remove('.to-the-fifth') & el.classList.add('to-the-left'));
+    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-end') & el.classList.remove('to-the-begining') & el.classList.remove('to-the-fourth') & el.classList.remove('to-the-fifth') & el.classList.add('to-the-left'));
     THIRD_BUTTON.classList.remove('clicked-btn');
     FIRST_BUTTON.classList.remove('clicked-btn');
     FOURTH_BUTTON.classList.remove('clicked-btn');
@@ -68,7 +68,7 @@ SECOND_BUTTON.addEventListener('click', (event) => {
 
 
 THIRD_BUTTON.addEventListener('click', (event) => {
-    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-left') & el.classList.remove('to-the-begining') & el.classList.remove('to-the-fourth') & el.classList.remove('.to-the-fifth') & el.classList.add('to-the-end'));
+    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-left') & el.classList.remove('to-the-begining') & el.classList.remove('to-the-fourth') & el.classList.remove('to-the-fifth') & el.classList.add('to-the-end'));
     SECOND_BUTTON.classList.remove('clicked-btn');
     FIRST_BUTTON.classList.remove('clicked-btn');
     FOURTH_BUTTON.classList.remove('clicked-btn');
@@ -77,7 +77,7 @@ THIRD_BUTTON.addEventListener('click', (event) => {
 });
 
 FOURTH_BUTTON.addEventListener('click', (event) => {
-    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-left') & el.classList.remove('to-the-begining') & el.classList.remove('to-the-end') & el.classList.remove('.to-the-fifth') & el.classList.add('to-the-fourth'));
+    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-left') & el.classList.remove('to-the-begining') & el.classList.remove('to-the-end') & el.classList.remove('to-the-fifth') & el.classList.add('to-the-fourth'));
     SECOND_BUTTON.classList.remove('clicked-btn');
     FIRST_BUTTON.classList.remove('clicked-btn');
     THIRD_BUTTON.classList.remove('clicked-btn');
@@ -86,7 +86,7 @@ FOURTH_BUTTON.addEventListener('click', (event) => {
 });
 
 FIFTH_BUTTON.addEventListener('click', (event) => {
-    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-left') & el.classList.remove('to-the-begining') & el.classList.remove('to-the-end') & el.classList.remove('to-the-fourth') & el.classList.add('.to-the-fifth'));
+    CAROUSEL.querySelectorAll('div').forEach(el => el.classList.remove('to-the-left') & el.classList.remove('to-the-begining') & el.classList.remove('to-the-end') & el.classList.remove('to-the-fourth') & el.classList.add('to-the-fifth'));
     SECOND_BUTTON.classList.remove('clicked-btn');
     FIRST_BUTTON.classList.remove('clicked-btn');
     THIRD_BUTTON.classList.remove('clicked-btn');

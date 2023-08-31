@@ -245,7 +245,7 @@ main {
 }
 
 .swap-left {
-    width: 55px;
+    width: 56px;
     height: 560px;
     display: none;
     align-items: center;
@@ -253,7 +253,7 @@ main {
 }
 
 .swap-right {
-    width: 55px;
+    width: 54px;
     height: 560px;
     display: none;
     align-items: center;
@@ -261,7 +261,15 @@ main {
 }
 
 .swap-arrow {
-    padding-top: 42px;
+    padding-top:76px;
+}
+
+.carret-left {
+    padding-right: 40px;
+}
+
+.carret-right {
+    padding-left: 38px;
 }
 
 .carousel-pagination {
@@ -1213,6 +1221,11 @@ footer {
     .about-carousel {
         align-self: center;
         overflow: hidden;
+        max-width: 475px;
+    }
+
+    .carousel-wrapper {
+        align-self: center;
     }
 
     .swap-left {
