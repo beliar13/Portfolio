@@ -11,6 +11,8 @@ const FIFTH_BUTTON = document.getElementById('fifth-btn');
 const CAROUSEL = document.getElementById('about-carousel');
 const LEFT_CARRET = document.getElementById('left-carret');
 const RIGHT_CARRET = document.getElementById('right-carret');
+const PROFILE_BTN = document.getElementById('profile-btn');
+const profile_window = document.getElementById('profile-dropdown');
 let image_index = 0;
 
 
@@ -130,3 +132,19 @@ RIGHT_CARRET.addEventListener('click', () => {
         resetButtonsStyle();
         document.getElementById(btnnumber).classList.add('clicked-btn');
 }});
+
+
+let profileShown = 0;
+
+PROFILE_BTN.addEventListener('click', () => {
+    if (profileShown == 0) {
+        profile_window.classList.add('profile-dropdown-show');
+        profile_window.classList.remove('profile-dropdown-hide');
+        profileShown = 1;
+    }
+    else {
+        profile_window.classList.remove('profile-dropdown-show');
+        profile_window.classList.add('profile-dropdown-hide');
+        profileShown = 0;
+    }
+})
