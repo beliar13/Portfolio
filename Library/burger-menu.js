@@ -29,7 +29,7 @@ const classes = ['to-the-begining','to-the-left','to-the-end','to-the-fourth','t
 
 const allButtons = ['first-btn','second-btn','third-btn','fourth-btn','fifth-btn'];
 
-BURGER.addEventListener('click', (event) => {
+/*BURGER.addEventListener('click', (event) => {
     if (BURGER.classList.value == 'burger-collapse') {
         event.target.classList.remove('burger-collapse');
         event.target.classList.add('burger-expand');
@@ -39,12 +39,35 @@ BURGER.addEventListener('click', (event) => {
         profile_window.classList.remove('profile-dropdown-show');
         profile_window.classList.add('profile-dropdown-hide');
         profileShown = 0;
+        console.log(burgerShown)
     }
     else {
+        console.log(burgerShown)
         event.target.classList.remove('burger-expand');
         event.target.classList.add('burger-collapse');
         MENU_LIST.classList.remove('nav-shown');
         MENU_LIST.classList.add('nav-hidden');
+        burgerShown = 0;
+    }  
+});*/
+
+BURGER.addEventListener('click', (event) => {
+    if (burgerShown == 0) {
+        BURGER.classList.remove('burger-collapse');
+        BURGER.classList.add('burger-expand');
+        MENU_LIST.classList.remove('nav-hidden');
+        MENU_LIST.classList.add('nav-shown');
+        profile_window.classList.remove('profile-dropdown-show');
+        profile_window.classList.add('profile-dropdown-hide');
+        profileShown = 0;
+        burgerShown = 1;
+        console.log(burgerShown)
+    }
+    else {
+        BURGER.classList.remove('burger-expand');
+        BURGER.classList.add('burger-collapse');
+        MENU_LIST.classList.add('nav-hidden');
+        MENU_LIST.classList.remove('nav-shown');
         burgerShown = 0;
     }  
 });
@@ -66,9 +89,19 @@ document.addEventListener('mouseup', function(e) {
         MENU_LIST.classList.remove('nav-shown');
         MENU_LIST.classList.add('nav-hidden');
         profileShown = 0;
+    }
+});
+
+document.addEventListener('mouseup', function(e) {
+    if (!BURGER.contains(e.target)) {
+        BURGER.classList.remove('burger-expand');
+        BURGER.classList.add('burger-collapse');
+        MENU_LIST.classList.remove('nav-shown');
+        MENU_LIST.classList.add('nav-hidden');
         burgerShown = 0;
     }
 });
+
 
 auth_options.forEach(opt => opt.addEventListener('click', () => {
     profile_window.classList.remove('profile-dropdown-show');
@@ -148,8 +181,8 @@ let profileShown = 0;
 
 PROFILE_BTN.addEventListener('click', () => {
     if (profileShown == 0) {
-        profile_window.classList.add('profile-dropdown-show');
         profile_window.classList.remove('profile-dropdown-hide');
+        profile_window.classList.add('profile-dropdown-show');
         profileShown = 1;
         if (burgerShown == 1) {
             BURGER.classList.add('burger-collapse');
