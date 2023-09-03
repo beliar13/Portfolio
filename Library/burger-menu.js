@@ -13,7 +13,9 @@ const LEFT_CARRET = document.getElementById('left-carret');
 const RIGHT_CARRET = document.getElementById('right-carret');
 const PROFILE_BTN = document.getElementById('profile-btn');
 const profile_window = document.getElementById('profile-dropdown');
+const auth_options = document.querySelectorAll('.profile-actions');
 let image_index = 0;
+let burgerShown = 0;
 
 const resetButtonsStyle = () => {
     BUTTONS_CONTAINER.querySelectorAll('div').forEach(btn => btn.removeAttribute('class') & btn.setAttribute('class','carousel-pagination-button'));
@@ -33,12 +35,17 @@ BURGER.addEventListener('click', (event) => {
         event.target.classList.add('burger-expand');
         MENU_LIST.classList.remove('nav-hidden');
         MENU_LIST.classList.add('nav-shown');
+        burgerShown = 1;
+        profile_window.classList.remove('profile-dropdown-show');
+        profile_window.classList.add('profile-dropdown-hide');
+        profileShown = 0;
     }
     else {
         event.target.classList.remove('burger-expand');
         event.target.classList.add('burger-collapse');
         MENU_LIST.classList.remove('nav-shown');
         MENU_LIST.classList.add('nav-hidden');
+        burgerShown = 0;
     }  
 });
 
@@ -47,18 +54,27 @@ MENU_LIST.addEventListener('click', (event) => {
     MENU_LIST.classList.add('nav-hidden');
     BURGER.classList.remove('burger-expand');
     BURGER.classList.add('burger-collapse');
-
+    burgerShown = 0;
 });
 
-WHOLE_PAGE.addEventListener('click', (event) => {
-    if (BURGER.classList.value == 'burger-expand') {
+document.addEventListener('mouseup', function(e) {
+    if ((!profile_window.contains(e.target)) || (!BURGER.contains(e.target))) {
+        profile_window.classList.remove('profile-dropdown-show');
+        profile_window.classList.add('profile-dropdown-hide');
         BURGER.classList.remove('burger-expand');
         BURGER.classList.add('burger-collapse');
         MENU_LIST.classList.remove('nav-shown');
         MENU_LIST.classList.add('nav-hidden');
+        profileShown = 0;
+        burgerShown = 0;
     }
 });
 
+auth_options.forEach(opt => opt.addEventListener('click', () => {
+    profile_window.classList.remove('profile-dropdown-show');
+    profile_window.classList.add('profile-dropdown-hide');
+    profileShown = 0;
+}))
 
 
 FIRST_BUTTON.addEventListener('click', (event) => {
@@ -135,6 +151,13 @@ PROFILE_BTN.addEventListener('click', () => {
         profile_window.classList.add('profile-dropdown-show');
         profile_window.classList.remove('profile-dropdown-hide');
         profileShown = 1;
+        if (burgerShown == 1) {
+            BURGER.classList.add('burger-collapse');
+            BURGER.classList.remove('burger-expand');
+            MENU_LIST.classList.add('nav-hidden');
+            MENU_LIST.classList.remove('nav-shown');
+            burgerShown = 0;
+        }
     }
     else {
         profile_window.classList.remove('profile-dropdown-show');
