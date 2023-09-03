@@ -15,9 +15,6 @@ const PROFILE_BTN = document.getElementById('profile-btn');
 const profile_window = document.getElementById('profile-dropdown');
 let image_index = 0;
 
-
-MENU_LIST.querySelectorAll('li').forEach(el => el.classList.add('list-item-hidden'));
-
 const resetButtonsStyle = () => {
     BUTTONS_CONTAINER.querySelectorAll('div').forEach(btn => btn.removeAttribute('class') & btn.setAttribute('class','carousel-pagination-button'));
 }
@@ -36,14 +33,12 @@ BURGER.addEventListener('click', (event) => {
         event.target.classList.add('burger-expand');
         MENU_LIST.classList.remove('nav-hidden');
         MENU_LIST.classList.add('nav-shown');
-        MENU_LIST.querySelectorAll('li').forEach(el => el.classList.remove('list-item-hidden'));
     }
     else {
         event.target.classList.remove('burger-expand');
         event.target.classList.add('burger-collapse');
         MENU_LIST.classList.remove('nav-shown');
         MENU_LIST.classList.add('nav-hidden');
-        MENU_LIST.querySelectorAll('li').forEach(el => el.classList.add('list-item-hidden'));
     }  
 });
 
@@ -61,7 +56,6 @@ WHOLE_PAGE.addEventListener('click', (event) => {
         BURGER.classList.add('burger-collapse');
         MENU_LIST.classList.remove('nav-shown');
         MENU_LIST.classList.add('nav-hidden');
-        MENU_LIST.querySelectorAll('li').forEach(el => el.classList.add('list-item-hidden'));
     }
 });
 

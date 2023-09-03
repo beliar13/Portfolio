@@ -1257,8 +1257,8 @@ footer {
         flex-direction: column;
         padding-left: 0;
         position: relative;
-        right: 157px;
-        width: 0px;
+        right: 46px;
+        width: 324px;
         align-items: center;
         background-color: #0C0C0E;
         z-index: 1;
@@ -1271,13 +1271,13 @@ footer {
         margin-left: -10px;
     }
     .nav-hidden {
-        width: 0px;
-        transition: width 1s ease;
+        transform: translateX(312px);
+        transition: all 1s ease;
     }
 
     .nav-shown {
-        width: 324px;
-        transition: width 1s ease;
+        transform: translateX(0px);
+        transition: all 1s ease;
     }
 
     .list-item-hidden {
@@ -1446,8 +1446,8 @@ footer {
         flex-direction: column;
         padding-left: 0;
         position: relative;
-        right: 157px;
-        width: 0px;
+        right: 12px;
+        width: 324px;
         align-items: center;
         background-color: #0C0C0E;
         z-index: 1;
@@ -1460,13 +1460,13 @@ footer {
         margin-left: -10px;
     }
     .nav-hidden {
-        width: 0px;
-        transition: width 1s ease-out;
+        transform: translateX(312px);
+        transition: all 1s ease;
     }
 
     .nav-shown {
-        width: 324px;
-        transition: width 1s ease-in-out;
+        transform: translateX(0px);
+        transition: all 1s ease;
     }
 
     .list-item-hidden {
