@@ -14,6 +14,9 @@ const RIGHT_CARRET = document.getElementById('right-carret');
 const PROFILE_BTN = document.getElementById('profile-btn');
 const profile_window = document.getElementById('profile-dropdown');
 const auth_options = document.querySelectorAll('.profile-actions');
+const TO_REGISTER = document.getElementById('register');
+const OVERLAY_WINDOW = document.getElementById('overlay');
+const CLOSE_REGISTER = document.getElementById('close-register');
 let image_index = 0;
 let burgerShown = 0;
 
@@ -28,28 +31,6 @@ const resetCarouselImageStyle = () => {
 const classes = ['to-the-begining','to-the-left','to-the-end','to-the-fourth','to-the-fifth'];
 
 const allButtons = ['first-btn','second-btn','third-btn','fourth-btn','fifth-btn'];
-
-/*BURGER.addEventListener('click', (event) => {
-    if (BURGER.classList.value == 'burger-collapse') {
-        event.target.classList.remove('burger-collapse');
-        event.target.classList.add('burger-expand');
-        MENU_LIST.classList.remove('nav-hidden');
-        MENU_LIST.classList.add('nav-shown');
-        burgerShown = 1;
-        profile_window.classList.remove('profile-dropdown-show');
-        profile_window.classList.add('profile-dropdown-hide');
-        profileShown = 0;
-        console.log(burgerShown)
-    }
-    else {
-        console.log(burgerShown)
-        event.target.classList.remove('burger-expand');
-        event.target.classList.add('burger-collapse');
-        MENU_LIST.classList.remove('nav-shown');
-        MENU_LIST.classList.add('nav-hidden');
-        burgerShown = 0;
-    }  
-});*/
 
 BURGER.addEventListener('click', (event) => {
     if (burgerShown == 0) {
@@ -197,4 +178,13 @@ PROFILE_BTN.addEventListener('click', () => {
         profile_window.classList.add('profile-dropdown-hide');
         profileShown = 0;
     }
+})
+
+
+TO_REGISTER.addEventListener('click', () => {
+    OVERLAY_WINDOW.classList.remove('overlay-hidden');
+})
+
+CLOSE_REGISTER.addEventListener('click', () => {
+    OVERLAY_WINDOW.classList.add('overlay-hidden');
 })
