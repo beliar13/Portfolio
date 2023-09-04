@@ -14,9 +14,19 @@ const RIGHT_CARRET = document.getElementById('right-carret');
 const PROFILE_BTN = document.getElementById('profile-btn');
 const profile_window = document.getElementById('profile-dropdown');
 const auth_options = document.querySelectorAll('.profile-actions');
+
 const TO_REGISTER = document.getElementById('register');
 const OVERLAY_WINDOW = document.getElementById('overlay');
 const CLOSE_REGISTER = document.getElementById('close-register');
+const GETREADERCARD_REG = document.getElementById('dc-signup');
+const REG_WINDOW = document.getElementById('register-window');
+
+const TO_LOGIN = document.getElementById('login');
+const OVERLAY_LOGIN = document.getElementById('overlay-login');
+const CLOSE_LOGIN = document.getElementById('close-login');
+const GETREADERCARD_LOGIN = document.getElementById('dc-login');
+const LOGIN_WINDOW = document.getElementById('login-window');
+
 let image_index = 0;
 let burgerShown = 0;
 
@@ -180,11 +190,48 @@ PROFILE_BTN.addEventListener('click', () => {
     }
 })
 
+/* Actions with register - start */
 
 TO_REGISTER.addEventListener('click', () => {
+    OVERLAY_WINDOW.classList.remove('overlay-hidden');
+})
+
+
+GETREADERCARD_REG.addEventListener('click', () => {
     OVERLAY_WINDOW.classList.remove('overlay-hidden');
 })
 
 CLOSE_REGISTER.addEventListener('click', () => {
     OVERLAY_WINDOW.classList.add('overlay-hidden');
 })
+
+document.addEventListener('mouseup', function(e) {
+    if (!REG_WINDOW.contains(e.target)) {
+        OVERLAY_WINDOW.classList.add('overlay-hidden');
+    }
+});
+
+/* Actions with register - end */
+
+/* Actions with login - start */
+
+TO_LOGIN.addEventListener('click', () => {
+    OVERLAY_LOGIN.classList.remove('overlay-hidden');
+})
+
+
+GETREADERCARD_LOGIN.addEventListener('click', () => {
+    OVERLAY_LOGIN.classList.remove('overlay-hidden');
+})
+
+CLOSE_LOGIN.addEventListener('click', () => {
+    OVERLAY_LOGIN.classList.add('overlay-hidden');
+})
+
+document.addEventListener('mouseup', function(e) {
+    if (!LOGIN_WINDOW.contains(e.target)) {
+        OVERLAY_LOGIN.classList.add('overlay-hidden');
+    }
+});
+
+/* Actions with login - end */

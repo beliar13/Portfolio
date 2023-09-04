@@ -1256,7 +1256,6 @@ footer {
     letter-spacing: 0.4px;
     text-transform: uppercase;
     padding-top: 5px;
-    padding-bottom: 10px;
 }
 
 .register-form {
@@ -1282,7 +1281,7 @@ footer {
     line-height: 20px; /* 133.333% */
     letter-spacing: 0.3px;
     align-self: start;
-    padding-left: 20px;
+    padding-left: 22px;
     padding-bottom: 10px;
     padding-top: 10px;
 }
@@ -1343,23 +1342,41 @@ footer {
 }
 
 #overlay {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     background: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #overlay.overlay-hidden {
     display: none;
 }
 
-#register-window {
-    position: absolute;
-    top: calc(50% - 191px);
-    left: calc(50% - 125px);
+#overlay-login {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#overlay-login.overlay-hidden {
+    display: none;
+}
+
+#login-window {
+    height: 252px;
+}
+
 /*register - window end*/
 /*Media 1024 - start*/
 
