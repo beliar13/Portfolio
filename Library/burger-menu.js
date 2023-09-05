@@ -27,6 +27,12 @@ const CLOSE_LOGIN = document.getElementById('close-login');
 const GETREADERCARD_LOGIN = document.getElementById('dc-login');
 const LOGIN_WINDOW = document.getElementById('login-window');
 
+const formFName = document.getElementById('register-fname');
+const formLName = document.getElementById('register-lname');
+const formEmail = document.getElementById('register-email');
+const formPass = document.getElementById('register-password');
+const formReg = document.getElementById('register-form');
+
 let image_index = 0;
 let burgerShown = 0;
 
@@ -235,3 +241,73 @@ document.addEventListener('mouseup', function(e) {
 });
 
 /* Actions with login - end */
+
+/* registration handle - start*/
+const cardNumber = () => {
+    return Math.floor(Math.random() * 100000000000).toString(16);
+}
+
+const rawdata = localStorage.getItem('users');
+const data = JSON.parse(rawdata);
+let usersarray = data || [];
+
+let fname = '';
+let lname = '';
+let email = '';
+let pass = '';
+let card = '';
+let currentUser = '';
+let isAuth = '';
+let userInitials = '';
+
+if (formReg){
+formReg.addEventListener('submit', (e) => {
+    e.preventDefault();
+    fname = formFName.value;
+    lname = formLName.value;
+    email = formEmail.value;
+    pass = formPass.value;
+    card = cardNumber();
+    createUserEntry(fname,lname,email,pass,card);
+    console.log(usersarray);
+    usersarray.push(ObjUser);
+    localStorage.setItem('users', JSON.stringify(usersarray));
+    checkAuth(email,card);
+    console.log(card);
+    console.log(isAuth);
+    changeProfileLogo();
+    OVERLAY_WINDOW.classList.add('overlay-hidden');
+})}
+
+const createUserEntry = (fname,lname,email,pass,card) => {
+    ObjUser = {
+        "name": fname,
+        "lastname": lname,
+        "email": email,
+        "password": pass,
+        "card": card
+    }
+    return ObjUser;
+}
+
+const checkAuth = (email, card) => {
+    if (usersarray.find(user => user.email === email) || usersarray.find(user => user.card === card)) {
+        isAuth = 1;
+    }
+    else {
+        isAuth = 0;
+    }
+    return isAuth;
+}
+
+const changeProfileLogo = () => {
+    if (isAuth == 1) {
+        PROFILE_BTN.style.background = 'white';
+        userInitials = fname.charAt(0).toUpperCase() + lname.charAt(0).toUpperCase();
+        PROFILE_BTN.innerText = userInitials;
+    }
+    if (isAuth == 0) {
+        PROFILE_BTN.style.background = 'url("./img/icon_profile.svg")'
+    }
+}
+/* registration handle - end*/
