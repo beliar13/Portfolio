@@ -275,7 +275,7 @@ formReg.addEventListener('submit', (e) => {
     checkAuth(email,card);
     console.log(card);
     console.log(isAuth);
-    changeProfileLogo();
+    changeProfileLogo(fname, lname);
     OVERLAY_WINDOW.classList.add('overlay-hidden');
 })}
 
@@ -300,7 +300,7 @@ const checkAuth = (email, card) => {
     return isAuth;
 }
 
-const changeProfileLogo = () => {
+const changeProfileLogo = (fname, lname) => {
     if (isAuth == 1) {
         PROFILE_BTN.style.background = 'white';
         userInitials = fname.charAt(0).toUpperCase() + lname.charAt(0).toUpperCase();
@@ -312,3 +312,32 @@ const changeProfileLogo = () => {
     }
 }
 /* registration handle - end*/
+/* login handle - start*/
+
+
+const formLogin = document.getElementById('login-form');
+const formLoginEmailLogin = document.getElementById('login-email');
+const formLoginPass = document.getElementById('login-password');
+
+if(formLogin) {
+    formLogin.addEventListener('submit', (e) => {
+        e.preventDefault();   
+        loginName = formLoginEmailLogin.value;
+        loginPass = formLoginPass.value;
+        if ((usersarray.find(user => user.email == loginName) && (usersarray.find(user => user.password == loginPass))) || (usersarray.find(user => user.card == loginName) && (usersarray.find(user => user.password == loginPass)))) {
+            userInfo = usersarray.find(user => user.email == loginName) || usersarray.find(user => user.card == loginName);         
+            console.log(userInfo);
+            isAuth = 1;
+            lname = userInfo.lastname;
+            fname = userInfo.name;
+            OVERLAY_LOGIN.classList.add('overlay-hidden');    
+        }
+        else {
+            isAuth = 0;
+            alert('Wrong email/card or password')
+        }
+        changeProfileLogo(fname, lname);     
+    }
+)}
+
+/* login handle - end*/
