@@ -307,7 +307,8 @@ const changeProfileLogo = () => {
         PROFILE_BTN.innerText = userInitials;
     }
     if (isAuth == 0) {
-        PROFILE_BTN.style.background = 'url("./img/icon_profile.svg")'
+        PROFILE_BTN.style.background = 'url("./img/icon_profile.svg")';
+        PROFILE_BTN.innerText = '';
     }
 }
 /* registration handle - end*/
