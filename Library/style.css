@@ -14,7 +14,7 @@ html {
     justify-content: center;
     align-items: flex-start;
     margin: 0 auto;
-    overflow: hidden;
+
 }
 
 .header {
@@ -43,6 +43,7 @@ html {
 .nav-logo-burger-wrapper {
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .navigation-area {
@@ -964,6 +965,17 @@ main {
     padding-left: 19px;
 }
 
+.reader-info[type="text"]
+{
+    color: #BB945F;
+    font-family: "Forum";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+}
+
 input:invalid {
     border: red solid 1px;
 }
@@ -1660,7 +1672,8 @@ footer {
     }
 
     .favorites-form {
-        align-self: flex-start;
+        position: sticky;
+        top: 0;
     }
     .checkbox-container:nth-child(4) {
         padding-left: 5px;
@@ -1807,3 +1820,4 @@ footer {
     transition: 0.5s ease;
 }
 /*favourites fade - end*/
+

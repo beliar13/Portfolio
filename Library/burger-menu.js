@@ -257,7 +257,7 @@ let email = '';
 let pass = '';
 let card = '';
 let currentUser = '';
-let isAuth = '';
+let isAuth = 0;
 let userInitials = '';
 
 if (formReg){
@@ -346,7 +346,7 @@ if(formLogin) {
 const purchaseButtons = document.querySelectorAll('.purchase-button')
 
 purchaseButtons.forEach(button => button.addEventListener('click', () => {
-    if (isAuth = 0){
+    if (isAuth == 0){
         OVERLAY_LOGIN.classList.remove('overlay-hidden');
     }
 }))
