@@ -1799,3 +1799,11 @@ footer {
     }
   }
 /*Media 768 - end*/
+
+
+/*favourites fade - start*/
+.fade-anim {
+    opacity: 0;
+    transition: 0.5s ease;
+}
+/*favourites fade - end*/
