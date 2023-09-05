@@ -341,3 +341,12 @@ if(formLogin) {
 )}
 
 /* login handle - end*/
+
+/*buy unAuth - start*/
+const purchaseButtons = document.querySelectorAll('.purchase-button')
+
+purchaseButtons.forEach(button => button.addEventListener('click', () => {
+    OVERLAY_LOGIN.classList.remove('overlay-hidden');
+}))
+
+/*buy unAuth - end*/
