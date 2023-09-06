@@ -173,7 +173,6 @@ RIGHT_CARRET.addEventListener('click', () => {
         document.getElementById(btnnumber).classList.add('clicked-btn');
 }});
 
-
 let profileShown = 0;
 
 PROFILE_BTN.addEventListener('click', () => {

@@ -14,6 +14,7 @@ html {
     justify-content: center;
     align-items: flex-start;
     margin: 0 auto;
+    overflow: hidden;
 
 }
 
@@ -23,7 +24,6 @@ html {
     background: #0C0C0E;
     display: flex;
     align-items: center;
-
 }
 
 .header-text {
@@ -43,7 +43,6 @@ html {
 .nav-logo-burger-wrapper {
     display: flex;
     align-items: center;
-    overflow: hidden;
 }
 
 .navigation-area {
@@ -136,6 +135,14 @@ html {
 .profile-dropdown-hide {
     transform: translateX(0px);
     transition: all 0.8s ease;
+}
+
+.overflow-hide {
+    overflow: hidden;
+}
+
+.overflow-show {
+    overflow: visible;
 }
 
 .profile-head {
@@ -1416,6 +1423,15 @@ footer {
         z-index: 2;
 
     }
+
+    .overflow-hide {
+        overflow: hidden;
+    }
+    
+    .overflow-show {
+        overflow: hidden;
+    }
+
     .test {
         margin-right: -80px;
     }
@@ -1518,6 +1534,11 @@ footer {
 
     .favorites-form {
         align-self: center;
+    }
+
+    .favorites-form {
+        position: sticky;
+        top: 0;
     }
 
     .season-book-wrapper {
