@@ -32,12 +32,12 @@
                     </div>
                     </div>
                     <div class="profile-dropdown" id="profile-dropdown">
-                        <div class="profile-head">
+                        <div class="profile-head" id="profile-head">
                             profile
                         </div>
                         <div class="profile-line"></div>
-                        <div class="profile-actions" id="login">log in</div>
-                        <div class="profile-actions" id="register">register</div>
+                        <div class="logprof" id="logprof"><div class="profile-actions" id="login">Log In</div></div>
+                        <div class="profile-actions" id="register">Register</div>
                     </div>
                     <div class="burger-collapse" id="burger">
                     </div>
@@ -349,7 +349,7 @@
                         <label class="register-label" for="register-lname">Last name</label>
                             <input type="text" class="register-inputs" id="register-lname" required="required" pattern="[A-Za-z0-9]{1,20}">
                         <label class="register-label" for="register-email">E-mail</label>
-                            <input type="email" class="register-inputs" id="register-email" required>
+                            <input type="email" class="register-inputs" id="register-email" pattern="[A-z0-9]+\@[A-z0-9]+\.[A-z]+" required>
                         <label class="register-label" for="register-password">Password</label>
                             <input type="password" class="register-inputs" id="register-password" required="required" pattern="[A-Za-z0-9]{8,20}">
                         <input class="register-signup signup-text" type="submit" value="Sign Up">    
@@ -374,7 +374,81 @@
                         <p class="register-question">Don’t have an account?</p><a class="register-login-link" href="#">Register</a>
                     </div>
                 </div>
-            </div>    
+            </div>
+           <div class="overlay-hidden" id="overlay-profile">
+                <div class="profile-module">
+                    <div class="profile-left">
+                        <div class="profile-initials">
+                            JD
+                        </div>
+                        <div class="profile-fname-lname">
+                            John Doe
+                        </div>
+                    </div>
+                    <div class="profile-right">
+                        <div class="profile-right-wrapper">
+                            <div class="profile-title">
+                                my profile
+                            </div>
+                            <div class="profile-attr-wrapper">
+                                <div class="profile-attr">
+                                    <div class="attr-name">
+                                        visits
+                                    </div>
+                                    <div class="attr-ico">
+                                        <img src="./img/icons/Union.svg" alt="profile">
+                                    </div>
+                                    <div class="attr-counter">
+                                        23
+                                    </div>
+                                </div>                        
+                                <div class="profile-attr">
+                                    <div class="attr-name">
+                                        bonuses
+                                    </div>
+                                    <div class="attr-ico">
+                                        <img src="./img/icons/Star 1.svg" alt="bonuses">
+                                    </div>
+                                    <div class="attr-counter">
+                                        1240
+                                    </div>
+                                </div>                        
+                                <div class="profile-attr">
+                                    <div class="attr-name">
+                                        books
+                                    </div>
+                                    <div class="attr-ico">
+                                        <img src="./img/icons/book.svg" alt="books">
+                                    </div>
+                                    <div class="attr-counter">
+                                        2
+                                    </div>
+                                </div>                        
+                            </div>
+                            <div class="rented-title">
+                                Rented books
+                            </div>
+                            <div class="rented-books-wrapper">
+                                <ul class="rented-books">
+                                    <li>The Last Queen, Clive Irving</li>
+                                    <li>Dominicana, Angie Cruz</li>
+                                </ul>                        
+                            </div>
+                            <div class="profile-card-wrapper">
+                                <div class="profile-card-title">
+                                    Card number
+                                </div>
+                                <div class="card-number">
+                                    123456789
+                                </div>
+                                <div class="copy-card">
+                                    <img src="./img/icons/icon copy.svg" alt="copy card">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <div class="addr-sm-sched-wrapper">

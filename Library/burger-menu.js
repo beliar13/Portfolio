@@ -267,6 +267,7 @@ formReg.addEventListener('submit', (e) => {
     email = formEmail.value;
     pass = formPass.value;
     card = cardNumber();
+    usercard = card;
     createUserEntry(fname,lname,email,pass,card);
     console.log(usersarray);
     usersarray.push(ObjUser);
@@ -275,6 +276,8 @@ formReg.addEventListener('submit', (e) => {
     console.log(card);
     console.log(isAuth);
     changeProfileLogo(fname, lname);
+    changeProfileName(usercard);
+    replaceLoginWithProfile();
     OVERLAY_WINDOW.classList.add('overlay-hidden');
 })}
 
@@ -310,6 +313,16 @@ const changeProfileLogo = (fname, lname) => {
         PROFILE_BTN.innerText = '';
     }
 }
+
+const changeProfileName = (usercard) => {
+    document.getElementById('profile-head').innerText = usercard;
+}
+
+const logprof = document.getElementById('logprof')
+
+const replaceLoginWithProfile = () => {
+    logprof.innerHTML = '<div class="profile-actions" id="login">My profile</div>'
+}
 /* registration handle - end*/
 /* login handle - start*/
 
@@ -329,6 +342,9 @@ if(formLogin) {
             isAuth = 1;
             lname = userInfo.lastname;
             fname = userInfo.name;
+            usercard = userInfo.card;
+            changeProfileName(usercard);
+            replaceLoginWithProfile();
             OVERLAY_LOGIN.classList.add('overlay-hidden');    
         }
         else {
