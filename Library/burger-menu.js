@@ -278,7 +278,10 @@ formReg.addEventListener('submit', (e) => {
     changeProfileLogo(fname, lname);
     changeProfileName(usercard);
     replaceLoginWithProfile();
+    replaceRegisterWithLogout();
+    profileAfterLogin();
     OVERLAY_WINDOW.classList.add('overlay-hidden');
+    isAuth = 1;
 })}
 
 const createUserEntry = (fname,lname,email,pass,card) => {
@@ -322,10 +325,30 @@ const changeProfileName = (usercard) => {
 const logprof = document.getElementById('logprof')
 
 const replaceLoginWithProfile = () => {
-    logprof.innerHTML = '<div class="profile-actions" id="profile-after-login">My profile</div>'
+    if(isAuth == 1) {
+        logprof.innerHTML = '<div class="profile-actions" id="profile-after-login">My profile</div>'
+    }
+    if(isAuth == 0) {
+        logprof.innerHTML = '<div class="profile-actions" id="login">Log In</div>'
+    }
 }
 /*replace login with profile - end*/
 /* registration handle - end*/
+
+/*replace register with logout - start*/
+const regout = document.getElementById('regout');
+
+const replaceRegisterWithLogout = () => {
+    if (isAuth == 1) {
+        regout.innerHTML = '<div class="profile-actions" id="logout">Log Out</div>'
+    }
+    if (isAuth == 0) {
+        regout.innerHTML = '<div class="profile-actions" id="register">Register</div>'        
+    }
+}
+/*replace register with logout - end*/
+
+
 /* login handle - start*/
 
 
@@ -347,6 +370,8 @@ if(formLogin) {
             usercard = userInfo.card;
             changeProfileName(usercard);
             replaceLoginWithProfile();
+            profileAfterLogin();
+            replaceRegisterWithLogout();
             OVERLAY_LOGIN.classList.add('overlay-hidden');    
         }
         else {
@@ -369,3 +394,33 @@ purchaseButtons.forEach(button => button.addEventListener('click', () => {
 }))
 
 /*buy unAuth - end*/
+const overlay_profile = document.getElementById('overlay-profile');
+/*show profile module - start*/
+const profileAfterLogin = () => {
+    const myprofile = document.getElementById('profile-after-login');
+
+    if (myprofile) {
+        console.log(myprofile)
+    myprofile.addEventListener('click', () => {
+        overlay_profile.classList.remove('overlay-hidden');
+    })}
+}
+
+const profileModule = document.getElementById('profile-module');
+
+document.addEventListener('mouseup', function(e) {
+    if (!profileModule.contains(e.target)) {
+        overlay_profile.classList.add('overlay-hidden');
+    }
+});
+
+const close_profile = document.getElementById('close-profile-module')
+
+close_profile.addEventListener('click', () => {
+    overlay_profile.classList.add('overlay-hidden');
+})
+
+/*show profile module - end*/
+
+/*when logout - start*/
+/*when logout - end*/

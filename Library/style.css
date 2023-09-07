@@ -185,6 +185,14 @@ html {
     padding-left: 145px;
     display: flex;
 }
+
+#logout {
+    padding-top: 10px;
+}
+
+#profile-after-login {
+    padding-top: 15px;
+}
 /*.profile-logo {
     width: 28px;
     height: 28px;

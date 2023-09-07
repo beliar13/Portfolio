@@ -37,7 +37,7 @@
                         </div>
                         <div class="profile-line"></div>
                         <div class="logprof" id="logprof"><div class="profile-actions" id="login">Log In</div></div>
-                        <div class="profile-actions" id="register">Register</div>
+                        <div class="regout" id="regout"><div class="profile-actions" id="register">Register</div></div>
                     </div>
                     <div class="burger-collapse" id="burger">
                     </div>
@@ -349,7 +349,7 @@
                         <label class="register-label" for="register-lname">Last name</label>
                             <input type="text" class="register-inputs" id="register-lname" required="required" pattern="[A-Za-z0-9]{1,20}">
                         <label class="register-label" for="register-email">E-mail</label>
-                            <input type="email" class="register-inputs" id="register-email" pattern="[A-z0-9]+\@[A-z0-9]+\.[A-z]+" required>
+                            <input type="email" class="register-inputs" id="register-email" required><!-- pattern="[A-za-z0-9]+\@[A-z0-9]+\.[A-za-z]+"-->
                         <label class="register-label" for="register-password">Password</label>
                             <input type="password" class="register-inputs" id="register-password" required="required" pattern="[A-Za-z0-9]{8,20}">
                         <input class="register-signup signup-text" type="submit" value="Sign Up">    
@@ -376,7 +376,7 @@
                 </div>
             </div>
            <div class="overlay-hidden" id="overlay-profile">
-                <div class="profile-module">
+                <div class="profile-module" id="profile-module">
                     <div class="profile-left">
                         <div class="profile-initials">
                             JD
