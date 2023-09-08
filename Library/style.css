@@ -2043,3 +2043,190 @@ footer {
 }
 /*favourites fade - end*/
 
+/*buy module - start*/
+#overlay-buy {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-buy.overlay-hidden {
+    display: none;
+}
+
+.buy-module {
+    width: 640px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-up {
+    display: flex;
+    height: 60px;
+    flex-shrink: 0;
+    background: #0C0C0E;
+    justify-content: center;
+}
+
+.buy-title {
+    color: #FFF;
+    text-align: center;
+    font-family: "Forum";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+.close-buy {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    background: url('img/icons/close_btn_white.svg');
+    background-size: contain;
+    position: relative;
+    top: 25px;
+    left: 105px;
+}
+
+.buy-buttom {
+    height: 480px;
+    background: #FFF;
+    display: flex;
+}
+.buttom-left {
+    display: flex;
+    padding-left: 40px;
+    padding-top: 20px;
+    width: 230px;
+}
+
+.buttom-right {
+    display: flex;
+    justify-content: center;
+    width: 410px;
+}
+
+.buycard-desc {
+    color: #8E8E8E;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 2px;
+    width: 330px;
+    padding-top: 30px;
+    justify-content: left;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-date {
+    display: flex;
+    gap: 10px;
+}
+.details-forall {
+    display: flex;
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.3px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.card-inputs {
+    width: 200px;
+    height: 16px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+}
+
+#card-expire-month {
+    width: 45px;
+}
+
+#card-expire-year {
+    width: 45px;
+}
+
+#card-cvc{
+    width: 45px;
+    margin-bottom: 11px;
+}
+
+.buy-buy {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;    
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    background-color: inherit;
+    margin-top: 20px;
+}
+
+.book-price {
+    color: #0C0C0E;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    top: -20px;
+    left: 100px;
+}
+/*buy module - end*/
+
+/*card stat after login - start*/
+
+#libcard-stats {
+    gap: 35px;
+    padding-top: 10px;
+}
+#libcard-stats > .profile-attr {
+    gap: 0px;
+}
+
+#libcard-stats > .profile-attr> .attr-name {
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 200% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+}
+/*card stat after login - end*/
+
+#dc-profile {
+    display: none;
+}

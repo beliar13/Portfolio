@@ -209,6 +209,8 @@ TO_REGISTER.addEventListener('click', () => {
         replaceRegisterWithLogout();
         profileAfterLogout();
         changeProfileLogo();
+        resetCheckCard();
+        cardSection();
     }
 
 })
@@ -257,6 +259,12 @@ document.addEventListener('mouseup', function(e) {
     }
 });
 
+const CARD_SECTION_PROFILE = document.getElementById('dc-profile');
+
+CARD_SECTION_PROFILE.addEventListener('click', () => {
+    overlay_profile.classList.remove('overlay-hidden');
+})
+
 /* Actions with login - end */
 
 /* registration handle - start*/
@@ -295,7 +303,8 @@ formReg.addEventListener('submit', (e) => {
     changeProfileName(usercard);
     replaceLoginWithProfile();
     replaceRegisterWithLogout();
-    logoutEvent();
+    cardSection();
+    duplicatProfileStats();
     document.getElementById('profile-module-card').innerText = usercard;
     OVERLAY_WINDOW.classList.add('overlay-hidden');
     isAuth = 1;
@@ -342,18 +351,6 @@ const changeProfileName = (usercard) => {
     document.getElementById('profile-head').innerText = usercard;
 }
 /*replace login with profile - start*/
-/*
-const logprof = document.getElementById('logprof')
-
-const replaceLoginWithProfile = () => {
-    if(isAuth == 1) {
-        logprof.innerHTML = '<div class="profile-actions" id="profile-after-login">My profile</div>'
-    }
-    if(isAuth == 0) {
-        logprof.innerHTML = '<div class="profile-actions" id="login">Log In</div>'
-    }
-}*/
-
 
 const replaceLoginWithProfile = () => {
     if(isAuth == 1) {
@@ -376,19 +373,6 @@ const replaceRegisterWithLogout = () => {
         TO_REGISTER.innerText = 'Register'        
     }
 }
-
-/*
-const regout = document.getElementById('regout');
-
-const replaceRegisterWithLogout = () => {
-    if (isAuth == 1) {
-        regout.innerHTML = '<div class="profile-actions" id="logout">Log Out</div>'
-    }
-    if (isAuth == 0) {
-        regout.innerHTML = '<div class="profile-actions" id="register">Register</div>'        
-    }
-}
-*/
 
 /*replace register with logout - end*/
 
@@ -415,9 +399,11 @@ if(formLogin) {
             changeProfileName(usercard);
             replaceLoginWithProfile();
             replaceRegisterWithLogout();
-            logoutEvent();
+            duplicatProfileStats();
+            cardSection();
             OVERLAY_LOGIN.classList.add('overlay-hidden');  
             document.getElementById('profile-module-card').innerText = usercard;  
+            document.getElementById('find-your-card').innerText = 'Your Library card';
         }
         else {
             isAuth = 0;
@@ -429,30 +415,22 @@ if(formLogin) {
 
 /* login handle - end*/
 
-/*buy unAuth - start*/
+/*buy buttons - start*/
 const purchaseButtons = document.querySelectorAll('.purchase-button')
+const overlay_buy  = document.getElementById('overlay-buy');
 
 purchaseButtons.forEach(button => button.addEventListener('click', () => {
     if (isAuth == 0){
         OVERLAY_LOGIN.classList.remove('overlay-hidden');
     }
+    if (isAuth == 1) {
+        overlay_buy.classList.remove('overlay-hidden');
+    }
 }))
 
-/*buy unAuth - end*/
+/*buy buttons - end*/
 
 /*show profile module - start*/
-
-/*
-const profileAfterLogin = () => {
-    const myprofile = document.getElementById('profile-after-login');
-
-    if (myprofile) {
-        console.log(myprofile)
-    myprofile.addEventListener('click', () => {
-        overlay_profile.classList.remove('overlay-hidden');
-    })}
-}
-*/
 
 const profileModule = document.getElementById('profile-module');
 
@@ -471,18 +449,41 @@ close_profile.addEventListener('click', () => {
 /*show profile module - end*/
 
 /*when logout - start*/
-const logoutEvent = () => {
-    const logoutButton = document.getElementById('logout');
-    if (logoutButton) {
-        logoutButton.addEventListener('click', () => {
-            isAuth = 0;
-            replaceLoginWithProfile();
-            replaceRegisterWithLogout();
-            profileAfterLogout();
-            changeProfileLogo();
-        })
+const resetCheckCard = () => {
+
+    if (isAuth == 0) {
+        document.getElementById('find-your-card').innerText = 'Find your Library card';
+        document.getElementById('reader-name').value = '';
+        document.getElementById('reader-card').value = '';
+
+        const check_card_button = document.createElement('button');
+        check_card_button.setAttribute('type','submit');
+        check_card_button.setAttribute('class', 'check-card');
+        check_card_button.innerText = 'Check the card';
+        statsContainer.replaceChildren(check_card_button);
+
     }
 }
+
+
+const cardSection = () => {
+    if (isAuth == 1) {
+        document.getElementById('get-card-info').innerText = "With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.";
+        document.getElementById('get-reader-card').innerText = "Visit your profile";
+        document.getElementById('dc-profile').style.display = 'flex';
+        document.getElementById('dc-login').style.display = 'none';
+        document.getElementById('dc-signup').style.display = 'none';
+    }
+
+    if (isAuth == 0) {
+        document.getElementById('get-card-info').innerText = "You will be able to see a reader card after logging into account or you can register a new account";
+        document.getElementById('get-reader-card').innerText = "Get a reader card";
+        document.getElementById('dc-profile').style.display = 'none';
+        document.getElementById('dc-login').style.display = 'flex';
+        document.getElementById('dc-signup').style.display = 'flex';
+    }
+}
+
 
 const profileAfterLogout = () => {
     document.getElementById('profile-head').innerText = 'Profile';
@@ -497,3 +498,25 @@ copyCard.addEventListener('click', () => {
     navigator.clipboard.writeText(document.getElementById('profile-module-card').innerText)
 })
 /*copy to clipboard - end*/
+
+/*duplicate profile to check card - start*/
+const profStats = document.getElementById('profile-attr-wrapper');
+const statsContainer = document.getElementById('card-check-stats');
+
+const duplicatProfileStats = () => {
+    clone = profStats.cloneNode(true);
+    clone.id = 'libcard-stats';
+
+    statsContainer.replaceChildren(clone);
+
+    document.getElementById('reader-name').value = `${fname.charAt(0).toUpperCase()}${fname.slice(1)} ${lname.charAt(0).toUpperCase()}${lname.slice(1)}`;
+    document.getElementById('reader-card').value = usercard;
+
+}
+/*duplicate profile to check card - end*/
+
+/*replace profilestats with checkcard - start*/
+
+
+
+/*replace profilestats with checkcard - end*/
