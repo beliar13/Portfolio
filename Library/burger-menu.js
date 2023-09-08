@@ -291,15 +291,11 @@ formReg.addEventListener('submit', (e) => {
     usersarray.push(ObjUser);
     localStorage.setItem('users', JSON.stringify(usersarray));
     checkAuth(email,card);
-    console.log(card);
-    console.log(isAuth);
     changeProfileLogo(fname, lname);
     changeProfileName(usercard);
     replaceLoginWithProfile();
     replaceRegisterWithLogout();
     logoutEvent();
-    document.getElementById('profile-module-card').innerText = usercard;
-    document.getElementById('profile-module-card').innerText = usercard;
     document.getElementById('profile-module-card').innerText = usercard;
     OVERLAY_WINDOW.classList.add('overlay-hidden');
     isAuth = 1;
@@ -493,3 +489,11 @@ const profileAfterLogout = () => {
 }
 
 /*when logout - end*/
+
+/*copy to clipboard - start*/
+const copyCard = document.getElementById('copy-card');
+
+copyCard.addEventListener('click', () => {
+    navigator.clipboard.writeText(document.getElementById('profile-module-card').innerText)
+})
+/*copy to clipboard - end*/
