@@ -299,6 +299,8 @@ formReg.addEventListener('submit', (e) => {
     replaceRegisterWithLogout();
     logoutEvent();
     document.getElementById('profile-module-card').innerText = usercard;
+    document.getElementById('profile-module-card').innerText = usercard;
+    document.getElementById('profile-module-card').innerText = usercard;
     OVERLAY_WINDOW.classList.add('overlay-hidden');
     isAuth = 1;
 })}
@@ -329,10 +331,14 @@ const changeProfileLogo = (fname, lname) => {
         PROFILE_BTN.style.background = 'white';
         userInitials = fname.charAt(0).toUpperCase() + lname.charAt(0).toUpperCase();
         PROFILE_BTN.innerText = userInitials;
+        document.getElementById('profile-initials').innerText = userInitials;
+        document.getElementById('profile-fname-lname').innerText = `${fname} ${lname}`;
     }
     if (isAuth == 0) {
         PROFILE_BTN.style.background = 'url("./img/icon_profile.svg")';
         PROFILE_BTN.innerText = '';
+        document.getElementById('profile-initials').innerText = 'JD';
+        document.getElementById('profile-fname-lname').innerText = 'Jhon Doe'
     }
 }
 
