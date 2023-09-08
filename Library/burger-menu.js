@@ -261,7 +261,7 @@ document.addEventListener('mouseup', function(e) {
 
 /* registration handle - start*/
 const cardNumber = () => {
-    return Math.floor(Math.random() * 100000000000).toString(16);
+    return Math.floor(Math.random() * 10000000000).toString(16);
 }
 
 const rawdata = localStorage.getItem('users');
@@ -298,6 +298,7 @@ formReg.addEventListener('submit', (e) => {
     replaceLoginWithProfile();
     replaceRegisterWithLogout();
     logoutEvent();
+    document.getElementById('profile-module-card').innerText = usercard;
     OVERLAY_WINDOW.classList.add('overlay-hidden');
     isAuth = 1;
 })}
@@ -413,7 +414,8 @@ if(formLogin) {
             replaceLoginWithProfile();
             replaceRegisterWithLogout();
             logoutEvent();
-            OVERLAY_LOGIN.classList.add('overlay-hidden');    
+            OVERLAY_LOGIN.classList.add('overlay-hidden');  
+            document.getElementById('profile-module-card').innerText = usercard;  
         }
         else {
             isAuth = 0;
