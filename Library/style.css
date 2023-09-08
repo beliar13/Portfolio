@@ -371,6 +371,7 @@ html {
     flex-direction: column;
     gap: 10px;
     overflow: scroll;
+    padding-inline-start: 30px;
 }
 
 .profile-card-wrapper {
@@ -1474,6 +1475,7 @@ footer {
 .register-form {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
 }
 
 .register-inputs {
@@ -1495,7 +1497,7 @@ footer {
     letter-spacing: 0.3px;
     align-self: start;
     padding-left: 22px;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
     padding-top: 10px;
 }
 
@@ -1603,7 +1605,7 @@ footer {
 }
 
 #login-window {
-    height: 252px;
+    height: 262px;
 }
 
 /*register - window end*/
