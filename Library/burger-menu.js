@@ -33,6 +33,8 @@ const formEmail = document.getElementById('register-email');
 const formPass = document.getElementById('register-password');
 const formReg = document.getElementById('register-form');
 
+const overlay_profile = document.getElementById('overlay-profile');
+
 let image_index = 0;
 let burgerShown = 0;
 
@@ -198,7 +200,17 @@ PROFILE_BTN.addEventListener('click', () => {
 /* Actions with register - start */
 
 TO_REGISTER.addEventListener('click', () => {
-    OVERLAY_WINDOW.classList.remove('overlay-hidden');
+    if (TO_REGISTER.innerText == 'Register') {
+        OVERLAY_WINDOW.classList.remove('overlay-hidden');
+    }
+    if (TO_REGISTER.innerText == 'Log Out') {
+        isAuth = 0;
+        replaceLoginWithProfile();
+        replaceRegisterWithLogout();
+        profileAfterLogout();
+        changeProfileLogo();
+    }
+
 })
 
 
@@ -221,7 +233,13 @@ document.addEventListener('mouseup', function(e) {
 /* Actions with login - start */
 
 TO_LOGIN.addEventListener('click', () => {
-    OVERLAY_LOGIN.classList.remove('overlay-hidden');
+    if (TO_LOGIN.innerText == 'Log In') {
+        OVERLAY_LOGIN.classList.remove('overlay-hidden');
+    }
+
+        if (TO_LOGIN.innerText == 'My profile') {
+            overlay_profile.classList.remove('overlay-hidden');
+    }
 })
 
 
@@ -279,7 +297,7 @@ formReg.addEventListener('submit', (e) => {
     changeProfileName(usercard);
     replaceLoginWithProfile();
     replaceRegisterWithLogout();
-    profileAfterLogin();
+    logoutEvent();
     OVERLAY_WINDOW.classList.add('overlay-hidden');
     isAuth = 1;
 })}
@@ -321,7 +339,7 @@ const changeProfileName = (usercard) => {
     document.getElementById('profile-head').innerText = usercard;
 }
 /*replace login with profile - start*/
-
+/*
 const logprof = document.getElementById('logprof')
 
 const replaceLoginWithProfile = () => {
@@ -331,11 +349,32 @@ const replaceLoginWithProfile = () => {
     if(isAuth == 0) {
         logprof.innerHTML = '<div class="profile-actions" id="login">Log In</div>'
     }
+}*/
+
+
+const replaceLoginWithProfile = () => {
+    if(isAuth == 1) {
+        TO_LOGIN.innerText = 'My profile';
+    }
+    if(isAuth == 0) {
+        TO_LOGIN.innerText = 'Log In';
+    }
 }
+
 /*replace login with profile - end*/
 /* registration handle - end*/
 
 /*replace register with logout - start*/
+const replaceRegisterWithLogout = () => {
+    if (isAuth == 1) {
+        TO_REGISTER.innerText = 'Log Out'
+    }
+    if (isAuth == 0) {
+        TO_REGISTER.innerText = 'Register'        
+    }
+}
+
+/*
 const regout = document.getElementById('regout');
 
 const replaceRegisterWithLogout = () => {
@@ -346,6 +385,8 @@ const replaceRegisterWithLogout = () => {
         regout.innerHTML = '<div class="profile-actions" id="register">Register</div>'        
     }
 }
+*/
+
 /*replace register with logout - end*/
 
 
@@ -370,8 +411,8 @@ if(formLogin) {
             usercard = userInfo.card;
             changeProfileName(usercard);
             replaceLoginWithProfile();
-            profileAfterLogin();
             replaceRegisterWithLogout();
+            logoutEvent();
             OVERLAY_LOGIN.classList.add('overlay-hidden');    
         }
         else {
@@ -394,8 +435,10 @@ purchaseButtons.forEach(button => button.addEventListener('click', () => {
 }))
 
 /*buy unAuth - end*/
-const overlay_profile = document.getElementById('overlay-profile');
+
 /*show profile module - start*/
+
+/*
 const profileAfterLogin = () => {
     const myprofile = document.getElementById('profile-after-login');
 
@@ -405,6 +448,7 @@ const profileAfterLogin = () => {
         overlay_profile.classList.remove('overlay-hidden');
     })}
 }
+*/
 
 const profileModule = document.getElementById('profile-module');
 
@@ -423,4 +467,21 @@ close_profile.addEventListener('click', () => {
 /*show profile module - end*/
 
 /*when logout - start*/
+const logoutEvent = () => {
+    const logoutButton = document.getElementById('logout');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            isAuth = 0;
+            replaceLoginWithProfile();
+            replaceRegisterWithLogout();
+            profileAfterLogout();
+            changeProfileLogo();
+        })
+    }
+}
+
+const profileAfterLogout = () => {
+    document.getElementById('profile-head').innerText = 'Profile';
+}
+
 /*when logout - end*/
