@@ -211,6 +211,7 @@ TO_REGISTER.addEventListener('click', () => {
         changeProfileLogo();
         resetCheckCard();
         cardSection();
+        resetProfileOnLogout();
     }
 
 })
@@ -294,29 +295,32 @@ formReg.addEventListener('submit', (e) => {
     pass = formPass.value;
     card = cardNumber();
     usercard = card;
-    createUserEntry(fname,lname,email,pass,card);
+    visits = 1;
+    CUvisits = visits;
+    createUserEntry(fname,lname,email,pass,card,visits);
     console.log(usersarray);
     usersarray.push(ObjUser);
     localStorage.setItem('users', JSON.stringify(usersarray));
     checkAuth(email,card);
-    changeProfileLogo(fname, lname);
+    changeProfileLogo(fname, lname, CUvisits);
     changeProfileName(usercard);
     replaceLoginWithProfile();
     replaceRegisterWithLogout();
     cardSection();
     duplicatProfileStats();
-    document.getElementById('profile-module-card').innerText = usercard;
+    document.getElementById('profile-module-card').innerText = usercard.toLocaleUpperCase();
     OVERLAY_WINDOW.classList.add('overlay-hidden');
     isAuth = 1;
 })}
 
-const createUserEntry = (fname,lname,email,pass,card) => {
+const createUserEntry = (fname,lname,email,pass,card,visits) => {
     ObjUser = {
         "name": fname,
         "lastname": lname,
         "email": email,
         "password": pass,
-        "card": card
+        "card": card,
+        "visits": visits
     }
     return ObjUser;
 }
@@ -331,24 +335,28 @@ const checkAuth = (email, card) => {
     return isAuth;
 }
 
-const changeProfileLogo = (fname, lname) => {
+const changeProfileLogo = (fname, lname, CUvisits) => {
     if (isAuth == 1) {
         PROFILE_BTN.style.background = 'white';
         userInitials = fname.charAt(0).toUpperCase() + lname.charAt(0).toUpperCase();
         PROFILE_BTN.innerText = userInitials;
         document.getElementById('profile-initials').innerText = userInitials;
         document.getElementById('profile-fname-lname').innerText = `${fname} ${lname}`;
+        document.querySelectorAll('.visits-counter').forEach(el => el.innerText = CUvisits);
+        PROFILE_BTN.setAttribute('title', `${fname.charAt(0).toLocaleUpperCase()+fname.slice(1)} ${lname.charAt(0).toLocaleUpperCase()+lname.slice(1)}`);
+
+        
     }
     if (isAuth == 0) {
         PROFILE_BTN.style.background = 'url("./img/icon_profile.svg")';
         PROFILE_BTN.innerText = '';
-        document.getElementById('profile-initials').innerText = 'JD';
-        document.getElementById('profile-fname-lname').innerText = 'Jhon Doe'
+        PROFILE_BTN.removeAttribute('title');
     }
 }
 
 const changeProfileName = (usercard) => {
-    document.getElementById('profile-head').innerText = usercard;
+    document.getElementById('profile-head').innerText = usercard.toUpperCase();
+    document.getElementById('profile-head').style.fontSize = '14px'; 
 }
 /*replace login with profile - start*/
 
@@ -396,20 +404,23 @@ if(formLogin) {
             lname = userInfo.lastname;
             fname = userInfo.name;
             usercard = userInfo.card;
+            CUvisits = Number(usersarray[usersarray.indexOf(userInfo)].visits)+1;
+            usersarray[usersarray.indexOf(userInfo)].visits = CUvisits;
+            localStorage.setItem('users', JSON.stringify(usersarray));            
             changeProfileName(usercard);
             replaceLoginWithProfile();
             replaceRegisterWithLogout();
             duplicatProfileStats();
             cardSection();
             OVERLAY_LOGIN.classList.add('overlay-hidden');  
-            document.getElementById('profile-module-card').innerText = usercard;  
+            document.getElementById('profile-module-card').innerText = usercard.toUpperCase();  
             document.getElementById('find-your-card').innerText = 'Your Library card';
         }
         else {
             isAuth = 0;
             alert('Wrong email/card or password')
         }
-        changeProfileLogo(fname, lname);     
+        changeProfileLogo(fname, lname,CUvisits);     
     }
 )}
 
@@ -515,8 +526,13 @@ const duplicatProfileStats = () => {
 }
 /*duplicate profile to check card - end*/
 
-/*replace profilestats with checkcard - start*/
+/*reset profile module - start*/
 
+const resetProfileOnLogout = () => {
+    document.getElementById('profile-module-card').innerText = '';
+    document.querySelectorAll('attr-counter').forEach(el => el.innerText = '')
+    document.getElementById('profile-initials').innerText = '';
+    document.getElementById('profile-fname-lname').innerText = '';
+}
 
-
-/*replace profilestats with checkcard - end*/
+/*reset profile module - end*/
