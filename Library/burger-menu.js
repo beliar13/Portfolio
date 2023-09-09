@@ -212,6 +212,7 @@ TO_REGISTER.addEventListener('click', () => {
         resetCheckCard();
         cardSection();
         resetProfileOnLogout();
+        resetFavorites();
         document.querySelectorAll('.books-counter').forEach(el => el.innerText = '');
     }
 
@@ -425,6 +426,7 @@ if(formLogin) {
             document.getElementById
             document.getElementById('profile-module-card').innerText = usercard.toUpperCase();  
             document.getElementById('find-your-card').innerText = 'Your Library card';
+            hehehe();
         }
         else {
             isAuth = 0;
@@ -452,13 +454,14 @@ purchaseButtons.forEach(button => button.addEventListener('click', (e) => {
     }
 
     if (isAuth ==1 && cardOwn == 1) {
-        purchaseButtons[purchaseButtons.indexOf(e.target)].setAttribute('disabled',''); 
+        purchaseButtons[purchaseButtons.indexOf(e.target)].setAttribute('disabled','');
 	    b = document.getElementById(`${booknames[purchaseButtons.indexOf(e.target)]}`).innerText;
 	    c = document.getElementById(`${bookauthors[purchaseButtons.indexOf(e.target)]}`).innerText;
 	    d = b+", "+c;
         (usersarray[usersarray.indexOf(userInfo)].books).push(d);
         localStorage.setItem('users', JSON.stringify(usersarray));  
         document.querySelectorAll('.books-counter').forEach(el => el.innerText = (usersarray[usersarray.indexOf(userInfo)].books).length);
+        hehehe();
     }
 }))
 
@@ -603,4 +606,18 @@ regFromLog.addEventListener('click', () => {
     OVERLAY_LOGIN.classList.add('overlay-hidden');
 })
 /*from login window to reg - end*/
+
+/*(userInfo.books[1].toString()).substring(0,(userInfo.books[1].toString()).indexOf(','))*/
+
+const hehehe = () => {
+    for (let i = 0; i < userInfo.books.length;i++) {
+        hah = (userInfo.books[i].toString()).substring(0,(userInfo.books[i].toString()).indexOf(','))
+        for (let j = 0; j < booknames.length; j++) {
+            if (document.getElementById(booknames[j]).innerText == hah) {
+                purchaseButtons[j].innerText = 'Own';
+                purchaseButtons[j].setAttribute('disabled','');
+            }
+        }
+    }
+}
 

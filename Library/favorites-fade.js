@@ -164,7 +164,9 @@ button_spring.addEventListener('click', () => {
             fourthbook_cover.innerHTML = seasons_spring[3].cover;
             
             season_card.classList.remove('fade-anim');    
+            purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'});
         }
+        hehehe();
     }
 })
 
@@ -192,7 +194,9 @@ button_winter.addEventListener('click', () => {
             fourthbook_description.innerText = seasons_winter[3].description;
             fourthbook_cover.innerHTML = seasons_winter[3].cover;
             season_card.classList.remove('fade-anim');    
+            purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'});
         }
+        hehehe();
     }
 })
 
@@ -220,7 +224,9 @@ button_autumn.addEventListener('click', () => {
             fourthbook_description.innerText = seasons_autumn[3].description;
             fourthbook_cover.innerHTML = seasons_autumn[3].cover;
             season_card.classList.remove('fade-anim');    
+            purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'});
         }
+        hehehe();
     }
 })
 
@@ -248,8 +254,34 @@ button_summer.addEventListener('click', () => {
             fourthbook_description.innerText = seasons_summer[3].description;
             fourthbook_cover.innerHTML = seasons_summer[3].cover;
             season_card.classList.remove('fade-anim');    
+            purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'});
         }
+        hehehe();
     }
 })
 
 /*favourites fade - end*/
+
+/*favorites reset on logout - start*/
+const resetFavorites = () => {
+    firstbook_name.innerText = seasons_winter[0].name;
+    firstbook_author.innerText = seasons_winter[0].author;
+    firstbook_description.innerText = seasons_winter[0].description;
+    firstbook_cover.innerHTML = seasons_winter[0].cover;
+
+    secondbook_name.innerText = seasons_winter[1].name;
+    secondbook_author.innerText = seasons_winter[1].author;
+    secondbook_description.innerText = seasons_winter[1].description;
+    secondbook_cover.innerHTML = seasons_winter[1].cover;
+
+    thirdbook_name.innerText = seasons_winter[2].name;
+    thirdbook_author.innerText = seasons_winter[2].author;
+    thirdbook_description.innerText = seasons_winter[2].description;
+    thirdbook_cover.innerHTML = seasons_winter[2].cover;
+
+    fourthbook_name.innerText = seasons_winter[3].name;
+    fourthbook_author.innerText = seasons_winter[3].author;
+    fourthbook_description.innerText = seasons_winter[3].description;
+    fourthbook_cover.innerHTML = seasons_winter[3].cover;
+}
+/*favorites reset on logout - end*/
