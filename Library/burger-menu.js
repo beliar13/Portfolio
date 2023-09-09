@@ -212,6 +212,7 @@ TO_REGISTER.addEventListener('click', () => {
         resetCheckCard();
         cardSection();
         resetProfileOnLogout();
+        document.querySelectorAll('.books-counter').forEach(el => el.innerText = '');
     }
 
 })
@@ -275,7 +276,7 @@ const cardNumber = () => {
 
 const rawdata = localStorage.getItem('users');
 const data = JSON.parse(rawdata);
-let usersarray = data || [];
+const usersarray = data || [];
 
 let fname = '';
 let lname = '';
@@ -298,12 +299,14 @@ formReg.addEventListener('submit', (e) => {
     visits = 1;
     cardOwn = 0;
     CUvisits = visits;
-    createUserEntry(fname,lname,email,pass,card,visits,cardOwn);
+    books = [];
+    CUbooks = books;
+    createUserEntry(fname,lname,email,pass,card,visits,cardOwn,books);
     console.log(usersarray);
     usersarray.push(ObjUser);
     localStorage.setItem('users', JSON.stringify(usersarray));
     checkAuth(email,card);
-    changeProfileLogo(fname, lname, CUvisits);
+    changeProfileLogo(fname, lname, CUvisits,CUbooks);
     changeProfileName(usercard);
     replaceLoginWithProfile();
     replaceRegisterWithLogout();
@@ -314,7 +317,7 @@ formReg.addEventListener('submit', (e) => {
     isAuth = 1;
 })}
 
-const createUserEntry = (fname,lname,email,pass,card,visits,cardOwn) => {
+const createUserEntry = (fname,lname,email,pass,card,visits,cardOwn,books) => {
     ObjUser = {
         "name": fname,
         "lastname": lname,
@@ -323,6 +326,7 @@ const createUserEntry = (fname,lname,email,pass,card,visits,cardOwn) => {
         "card": card,
         "visits": visits,
         "cardOwn": cardOwn,
+        "books": books,
     }
     return ObjUser;
 }
@@ -337,7 +341,7 @@ const checkAuth = (email, card) => {
     return isAuth;
 }
 
-const changeProfileLogo = (fname, lname, CUvisits) => {
+const changeProfileLogo = (fname, lname, CUvisits, CUbooks) => {
     if (isAuth == 1) {
         PROFILE_BTN.style.background = 'white';
         userInitials = fname.charAt(0).toUpperCase() + lname.charAt(0).toUpperCase();
@@ -345,6 +349,7 @@ const changeProfileLogo = (fname, lname, CUvisits) => {
         document.getElementById('profile-initials').innerText = userInitials;
         document.getElementById('profile-fname-lname').innerText = `${fname} ${lname}`;
         document.querySelectorAll('.visits-counter').forEach(el => el.innerText = CUvisits);
+        document.querySelectorAll('.books-counter').forEach(el => el.innerText = CUbooks);
         PROFILE_BTN.setAttribute('title', `${fname.charAt(0).toLocaleUpperCase()+fname.slice(1)} ${lname.charAt(0).toLocaleUpperCase()+lname.slice(1)}`);
 
         
@@ -408,6 +413,7 @@ if(formLogin) {
             usercard = userInfo.card;
             CUvisits = Number(usersarray[usersarray.indexOf(userInfo)].visits)+1;
             cardOwn = usersarray[usersarray.indexOf(userInfo)].cardOwn;
+            CUbooks = (userInfo.books).length;
             usersarray[usersarray.indexOf(userInfo)].visits = CUvisits;
             localStorage.setItem('users', JSON.stringify(usersarray));            
             changeProfileName(usercard);
@@ -416,6 +422,7 @@ if(formLogin) {
             duplicatProfileStats();
             cardSection();
             OVERLAY_LOGIN.classList.add('overlay-hidden');  
+            document.getElementById
             document.getElementById('profile-module-card').innerText = usercard.toUpperCase();  
             document.getElementById('find-your-card').innerText = 'Your Library card';
         }
@@ -423,14 +430,14 @@ if(formLogin) {
             isAuth = 0;
             alert('Wrong email/card or password')
         }
-        changeProfileLogo(fname, lname,CUvisits);     
+        changeProfileLogo(fname, lname,CUvisits, CUbooks);     
     }
 )}
 
 /* login handle - end*/
 
 /*buy buttons - start*/
-const purchaseButtons = document.querySelectorAll('.purchase-button')
+const purchaseButtons = Array.from(document.querySelectorAll('.purchase-button'));
 const overlay_buy  = document.getElementById('overlay-buy');
 
 purchaseButtons.forEach(button => button.addEventListener('click', () => {
@@ -439,6 +446,10 @@ purchaseButtons.forEach(button => button.addEventListener('click', () => {
     }
     if ((isAuth == 1 && cardOwn == 0)) {
         overlay_buy.classList.remove('overlay-hidden');
+    }
+
+    if (isAuth ==1 && cardOwn == 1) {
+        alert('good');
     }
 }))
 
@@ -541,18 +552,46 @@ const resetProfileOnLogout = () => {
 /*reset profile module - end*/
 
 
-/*but library card - start*/
+/*buy library card - start*/
 const cardDetails = document.getElementById('card-details');
 
 if(cardDetails) {
-    let cardOwn = 0;
     cardDetails.addEventListener('submit', (e) => {
         e.preventDefault();   
-        overlay_buy.classList.add('overlay-hidden');
-        usersarray[usersarray.indexOf(userInfo)].cardOwn = 1;
-        localStorage.setItem('users', JSON.stringify(usersarray)); 
+        if (usersarray.find(user => user.card == usercard).visits > 1){
+            overlay_buy.classList.add('overlay-hidden');
+            usersarray[usersarray.indexOf(userInfo)].cardOwn = 1;
+            localStorage.setItem('users', JSON.stringify(usersarray));
+            cardOwn = 1;
+        }
+
+
+        if (usersarray.find(user => user.card == usercard).visits == 1) {
+            userInfo = usersarray.find(user => user.card == usercard);
+            overlay_buy.classList.add('overlay-hidden');
+            usersarray[usersarray.indexOf(userInfo)].cardOwn = 1;
+            localStorage.setItem('users', JSON.stringify(usersarray)); 
+            cardOwn = 1;
+        }
 
     }
 )}
 
-/*but library card - end*/
+/*buy library card - end*/
+
+/*from login window to reg - start*/
+const regFromLog = document.getElementById('reg-from-log');
+const logFromReg = document.getElementById('log-from-reg');
+
+logFromReg.addEventListener('click', () => {
+    OVERLAY_WINDOW.classList.add('overlay-hidden');
+    OVERLAY_LOGIN.classList.remove('overlay-hidden');
+})
+
+
+regFromLog.addEventListener('click', () => {
+    OVERLAY_WINDOW.classList.remove('overlay-hidden');
+    OVERLAY_LOGIN.classList.add('overlay-hidden');
+})
+/*from login window to reg - end*/
+
