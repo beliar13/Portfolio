@@ -440,7 +440,10 @@ if(formLogin) {
 const purchaseButtons = Array.from(document.querySelectorAll('.purchase-button'));
 const overlay_buy  = document.getElementById('overlay-buy');
 
-purchaseButtons.forEach(button => button.addEventListener('click', () => {
+const booknames = ['first-book-name','second-book-name','third-book-name','fourth-book-name']
+const bookauthors = ['first-book-author','second-book-author','third-book-author','fourth-book-author']
+
+purchaseButtons.forEach(button => button.addEventListener('click', (e) => {
     if (isAuth == 0){
         OVERLAY_LOGIN.classList.remove('overlay-hidden');
     }
@@ -449,7 +452,13 @@ purchaseButtons.forEach(button => button.addEventListener('click', () => {
     }
 
     if (isAuth ==1 && cardOwn == 1) {
-        alert('good');
+        purchaseButtons[purchaseButtons.indexOf(e.target)].setAttribute('disabled',''); 
+	    b = document.getElementById(`${booknames[purchaseButtons.indexOf(e.target)]}`).innerText;
+	    c = document.getElementById(`${bookauthors[purchaseButtons.indexOf(e.target)]}`).innerText;
+	    d = b+", "+c;
+        (usersarray[usersarray.indexOf(userInfo)].books).push(d);
+        localStorage.setItem('users', JSON.stringify(usersarray));  
+        document.querySelectorAll('.books-counter').forEach(el => el.innerText = (usersarray[usersarray.indexOf(userInfo)].books).length);
     }
 }))
 
@@ -535,7 +544,7 @@ const duplicatProfileStats = () => {
     statsContainer.replaceChildren(clone);
 
     document.getElementById('reader-name').value = `${fname.charAt(0).toUpperCase()}${fname.slice(1)} ${lname.charAt(0).toUpperCase()}${lname.slice(1)}`;
-    document.getElementById('reader-card').value = usercard;
+    document.getElementById('reader-card').value = usercard.toUpperCase();
 
 }
 /*duplicate profile to check card - end*/
