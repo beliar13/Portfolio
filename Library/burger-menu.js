@@ -427,6 +427,7 @@ if(formLogin) {
             document.getElementById('profile-module-card').innerText = usercard.toUpperCase();  
             document.getElementById('find-your-card').innerText = 'Your Library card';
             hehehe();
+            rentedBooksShow();
         }
         else {
             isAuth = 0;
@@ -607,7 +608,7 @@ regFromLog.addEventListener('click', () => {
 })
 /*from login window to reg - end*/
 
-/*(userInfo.books[1].toString()).substring(0,(userInfo.books[1].toString()).indexOf(','))*/
+/*compare owned books from local storage and make them own in fav section - start*/
 
 const hehehe = () => {
     for (let i = 0; i < userInfo.books.length;i++) {
@@ -621,3 +622,23 @@ const hehehe = () => {
     }
 }
 
+/*compare owned books from local storage and make them own in fav section - end*/
+
+/*testing rented books - start*/
+const rentedBooksUl = document.getElementById('rented-books');
+
+const rentedBooksShow = () => {
+    if (userInfo) {
+        myarray = userInfo.books;
+        for (let k = 0; k < myarray.length; k++){
+            liItem = myarray[k];
+            myli = document.createElement('li');
+            myli.innerText = liItem;
+            rentedBooksUl.appendChild(myli);
+        }
+    }
+    else {
+        
+    }
+}
+/*testing rented books - end*/

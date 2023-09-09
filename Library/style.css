@@ -373,6 +373,7 @@ html {
     gap: 10px;
     overflow: scroll;
     padding-inline-start: 30px;
+    max-height: 70px;
 }
 
 .profile-card-wrapper {
