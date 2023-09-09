@@ -296,8 +296,9 @@ formReg.addEventListener('submit', (e) => {
     card = cardNumber();
     usercard = card;
     visits = 1;
+    cardOwn = 0;
     CUvisits = visits;
-    createUserEntry(fname,lname,email,pass,card,visits);
+    createUserEntry(fname,lname,email,pass,card,visits,cardOwn);
     console.log(usersarray);
     usersarray.push(ObjUser);
     localStorage.setItem('users', JSON.stringify(usersarray));
@@ -313,14 +314,15 @@ formReg.addEventListener('submit', (e) => {
     isAuth = 1;
 })}
 
-const createUserEntry = (fname,lname,email,pass,card,visits) => {
+const createUserEntry = (fname,lname,email,pass,card,visits,cardOwn) => {
     ObjUser = {
         "name": fname,
         "lastname": lname,
         "email": email,
         "password": pass,
         "card": card,
-        "visits": visits
+        "visits": visits,
+        "cardOwn": cardOwn,
     }
     return ObjUser;
 }
@@ -405,6 +407,7 @@ if(formLogin) {
             fname = userInfo.name;
             usercard = userInfo.card;
             CUvisits = Number(usersarray[usersarray.indexOf(userInfo)].visits)+1;
+            cardOwn = usersarray[usersarray.indexOf(userInfo)].cardOwn;
             usersarray[usersarray.indexOf(userInfo)].visits = CUvisits;
             localStorage.setItem('users', JSON.stringify(usersarray));            
             changeProfileName(usercard);
@@ -434,7 +437,7 @@ purchaseButtons.forEach(button => button.addEventListener('click', () => {
     if (isAuth == 0){
         OVERLAY_LOGIN.classList.remove('overlay-hidden');
     }
-    if (isAuth == 1) {
+    if ((isAuth == 1 && cardOwn == 0)) {
         overlay_buy.classList.remove('overlay-hidden');
     }
 }))
@@ -536,3 +539,20 @@ const resetProfileOnLogout = () => {
 }
 
 /*reset profile module - end*/
+
+
+/*but library card - start*/
+const cardDetails = document.getElementById('card-details');
+
+if(cardDetails) {
+    let cardOwn = 0;
+    cardDetails.addEventListener('submit', (e) => {
+        e.preventDefault();   
+        overlay_buy.classList.add('overlay-hidden');
+        usersarray[usersarray.indexOf(userInfo)].cardOwn = 1;
+        localStorage.setItem('users', JSON.stringify(usersarray)); 
+
+    }
+)}
+
+/*but library card - end*/
