@@ -306,6 +306,7 @@ formReg.addEventListener('submit', (e) => {
     console.log(usersarray);
     usersarray.push(ObjUser);
     localStorage.setItem('users', JSON.stringify(usersarray));
+    userInfo = usersarray.find(user => user.email === email) || usersarray.find(user => user.card === card);
     checkAuth(email,card);
     changeProfileLogo(fname, lname, CUvisits,CUbooks);
     changeProfileName(usercard);
@@ -313,7 +314,9 @@ formReg.addEventListener('submit', (e) => {
     replaceRegisterWithLogout();
     cardSection();
     duplicatProfileStats();
+    rentedBooksShow();
     document.getElementById('profile-module-card').innerText = usercard.toLocaleUpperCase();
+    document.querySelectorAll('.books-counter').forEach(el => el.innerText = '0');
     OVERLAY_WINDOW.classList.add('overlay-hidden');
     isAuth = 1;
 })}
@@ -462,6 +465,7 @@ purchaseButtons.forEach(button => button.addEventListener('click', (e) => {
         (usersarray[usersarray.indexOf(userInfo)].books).push(d);
         localStorage.setItem('users', JSON.stringify(usersarray));  
         document.querySelectorAll('.books-counter').forEach(el => el.innerText = (usersarray[usersarray.indexOf(userInfo)].books).length);
+        rentedBooksShow();
         hehehe();
     }
 }))
@@ -636,9 +640,5 @@ const rentedBooksShow = () => {
             myli.innerText = liItem;
             rentedBooksUl.appendChild(myli);
         }
-    }
-    else {
-        
-    }
-}
+}}
 /*testing rented books - end*/
