@@ -273,7 +273,7 @@ CARD_SECTION_PROFILE.addEventListener('click', () => {
 
 /* registration handle - start*/
 const cardNumber = () => {
-    return Math.floor(Math.random() * 10000000000).toString(16);
+    return (Math.floor(Math.random() * 0xffffffff * 100000).toString(16)).slice(0,9);
 }
 
 const rawdata = localStorage.getItem('users');
@@ -296,8 +296,8 @@ formReg.addEventListener('submit', (e) => {
     lname = formLName.value;
     email = formEmail.value;
     pass = formPass.value;
-    card = cardNumber();
-    usercard = card;
+    card = (cardNumber()).toUpperCase();
+    usercard = card.toUpperCase();
     visits = 1;
     cardOwn = 0;
     CUvisits = visits;
@@ -317,7 +317,7 @@ formReg.addEventListener('submit', (e) => {
     cardSection();
     duplicatProfileStats();
     rentedBooksShow();
-    document.getElementById('profile-module-card').innerText = usercard.toLocaleUpperCase();
+    document.getElementById('profile-module-card').innerText = usercard;
     document.querySelectorAll('.books-counter').forEach(el => el.innerText = '0');
     OVERLAY_WINDOW.classList.add('overlay-hidden');
     isAuth = 1;
@@ -502,8 +502,9 @@ const resetCheckCard = () => {
         document.getElementById('reader-card').value = '';
 
         const check_card_button = document.createElement('button');
-        check_card_button.setAttribute('type','submit');
+        check_card_button.setAttribute('type','button');
         check_card_button.setAttribute('class', 'check-card');
+        check_card_button.id = 'check-card';
         check_card_button.innerText = 'Check the card';
         statsContainer.replaceChildren(check_card_button);
 
@@ -656,3 +657,30 @@ const resetRentedBooksProfile = () => {
     }
 }
 /*reset rented books in profile - end*/
+
+
+/*check card when not login - start*/
+
+const checkMyCard = () => {
+    if (isAuth == 0) {
+        cardOwnerName = document.getElementById('reader-name').value;
+        cardOwnerCard = document.getElementById('reader-card').value;
+        ownerFName = cardOwnerName.substring(0,cardOwnerName.indexOf(' '));
+        ownerLName = cardOwnerName.slice(cardOwnerName.indexOf(' ')+1);
+        ownerObj = usersarray.find(user => user.card == cardOwnerCard && user.name == ownerFName && user.lastname == ownerLName)
+        if (ownerObj) {
+            cloneStats = profStats.cloneNode(true);
+            cloneStats.id = 'libcard-stats';
+            statsContainer.replaceChildren(cloneStats);
+            document.querySelectorAll('visits-counter').forEach(el => el.innerText = ownerObj.visits);
+            document.querySelectorAll('books-counter').forEach(el => el.innerText = (ownerObj.books).length);
+            setTimeout(resetCheckCard, 10000);
+        }
+}
+}
+/*check card when not login - end*/
+
+const mybutt = document.getElementById('check-card');
+mybutt.addEventListener('click', () => {
+    checkMyCard();
+})
