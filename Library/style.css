@@ -14,6 +14,17 @@ html {
     justify-content: center;
     align-items: flex-start;
     margin: 0 auto;
+
+}
+
+.for-sticky {
+    display: flex;
+    width: 1440px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .header {
@@ -87,14 +98,8 @@ html {
 .profile-burger {
     display: flex;
     align-items: center;
-}
 
-.profile-logo {
-    width: 28px;
-    height: 28px;
-    padding-left: 40px;
 }
-
 
 .burger-collapse {
     display:none;
@@ -117,7 +122,290 @@ html {
     margin-right: 20px;
     padding-left: 13px;
 }
+/*burger - end*/
+/*profile - start*/
+.profile-dropdown {
+    width: 80px;
+    height: 115px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 71px;
+    right: -22px;
+    flex-shrink: 0;
+}
 
+.profile-dropdown-show {
+    transform: translateX(-100px);
+    transition: all 0.8s ease;
+}
+
+.profile-dropdown-hide {
+    transform: translateX(0px);
+    transition: all 0.8s ease;
+}
+
+.overflow-hide {
+    overflow: hidden;
+}
+
+.overflow-show {
+    overflow: visible;
+}
+
+.profile-head {
+    color: #000;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 133.333% */
+    text-transform: capitalize;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+}
+
+.profile-line {
+    width: 40px;
+    height: 1px;
+    background: #BB945F;
+    align-self: center;
+}
+
+.profile-actions {
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */    
+}
+
+#login {
+    padding-top: 15px;
+}
+
+#register {
+    padding-top: 10px;
+}
+.test {
+    padding-left: 145px;
+    display: flex;
+}
+
+#logout {
+    padding-top: 10px;
+}
+
+#profile-after-login {
+    padding-top: 15px;
+}
+/*.profile-logo {
+    width: 28px;
+    height: 28px;
+    padding-left: 40px;
+}*/
+.profile-logo {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    color: #BB945F;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    background: url('./img/icon_profile.svg');
+}
+/*profile - end*/
+/*profile module - start*/
+.profile-module {
+    display: flex;
+    width: 600px;
+    height: 400px;
+    background-color: lightblue;
+}
+
+.profile-left {
+    width: 170px;
+    background: #0C0C0E;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-right {
+    width: 430px;
+    background: #FFF;
+}
+
+.profile-initials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    color: #BB945F;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    text-transform: capitalize;
+}
+
+.profile-fname-lname {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    min-height: 30px;
+    flex-shrink: 0;
+    background: #FFF;
+    color: #000;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;
+}
+
+.profile-right-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.profile-title {
+    color: #000;
+    text-align: center;
+    font-family: "Forum";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding-top: 25px;
+}
+
+.profile-attr-wrapper {
+    display: flex;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.profile-attr {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.attr-name {
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+}
+
+.attr-ico {
+    display: flex;
+    justify-content: center;
+}
+
+.attr-counter {
+    display: flex;
+    justify-content: center;
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 200% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+}
+
+.rented-title {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 80% */
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.rented-books {
+    color: #000;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: scroll;
+    padding-inline-start: 30px;
+    height: 70px;
+}
+
+.profile-card-wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.profile-card-title {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
+
+.card-number {
+    color: #BB945F;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
+#close-profile-module {
+    left: 370px;
+    top: 25px;
+}
+/*profile module - end*/
 main {
     width: 100%;
 }
@@ -178,6 +466,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 .heading-block {
@@ -223,10 +512,17 @@ main {
     margin-top: 0;
 }
 
+.carousel-wrapper {
+    display: flex;
+    align-self: flex-start;
+}
+
 .about-carousel {
     display: flex;
     gap: 25px;
     padding-top: 20px;
+    padding-left: 20px;
+    overflow: hidden;
 }
 
 .carousel-item {
@@ -237,7 +533,7 @@ main {
 }
 
 .swap-left {
-    width: 55px;
+    width: 56px;
     height: 560px;
     display: none;
     align-items: center;
@@ -245,7 +541,7 @@ main {
 }
 
 .swap-right {
-    width: 55px;
+    width: 54px;
     height: 560px;
     display: none;
     align-items: center;
@@ -253,11 +549,15 @@ main {
 }
 
 .swap-arrow {
-    padding-top: 42px;
+    padding-top:76px;
 }
 
-.carousel-item:nth-child(1n+5) {
-    display: none;
+.carret-left {
+    padding-right: 40px;
+}
+
+.carret-right {
+    padding-left: 38px;
 }
 
 .carousel-pagination {
@@ -265,15 +565,16 @@ main {
     padding-top: 35px;
 }
 
-.carousel-pagination-button.active {
-    background-color:#BB945F;
-}
 
 .carousel-pagination-button {
     width: 16px;
     height: 16px;
     background-color:#0C0C0E;
     border-radius: 50%;
+}
+
+.clicked-btn {
+    background-color:#BB945F;
 }
 
 .carousel-pagination-button:hover {
@@ -291,6 +592,31 @@ main {
 
 .a-carousel:nth-child(1n+4) {
     display: none;
+}
+
+.to-the-left {
+    transform: translateX(-475px);
+    transition: all 0.8s ease;
+}
+
+.to-the-end {
+    transform: translateX(-950px);
+    transition: all 0.8s ease;
+}
+
+.to-the-begining {
+    transform: translateX(0px);
+    transition: all 0.8s ease;
+}
+
+.to-the-fourth {
+    transform: translateX(-1425px);
+    transition: all 0.8s ease;
+}
+
+.to-the-fifth {
+    transform: translateX(-1900px);
+    transition: all 0.8s ease;
 }
 
 /*About - end*/
@@ -843,6 +1169,17 @@ main {
     padding-left: 19px;
 }
 
+.reader-info[type="text"]
+{
+    color: #BB945F;
+    font-family: "Forum";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 166.667% */
+    letter-spacing: 0.6px;
+}
+
 input:invalid {
     border: red solid 1px;
 }
@@ -1104,10 +1441,185 @@ footer {
     transition: all 0.3s ease-out;
 }
 /*Footer - end*/
+
+/*Register - window start*/
+.register-window {
+    width: 250px;
+    height: 382px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-register {
+    width: 15px;
+    height: 15px;
+    background: url('./img/close_btn.svg');
+    background-size: contain;
+    position: relative;
+    top: 15px;
+    left: 220px;
+}
+
+.module-head {
+    color: #000;
+    text-align: center;
+    font-family: "Forum";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    padding-top: 5px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.register-inputs {
+    width: 200px;
+    height: 20px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+    align-self: center;
+}
+
+.register-label {
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.3px;
+    align-self: start;
+    padding-left: 22px;
+    padding-bottom: 6px;
+    padding-top: 10px;
+}
+
+.register-signup {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    background-color: inherit;
+    margin-top: 20px;
+    margin-left: 22px;
+}
+
+.signup-text {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.register-bottom {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 10px;
+    margin-left: 22px;
+}
+
+.register-question {
+    display: inline;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    color: #000;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register-login-link {
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-decoration-line: underline;
+    display: flex;
+}
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay.overlay-hidden {
+    display: none;
+}
+
+#overlay-profile {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-profile.overlay-hidden {
+    display: none;
+}
+
+#overlay-login {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-login.overlay-hidden {
+    display: none;
+}
+
+#login-window {
+    height: 262px;
+}
+
+/*register - window end*/
 /*Media 1024 - start*/
 
 @media screen and (max-width: 1024px) {
     .page-wrapper {
+        width: 1024px;
+    }
+
+    .for-sticky {
         width: 1024px;
     }
 
@@ -1129,15 +1641,24 @@ footer {
         z-index: 2;
 
     }
-    .profile-logo {
-        padding-left: 34px;
+
+    .overflow-hide {
+        overflow: hidden;
+    }
+    
+    .overflow-show {
+        overflow: hidden;
+    }
+
+    .test {
+        margin-right: -80px;
     }
     .navigation-menu {
         flex-direction: column;
         padding-left: 0;
         position: relative;
-        right: 157px;
-        width: 0px;
+        right: 46px;
+        width: 324px;
         align-items: center;
         background-color: #0C0C0E;
         z-index: 1;
@@ -1150,13 +1671,13 @@ footer {
         margin-left: -10px;
     }
     .nav-hidden {
-        width: 0px;
-        transition: width 1s ease;
+        transform: translateX(312px);
+        transition: all 1s ease;
     }
 
     .nav-shown {
-        width: 324px;
-        transition: width 1s ease;
+        transform: translateX(0px);
+        transition: all 1s ease;
     }
 
     .list-item-hidden {
@@ -1176,20 +1697,47 @@ footer {
         display: block;
     }
 
+    .profile-dropdown {
+        right:-185px;
+    }
+
+    .profile-dropdown-show {
+        transform: translateX(-185px);
+        transition: all 0.8s ease;
+    }
+    
+    .profile-dropdown-hide {
+        transform: translateX(0px);
+        transition: all 0.8s ease;
+    }
+
     .welcome {
         background: url(./img/Welcome-768.png), lightgray 50% / cover no-repeat;
     }
    
+    .about-carousel {
+        align-self: center;
+        overflow: hidden;
+        max-width: 475px;
+    }
+
+    .carousel-wrapper {
+        align-self: center;
+    }
+
     .swap-left {
         display: flex;
     }
     .carousel-item {
         display: flex;
     }
-    .carousel-item:nth-child(1n+3) {
+    /*.carousel-item:nth-child(1n+3) {
         display: none;
-    }
+    }*/
 
+    .a-carousel:nth-child(1n+4) {
+        display: flex;
+    }
     .a-carousel:nth-child(1n+5) {
         display: flex;
     }
@@ -1204,6 +1752,12 @@ footer {
 
     .favorites-form {
         align-self: center;
+    }
+
+    .favorites-form {
+        position: sticky;
+        top: 15px;
+        z-index: 2;
     }
 
     .season-book-wrapper {
@@ -1273,6 +1827,10 @@ footer {
         width: 768px;
     }
 
+    .for-sticky {
+        width: 768px;
+    }
+
     main {
         width: 768px;
     }
@@ -1292,14 +1850,14 @@ footer {
 
     }
     .profile-logo {
-        padding-left: 34px;
+        margin-left: 34px;
     }
     .navigation-menu {
         flex-direction: column;
         padding-left: 0;
         position: relative;
-        right: 157px;
-        width: 0px;
+        right: 12px;
+        width: 324px;
         align-items: center;
         background-color: #0C0C0E;
         z-index: 1;
@@ -1312,13 +1870,13 @@ footer {
         margin-left: -10px;
     }
     .nav-hidden {
-        width: 0px;
-        transition: width 1s ease-out;
+        transform: translateX(312px);
+        transition: all 1s ease;
     }
 
     .nav-shown {
-        width: 324px;
-        transition: width 1s ease-in-out;
+        transform: translateX(0px);
+        transition: all 1s ease;
     }
 
     .list-item-hidden {
@@ -1359,7 +1917,8 @@ footer {
     }
 
     .favorites-form {
-        align-self: flex-start;
+        position: sticky;
+        top: 15px;
     }
     .checkbox-container:nth-child(4) {
         padding-left: 5px;
@@ -1498,3 +2057,199 @@ footer {
     }
   }
 /*Media 768 - end*/
+
+
+/*favourites fade - start*/
+.fade-anim {
+    opacity: 0;
+    transition: 0.5s ease;
+}
+/*favourites fade - end*/
+
+/*buy module - start*/
+#overlay-buy {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-buy.overlay-hidden {
+    display: none;
+}
+
+.buy-module {
+    width: 640px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-up {
+    display: flex;
+    height: 60px;
+    flex-shrink: 0;
+    background: #0C0C0E;
+    justify-content: center;
+}
+
+.buy-title {
+    color: #FFF;
+    text-align: center;
+    font-family: "Forum";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+.close-buy {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    background: url('img/icons/close_btn_white.svg');
+    background-size: contain;
+    position: relative;
+    top: 25px;
+    left: 105px;
+}
+
+.buy-buttom {
+    height: 480px;
+    background: #FFF;
+    display: flex;
+}
+.buttom-left {
+    display: flex;
+    padding-left: 40px;
+    padding-top: 20px;
+    width: 230px;
+}
+
+.buttom-right {
+    display: flex;
+    justify-content: center;
+    width: 410px;
+}
+
+.buycard-desc {
+    color: #8E8E8E;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 2px;
+    width: 330px;
+    padding-top: 30px;
+    justify-content: left;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-date {
+    display: flex;
+    gap: 10px;
+}
+.details-forall {
+    display: flex;
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.3px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.card-inputs {
+    width: 200px;
+    height: 16px;
+    flex-shrink: 0;
+    border: 1px solid #BB945F;
+}
+
+#card-expire-month {
+    width: 45px;
+}
+
+#card-expire-year {
+    width: 45px;
+}
+
+#card-cvc{
+    width: 45px;
+    margin-bottom: 11px;
+}
+
+.buy-buy {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;    
+    color: #0C0C0E;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    background-color: inherit;
+    margin-top: 20px;
+}
+
+.book-price {
+    color: #0C0C0E;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    top: -20px;
+    left: 100px;
+}
+/*buy module - end*/
+
+/*card stat after login - start*/
+
+#libcard-stats {
+    gap: 35px;
+    padding-top: 10px;
+}
+#libcard-stats > .profile-attr {
+    gap: 0px;
+}
+
+#libcard-stats > .profile-attr> .attr-name {
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 200% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+}
+/*card stat after login - end*/
+
+#dc-profile {
+    display: none;
+}
