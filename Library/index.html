@@ -12,9 +12,10 @@
 </head>
 <body>
     <div class="page-wrapper" id="page-wrapper">
+        <div class="for-sticky">
         <header class="header" id="header">
             <h1 class="header-text">Brooklyn Public Library</h1>
-            <div class="nav-logo-burger-wrapper">
+            <div class="nav-logo-burger-wrapper" id="nav-logo-burger-wrapper">
                 <nav class="navigation-area" id="navigation-area">
                     <ul class="navigation-menu nav-hidden" id="nav-menu">
                         <li class="navigation-menu-link"><a class="nav-links" href="#about">About</a></li>
@@ -25,15 +26,27 @@
                     </ul>    
                 </nav>
                 <div class="profile-burger">
-                    <div class="profile-logo">
-                        <object data="./img/icon_profile.svg" type="image/svg+xml" class="profile-logo-svg">Your browser does not support svg</object>
+                    <div class="test">
+                    <div class="profile-logo" id="profile-btn">
+                        <!--
+                            <object data="./img/icon_profile.svg" type="image/svg+xml" class="profile-logo-svg">Your browser does not support svg</object>-->
+                    </div>
+                    </div>
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <div class="profile-head" id="profile-head">
+                            profile
+                        </div>
+                        <div class="profile-line"></div>
+                        <div class="profile-actions" id="login">Log In</div>
+                        <!--<div class="logprof" id="logprof"><div class="profile-actions" id="login">Log In</div></div>-->
+                        <!--<div class="regout" id="regout"><div class="profile-actions" id="register">Register</div></div>-->
+                        <div class="profile-actions" id="register">Register</div>
                     </div>
                     <div class="burger-collapse" id="burger">
                     </div>
                 </div>
             </div>
         </header>
-        <main id="main">
             <section class="welcome">
                 <div class="overlay"></div>
                     <div class="welcome-sign-bg">
@@ -41,6 +54,8 @@
                             <p class="welcome-ttbl">to the Brooklyn<br>library</p>
                     </div>
             </section>
+        </div>
+        <main id="main">
             <section class="about-section" id="about">
                 <div class="heading-block">
                     <h2 class="heading-text">About</h2>
@@ -50,21 +65,23 @@
                 <div class="about-description">
                     <p class="about-description-text">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
                 </div>
-                <div class="about-carousel">
-                    <a class="swap-left" href="#"><object data="./img/icons/Arrow2.svg" type="image/svg+xml" class="swap-arrow">Swap left</object></a>
-                    <div class="carousel-item"><img src="./img/carousel-image-1.png" alt="carousel-image-1"></div>
-                    <div class="carousel-item"><img src="./img/carousel-image-2.png" alt="carousel-image-2"></div>
-                    <div class="carousel-item"><img src="./img/carousel-image-3.png" alt="carousel-image-3"></div>
-                    <div class="carousel-item"><img src="./img/carousel-image-4.png" alt="carousel-image-3"></div>
-                    <div class="carousel-item"><img src="./img/carousel-image-5.png" alt="carousel-image-3"></div>
-                    <a class="swap-right" href="#"><object data="./img/icons/Arrow1.svg" type="image/svg+xml" class="swap-arrow">Swap right</object></a>
+                <div class="carousel-wrapper">
+                    <a class="swap-left" id="left-carret"><object data="./img/icons/Carret_Left.svg" type="image/svg+xml" class="swap-arrow carret-left">Swap left</object></a>
+                    <div class="about-carousel" id="about-carousel">                      
+                        <div class="carousel-item" id="image-one"><img src="./img/carousel-image-1.png" alt="carousel-image-1"></div>
+                        <div class="carousel-item" id="image-two"><img src="./img/carousel-image-2.png" alt="carousel-image-2"></div>
+                        <div class="carousel-item" id="image-three"><img src="./img/carousel-image-3.png" alt="carousel-image-3"></div>
+                        <div class="carousel-item" id="image-four"><img src="./img/carousel-image-4.png" alt="carousel-image-3"></div>
+                        <div class="carousel-item" id="image-five"><img src="./img/carousel-image-5.png" alt="carousel-image-3"></div>
+                    </div>
+                    <a class="swap-right" id="right-carret"><object data="./img/icons/Carret_Right.svg" type="image/svg+xml" class="swap-arrow carret-right">Swap right</object></a>
                 </div>
-                <div class="carousel-pagination">
-                    <a class="a-carousel"><div class="carousel-pagination-button active"></div></a>
-                    <a class="a-carousel"><div class="carousel-pagination-button"></div></a>
-                    <a class="a-carousel"><div class="carousel-pagination-button"></div></a>
-                    <a class="a-carousel"><div class="carousel-pagination-button"></div></a>
-                    <a class="a-carousel"><div class="carousel-pagination-button"></div></a>
+                <div class="carousel-pagination" id="carousel-pagination">
+                    <a class="a-carousel"><div class="carousel-pagination-button clicked-btn" id="first-btn"></div></a>
+                    <a class="a-carousel"><div class="carousel-pagination-button" id="second-btn"></div></a>
+                    <a class="a-carousel"><div class="carousel-pagination-button" id="third-btn"></div></a>
+                    <a class="a-carousel"><div class="carousel-pagination-button" id="fourth-btn"></div></a>
+                    <a class="a-carousel"><div class="carousel-pagination-button" id="fifth-btn"></div></a>
                 </div>
             </section>
             <section class="favorites-section">
@@ -75,7 +92,7 @@
                 <div class="favorites-pick">
                     <p class="favorites-pick-text">Pick favorites of season</p>
                 </div>
-                <div class="favorites-form">
+                <div class="favorites-form" id="favorites-form">
                     <div class="checkbox-container">
                         <label class="label-text" for="season-winter">
                             <input name="season" class="favorites-checkbox" id="season-winter" type="radio" checked>
@@ -101,7 +118,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="season-book-wrapper">
+                <div class="season-book-wrapper" id="season-book-wrapper">
                     <div class="book-card">
                         <div class="staff-picks">
                             Staff Picks
@@ -109,16 +126,16 @@
                         <div class="staff-picks-line">
                         </div>
                         <div class="book-name">
-                            <p class="book-name-font">The Book Eaters</p>
+                            <p class="book-name-font" id="first-book-name">The Book Eaters</p>
                         </div>
                         <div class="book-author">
-                            <p class="book-author-font">By Sunyi Dean</p>
+                            <p class="book-author-font" id="first-book-author">By Sunyi Dean</p>
                         </div>
                         <div class="book-description">
-                            <p class="book-desc-font">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
+                            <p class="book-desc-font" id="first-book-description">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
                         </div>
                         <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/winter/books-winter-1.jpg" alt="winter-1"></div>
+                        <div class="book-cover" id="first-book-cover"><img src="./img/winter/books-winter-1.jpg" alt="winter-1"></div>
                     </div>
                     <div class="book-card">
                         <div class="staff-picks">
@@ -127,16 +144,16 @@
                         <div class="staff-picks-line">
                         </div>
                         <div class="book-name">
-                            <p class="book-name-font">Cackle</p>
+                            <p class="book-name-font" id="second-book-name">Cackle</p>
                         </div>
                         <div class="book-author">
-                            <p class="book-author-font">By Rachel Harrison</p>
+                            <p class="book-author-font" id="second-book-author">By Rachel Harrison</p>
                         </div>
                         <div class="book-description">
-                            <p class="book-desc-font">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
+                            <p class="book-desc-font" id="second-book-description">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
                         </div>
                         <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/winter/books-winter-2.jpg" alt="winter-2"></div>
+                        <div class="book-cover" id="second-book-cover"><img src="./img/winter/books-winter-2.jpg" alt="winter-2"></div>
                     </div>
                     <div class="book-card">
                         <div class="staff-picks">
@@ -145,16 +162,16 @@
                         <div class="staff-picks-line">
                         </div>
                         <div class="book-name">
-                            <p class="book-name-font">Dante: Poet of the Secular World</p>
+                            <p class="book-name-font" id="third-book-name">Dante: Poet of the Secular World</p>
                         </div>
                         <div class="book-author">
-                            <p class="book-author-font">By Erich Auerbach</p>
+                            <p class="book-author-font" id="third-book-author">By Erich Auerbach</p>
                         </div>
                         <div class="book-description">
-                            <p class="book-desc-font">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
+                            <p class="book-desc-font" id="third-book-description">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
                         </div>
                         <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/winter/books-winter-3.jpg" alt="winter-3"></div>
+                        <div class="book-cover" id="third-book-cover"><img src="./img/winter/books-winter-3.jpg" alt="winter-3"></div>
                     </div>
                     <div class="book-card">
                         <div class="staff-picks">
@@ -163,233 +180,17 @@
                         <div class="staff-picks-line">
                         </div>
                         <div class="book-name">
-                            <p class="book-name-font">The Last Queen</p>
+                            <p class="book-name-font" id="fourth-book-name">The Last Queen</p>
                         </div>
                         <div class="book-author">
-                            <p class="book-author-font">By Clive Irving</p>
+                            <p class="book-author-font" id="fourth-book-author">By Clive Irving</p>
                         </div>
                         <div class="book-description">
-                            <p class="book-desc-font">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
-                        </div>
-                        <button type="button" class="purchase-button" disabled>Own</button>
-                        <div class="book-cover"><img src="./img/winter/books-winter-4.jpg" alt="winter-4"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">The Body</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Stephen King</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">Powerful novel that takes you back to a nostalgic time, exploring both the beauty and danger and loss of innocence that is youth.</p>
+                            <p class="book-desc-font" id="fourth-book-description">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
                         </div>
                         <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/spring/book-spring-1.png" alt="spring-1"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">Carry: A Memoir of Survival on Stolen Land</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Toni Jenson</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">This memoir about the author's relationship with gun violence feels both expansive and intimate, resulting in a lyrical indictment of the way things are.</p>
-                        </div>
-                        <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/spring/book-spring-2.png" alt="spring-2"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">Days of Distraction</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Alexandra Chang</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">A sardonic view of Silicon Valley culture, a meditation on race, and a journal of displacement and belonging, all in one form-defying package of spare prose.</p>
-                        </div>
-                        <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/spring/book-spring-3.png" alt="spring-3"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">Dominicana</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Angie Cruz</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.</p>
-                        </div>
-                        <button type="button" class="purchase-button" disabled>Own</button>
-                        <div class="book-cover"><img src="./img/spring/book-spring-4.png" alt="spring-4"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">Crude: A Memoir</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Pablo Fajardo & Sophie Tardy-Joubert</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">Drawing and color by Damien Roudeau | This book illustrates the struggles of a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their oil fields did to the Amazon and her people</p>
-                        </div>
-                        <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/summer/book-summer-1.png" alt="summer-1"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">Let My People Go Surfing</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Yvon Chouinard</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">Chouinard—climber, businessman, environmentalist—shares tales of courage and persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business Unusual.</p>
-                        </div>
-                        <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/summer/book-summer-2.png" alt="summer-2"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">The Octopus Museum: Poems</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Brenda Shaughnessy</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">This collection of bold and scathingly beautiful feminist poems imagines what comes after our current age of environmental destruction, racism, sexism, and divisive politics.</p>
-                        </div>
-                        <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/summer/book-summer-3.png" alt="summer-3"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">Shark Dialogues: A Novel</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Kiana Davenport</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">An epic saga of seven generations of one family encompasses the tumultuous history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale of villains and dreamers, queens and revolutionaries, lepers and healers.</p>
-                        </div>
-                        <button type="button" class="purchase-button" disabled>Own</button>
-                        <div class="book-cover"><img src="./img/summer/book-summer-4.png" alt="summer-4"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">Casual Conversation</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Renia White</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">White's impressive debut collection takes readers through and beyond the concepts of conversation and the casual - both what we say to each other and what we don't, examining the possibilities around how we construct and communicate identity.</p>
-                        </div>
-                        <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/autumn/book-autumn-1.png" alt="autumn-1"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">The Great Fire</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Lou Ureneck</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">The harrowing story of an ordinary American and a principled Naval officer who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter of a million refugees from the Armenian Genocide</p>
-                        </div>
-                        <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/autumn/book-autumn-2.png" alt="autumn-2"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">Rickey: The Life and Legend</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Howard Bryant</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">With the fall rolling around, one can't help but think of baseball's postseason coming up! And what better way to prepare for it than reading the biography of one of the game's all-time greatest performers, the Man of Steal, Rickey Henderson?</p>
-                        </div>
-                        <button type="button" class="purchase-button">Buy</button>
-                        <div class="book-cover"><img src="./img/autumn/book-autumn-3.png" alt="autumn-3"></div>
-                    </div>
-                    <div class="book-card">
-                        <div class="staff-picks">
-                            Staff Picks
-                        </div>
-                        <div class="staff-picks-line">
-                        </div>
-                        <div class="book-name">
-                            <p class="book-name-font">Slug: And Other Stories</p>
-                        </div>
-                        <div class="book-author">
-                            <p class="book-author-font">By Megan Milks</p>
-                        </div>
-                        <div class="book-description">
-                            <p class="book-desc-font">Exes Tegan and Sara find themselves chained together by hairballs of codependency. A father and child experience the shared trauma of giving birth to gods from their wounds.</p>
-                        </div>
-                        <button type="button" class="purchase-button" disabled>Own</button>
-                        <div class="book-cover"><img src="./img/autumn/book-autumn-4.png" alt="autumn-4"></div>
-                    </div>
+                        <div class="book-cover" id="fourth-book-cover"><img src="./img/winter/books-winter-4.jpg" alt="winter-4"></div>
+                    </div>                    
                 </div>
             </section>
             <section class="coffee-shop">
@@ -516,33 +317,185 @@
                 <div class="heading-line"></div>
                 <div class="card-wrapper">
                     <div class="find-card">
-                            <div class="find-your-card">
+                            <div class="find-your-card" id="find-your-card">
                                 Find your Library card
                             </div>
                             <form class="card-out">
                                 <div class="input-bg">
                                     <p class="card-title">Brooklyn Public Library</p>
-                                    <input class="reader-info" type="text" id="reader-name" name="reader-name" placeholder="Reader's name" pattern="[a-zA-Z0-9\-]+">
+                                    <input class="reader-info" type="text" id="reader-name" name="reader-name" placeholder="Reader's name" pattern="[a-zA-Z0-9\-\s]+">
                                     <input class="reader-info" type="text" id="reader-card" name="reader-card" placeholder="Card number" pattern="[a-zA-Z0-9\-]+">
                                 </div>
-                                <button class="check-card" type="submit">Check the card</button>
+                                <div class="card-check-stats" style="display: flex; align-self: center;" id="card-check-stats"><button class="check-card" type="button" id="check-card">Check the card</button></div>
                             </form>
                     </div>
                     <div class="get-card">
-                        <div class="get-reader-card">
+                        <div class="get-reader-card" id="get-reader-card">
                             Get a reader card
                         </div>
-                        <div class="get-card-info">
+                        <div class="get-card-info" id="get-card-info">
                             You will be able to see a reader card after logging into account or you can register a new account
                         </div>
                         <div class="sign-login-wrapper">
-                            <button class="login-signup-button">Sign Up</button>
-                            <button class="login-signup-button">Log in</button>
+                            <button class="login-signup-button" id="dc-signup">Sign Up</button>
+                            <button class="login-signup-button" id="dc-login">Log in</button>
+                            <button class="login-signup-button" id="dc-profile">Profile</button>
                         </div>
                     </div>
                 </div>
             </section>
-    
+            <div id="overlay" class="overlay-hidden">
+                <div class="register-window" id="register-window">
+                    <div class="close-register" id="close-register"></div>
+                    <div class="module-head">register</div>
+                    <form action="#" class="register-form" id="register-form">
+                        <script>document.getElementById('register-form').setAttribute('action', '')</script>
+                        <label class="register-label" for="register-fname">First name</label>
+                            <input type="text" class="register-inputs" id="register-fname" required="required" pattern="[A-Za-z0-9]{1,20}">
+                        <label class="register-label" for="register-lname">Last name</label>
+                            <input type="text" class="register-inputs" id="register-lname" required="required" pattern="[A-Za-z0-9]{1,20}">
+                        <label class="register-label" for="register-email">E-mail</label>
+                            <input type="email" class="register-inputs" id="register-email" required><!-- pattern="[A-za-z0-9]+\@[A-z0-9]+\.[A-za-z]+"-->
+                        <label class="register-label" for="register-password">Password</label>
+                            <input type="password" class="register-inputs" id="register-password" required="required" pattern="[A-Za-z0-9]{8,20}">
+                        <input class="register-signup signup-text" type="submit" value="Sign Up">    
+                    </form>
+                    <div class="register-bottom">
+                        <p class="register-question">Already have an account?</p><a class="register-login-link" id="log-from-reg">Login</a>
+                    </div>
+                </div>
+            </div>
+            <div id="overlay-login" class="overlay-hidden">
+                <div class="register-window" id="login-window">
+                    <div class="close-register" id="close-login"></div>
+                    <div class="module-head">login</div>
+                    <form action="#" class="register-form" id="login-form">
+                        <script>document.getElementById('login-form').setAttribute('action', '')</script>
+                        <label class="register-label" for="login-email">E-mail or readers card</label>
+                            <input type="text" class="register-inputs" id="login-email" required>
+                        <label class="register-label" for="login-password">Password</label>
+                            <input type="password" class="register-inputs" id="login-password" required>
+                        <input class="register-signup signup-text" type="submit" value="Log In">    
+                    </form>
+                    <div class="register-bottom">
+                        <p class="register-question">Don’t have an account?</p><a class="register-login-link" id="reg-from-log">Register</a>
+                    </div>
+                </div>
+            </div>
+           <div class="overlay-hidden" id="overlay-profile">
+                <div class="profile-module" id="profile-module">
+                    <div class="profile-left">
+                        <div class="profile-initials" id="profile-initials">
+                            JD
+                        </div>
+                        <div class="profile-fname-lname" id="profile-fname-lname">
+                            John Doe
+                        </div>
+                    </div>
+                    <div class="profile-right">
+                        <div class="profile-right-wrapper">
+                            <div class="close-register" id="close-profile-module"></div>
+                            <div class="profile-title">
+                                my profile
+                            </div>
+                            <div class="profile-attr-wrapper" id="profile-attr-wrapper">
+                                <div class="profile-attr">
+                                    <div class="attr-name">
+                                        visits
+                                    </div>
+                                    <div class="attr-ico">
+                                        <img src="./img/icons/Union.svg" alt="profile">
+                                    </div>
+                                    <div class="attr-counter visits-counter">
+                                        23
+                                    </div>
+                                </div>                        
+                                <div class="profile-attr">
+                                    <div class="attr-name">
+                                        bonuses
+                                    </div>
+                                    <div class="attr-ico">
+                                        <img src="./img/icons/Star1.svg" alt="bonuses">
+                                    </div>
+                                    <div class="attr-counter">
+                                        1240
+                                    </div>
+                                </div>                        
+                                <div class="profile-attr">
+                                    <div class="attr-name">
+                                        books
+                                    </div>
+                                    <div class="attr-ico">
+                                        <img src="./img/icons/book.svg" alt="books">
+                                    </div>
+                                    <div class="attr-counter books-counter">
+                                        2
+                                    </div>
+                                </div>                        
+                            </div>
+                            <div class="rented-title">
+                                Rented books
+                            </div>
+                            <div class="rented-books-wrapper">
+                                <ul class="rented-books" id="rented-books">
+                                    <li>The Last Queen, Clive Irving</li>
+                                    <li>Dominicana, Angie Cruz</li>
+                                </ul>                        
+                            </div>
+                            <div class="profile-card-wrapper">
+                                <div class="profile-card-title">
+                                    Card number
+                                </div>
+                                <div class="card-number" id="profile-module-card">
+                                    123456789
+                                </div>
+                                <div class="copy-card" id="copy-card">
+                                    <img src="./img/icons/icon-copy.svg" alt="copy card">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay-hidden" id="overlay-buy">
+                <div class="buy-module" id="buy-module">
+                    <div class="buy-up">
+        
+                        <div class="buy-title">
+                            buy a library card
+                        </div>
+                        <div class="close-buy" id="close-buy"></div>
+                    </div>
+                    <div class="buy-buttom">
+                        <div class="buttom-left">
+                            <form class="card-details" id="card-details">
+                                <label for="cardnum" class="details-forall">Bank card number</label>
+                                <input class="card-inputs" type="text" name="cardnum" id="cardnum" pattern="[0-9]{16}" required>
+                                <label for="card-expire-year" class="details-forall">Expiration code</label>  
+                                <div class="card-date">
+                                    <input class="card-inputs"  type="text" name="card-expire-month" id="card-expire-month" pattern="[0-9]{2}" required>
+                                    <input class="card-inputs"  type="text" name="card-expire-year" id="card-expire-year" pattern="[0-9]{2}" required>
+                                </div>
+                                <label for="card-cvc" class="details-forall">CVC</label>
+                                <input class="card-inputs"  type="text" name="card-cvc" id="card-cvc" pattern="[0-9]{3,3}" required>    
+                                <label for="card-holder" class="details-forall">Cardholder name</label>
+                                <input class="card-inputs"  type="text" name="card-holder" id="card-holder" pattern="[A-Za-z]+" required>     
+                                <label for="card-post" class="details-forall">Postal code</label>
+                                <input class="card-inputs"  type="text" name="card-post" id="card-post" pattern="[0-9]{6}" required>   
+                                <label for="card-city" class="details-forall">City / town</label>
+                                <input class="card-inputs"  type="text" name="card-city" id="card-city" pattern="[a-zA-Z]+" required>     
+                                <input class="buy-buy" type="submit" value="Buy"> 
+                                <div class="book-price">$ 25.00</div>       
+                            </form>
+                        </div>
+                        <div class="buttom-right">
+                            <div class="buycard-desc">
+                                If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <div class="addr-sm-sched-wrapper">
@@ -604,6 +557,8 @@
     </div>
 <script src="index.js">
 </script>
-<script src="burger-menu.js"></script>      
+<script src="scripts.js"></script>      
+<script src="favorites-fade.js"></script>      
+<script src="modules_buy.js"></script>      
 </body>
 </html>
