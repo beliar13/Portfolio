@@ -426,7 +426,7 @@ if(formLogin) {
             usersarray[usersarray.indexOf(userInfo)].visits = CUvisits;
             localStorage.setItem('users', JSON.stringify(usersarray));            
             changeProfileName(usercard);
-            resetRentedBooksProfile();
+
             replaceLoginWithProfile();
             replaceRegisterWithLogout();
             duplicatProfileStats();
@@ -471,6 +471,7 @@ purchaseButtons.forEach(button => button.addEventListener('click', (e) => {
         (usersarray[usersarray.indexOf(userInfo)].books).push(d);
         localStorage.setItem('users', JSON.stringify(usersarray));  
         document.querySelectorAll('.books-counter').forEach(el => el.innerText = (usersarray[usersarray.indexOf(userInfo)].books).length);
+        resetRentedBooksProfile();
         rentedBooksShow();
         hehehe();
     }
@@ -645,8 +646,10 @@ const rentedBooksShow = () => {
             liItem = myarray[k];
             myli = document.createElement('li');
             myli.innerText = liItem;
+
             rentedBooksUl.appendChild(myli);
-        }
+        }      
+
 }}
 /*testing rented books - end*/
 
