@@ -213,6 +213,7 @@ TO_REGISTER.addEventListener('click', () => {
         cardSection();
         resetProfileOnLogout();
         resetFavorites();
+        resetRentedBooksProfile();
         document.querySelectorAll('.books-counter').forEach(el => el.innerText = '');
     }
 
@@ -311,6 +312,7 @@ formReg.addEventListener('submit', (e) => {
     changeProfileLogo(fname, lname, CUvisits,CUbooks);
     changeProfileName(usercard);
     replaceLoginWithProfile();
+    resetRentedBooksProfile();
     replaceRegisterWithLogout();
     cardSection();
     duplicatProfileStats();
@@ -421,6 +423,7 @@ if(formLogin) {
             usersarray[usersarray.indexOf(userInfo)].visits = CUvisits;
             localStorage.setItem('users', JSON.stringify(usersarray));            
             changeProfileName(usercard);
+            resetRentedBooksProfile();
             replaceLoginWithProfile();
             replaceRegisterWithLogout();
             duplicatProfileStats();
@@ -642,3 +645,14 @@ const rentedBooksShow = () => {
         }
 }}
 /*testing rented books - end*/
+
+/*reset rented books in profile - start*/
+const myUl = document.getElementById('rented-books');
+let myUlChild = myUl.lastChild;
+const resetRentedBooksProfile = () => {
+    while (myUlChild) {
+        myUl.removeChild(myUlChild);
+        myUlChild = myUl.lastChild;
+    }
+}
+/*reset rented books in profile - end*/
