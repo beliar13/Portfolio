@@ -215,6 +215,9 @@ TO_REGISTER.addEventListener('click', () => {
         resetFavorites();
         resetRentedBooksProfile();
         document.querySelectorAll('.books-counter').forEach(el => el.innerText = '');
+        document.querySelectorAll('.purchase-button').forEach(el => {el.removeAttribute('disabled') ; el.innerText = 'Buy'});
+        document.querySelectorAll('.favorites-checkbox').forEach(el => el.checked = false);
+        document.getElementById('season-winter').checked = true;
     }
 
 })

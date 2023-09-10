@@ -166,7 +166,12 @@ button_spring.addEventListener('click', () => {
             season_card.classList.remove('fade-anim');    
             purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'});
         }
-        hehehe();
+        if (isAuth == 1){
+            hehehe();
+        }
+        if (isAuth == 0) {
+            purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'}); 
+        }
     }
 })
 
@@ -196,7 +201,12 @@ button_winter.addEventListener('click', () => {
             season_card.classList.remove('fade-anim');    
             purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'});
         }
-        hehehe();
+        if (isAuth == 1){
+            hehehe();
+        }
+        if (isAuth == 0) {
+            purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'}); 
+        }
     }
 })
 
@@ -226,7 +236,12 @@ button_autumn.addEventListener('click', () => {
             season_card.classList.remove('fade-anim');    
             purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'});
         }
-        hehehe();
+        if (isAuth == 1){
+            hehehe();
+        }
+        if (isAuth == 0) {
+            purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'}); 
+        }
     }
 })
 
@@ -256,7 +271,13 @@ button_summer.addEventListener('click', () => {
             season_card.classList.remove('fade-anim');    
             purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'});
         }
-        hehehe();
+        if (isAuth == 1){
+            hehehe();
+        }
+        if (isAuth == 0) {
+            purchaseButtons.forEach(btn => {btn.removeAttribute('disabled'); btn.innerText = 'Buy'}); 
+        }
+
     }
 })
 
