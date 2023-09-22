@@ -9,25 +9,25 @@ const audio = new Audio (); /*create audio element*/
 /*array with track objects */
 const trackList = [
     {
-        "source": "./mp3/04%20P.A.R.T.Y..flac",
+        "source": "./mp3/04%20P.A.R.T.Y..mp3",
         "author": "Alestorm",
         "track": "P.A.R.T.Y.",
         "cover": "./img/covers/Track1.jpg",
     },
     {
-        "source": "./mp3/C03%20Whiskey%20And%20Pills.flac",
+        "source": "./mp3/C03%20Whiskey%20And%20Pills.mp3",
         "author": "Billy Idol",
         "track": "Whiskey And Pills",
         "cover": "./img/covers/Track2.jpg",
     },
     {
-        "source": "./mp3/39.%20BFG%2010k.flac",
+        "source": "./mp3/39.%20BFG%2010k.mp3",
         "author": "Mick Gordon",
         "track": "BFG 10k",
         "cover": "./img/covers/Track3.jpg",
     },
     {
-        "source": "./mp3/05%20Love%20Sux.flac",
+        "source": "./mp3/05%20Love%20Sux.mp3",
         "author": "Avril Lavinge",
         "track": "Love Sux",
         "cover": "./img/covers/Track4.jpg",
