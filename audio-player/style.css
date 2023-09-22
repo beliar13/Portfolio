@@ -90,6 +90,12 @@ html {
     height: 40%;
     background: url('img/ico/track-backward.png') no-repeat;
     background-size: contain;
+    cursor: pointer;
+}
+
+.track-prev:active {
+    transform: scale(0.9);
+    transition: all 0.3s ease;
 }
 
 .play-pause {
@@ -98,6 +104,12 @@ html {
     height: 55%;
     background: url('img/ico/track-play.png') no-repeat;
     background-size: contain;
+    cursor:pointer;
+}
+
+.play-pause:active {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
 .pause {
@@ -111,6 +123,12 @@ html {
     height: 40%;
     background: url('img/ico/track-forward.png') no-repeat;
     background-size: contain;
+    cursor: pointer;
+}
+
+.track-next:active {
+    transform: scale(0.9);
+    transition: all 0.3s ease;
 }
 
 .footer {

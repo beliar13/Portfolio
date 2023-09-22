@@ -9,32 +9,32 @@ const audio = new Audio (); /*create audio element*/
 /*array with track objects */
 const trackList = [
     {
+        "source": "./mp3/04%20P.A.R.T.Y..flac",
+        "author": "Alestorm",
+        "track": "P.A.R.T.Y.",
+        "cover": "./img/covers/Track1.jpg",
+    },
+    {
+        "source": "./mp3/C03%20Whiskey%20And%20Pills.flac",
+        "author": "Billy Idol",
+        "track": "Whiskey And Pills",
+        "cover": "./img/covers/Track2.jpg",
+    },
+    {
+        "source": "./mp3/39.%20BFG%2010k.flac",
+        "author": "Mick Gordon",
+        "track": "BFG 10k",
+        "cover": "./img/covers/Track3.jpg",
+    },
+    {
         "source": "./mp3/05%20Love%20Sux.flac",
         "author": "Avril Lavinge",
         "track": "Love Sux",
         "cover": "./img/covers/Track4.jpg",
     },
-    {
-        "source": "./mp3/39.%20BFG%2010k.flac",
-        "author": "Mick Gordon",
-        "track": "BFG 10k",
-        "cover": "./img/covers/Track3.jpg",
-    },
-    {
-        "source": "./mp3/39.%20BFG%2010k.flac",
-        "author": "Mick Gordon",
-        "track": "BFG 10k",
-        "cover": "./img/covers/Track3.jpg",
-    },
-    {
-        "source": "./mp3/39.%20BFG%2010k.flac",
-        "author": "Mick Gordon",
-        "track": "BFG 10k",
-        "cover": "./img/covers/Track3.jpg",
-    }
 ]
 
-audio.src = trackList[1].source /*'./mp3/05%20Love%20Sux.flac'set source for audio*/
+audio.src = trackList[0].source /*'./mp3/05%20Love%20Sux.flac'set source for audio*/
 let isPlay = false; /*variable to track if audio is playing or should be stopped*/
 let playingTime = 0;
 
@@ -78,6 +78,9 @@ const calcTrackCurrTime = () => {
         cminu = `0${cminu}`;
     }
     csecu = parseInt(audio.currentTime - cminu*60);
+    if (csecu == 0) {
+        csecu = '00';
+    }
     if (csecu > 0 && csecu < 10) {
         csecu = `0${csecu}`;
     }
@@ -87,7 +90,7 @@ const calcTrackCurrTime = () => {
 
 /*track cover */
 const changeCover = () => {
-    trackCover.style.background = `url(${trackList[1].cover})`;
+    trackCover.style.background = `url(${trackList[0].cover})`;
     trackCover.style.backgroundSize = 'contain';
     trackCover.style.backgroundRepeat = 'no-repeat';
 
@@ -95,12 +98,12 @@ const changeCover = () => {
 
 /*track author change */
 const changeAuthor = () => {
-    trackAuthor.innerText = trackList[1].author;
+    trackAuthor.innerText = trackList[0].author;
 }
 
 /*track name change */
 const changeTrackName = () => {
-    trackName.innerText = trackList[1].track;
+    trackName.innerText = trackList[0].track;
 }
 
 /*listen button click - change icon, start playing*/
@@ -115,3 +118,8 @@ playPause.addEventListener('click', () => {
         trackCT.innerText = calcTrackCurrTime();
     })
 });
+
+audio.addEventListener('ended', () => {
+    playPauseRotation();
+    isPlay = false;
+})
