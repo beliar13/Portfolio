@@ -94,6 +94,14 @@ html {
     height: 25%;
     background-color: black;
     display: flex;
+    cursor: pointer;
+}
+
+.track-current-time {
+    display: flex;
+    width: 10%;
+    align-items: center;
+    justify-content: center;
 }
 
 .progr {
@@ -101,8 +109,16 @@ html {
     height: 100%;
     flex-basis: 0%;
     background-color: #949494;
+    cursor: pointer;
 }
 
+.track-duration {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 .player-bottom {
     width: 100%;
     height: 27%;

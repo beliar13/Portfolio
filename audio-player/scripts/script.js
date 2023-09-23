@@ -6,6 +6,8 @@ const trackAuthor = document.getElementById('track-author'); /*select div for tr
 const trackName = document.getElementById('track-name'); /*select div for track author */
 const progBar = document.getElementById('progr'); /*select div for progressbar */
 const progress = document.getElementById('duration-bar'); /*select div for progressbar outer */
+const nextTrack = document.getElementById('track-next'); /*select div for next track button */
+const prevTrack = document.getElementById('track-prev'); /*select div for prev track button */
 
 
 const audio = new Audio (); /*create audio element*/
@@ -36,8 +38,10 @@ const trackList = [
         "cover": "./img/covers/Track4.jpg",
     },
 ]
+
 /*'./mp3/05%20Love%20Sux.flac'set source for audio*/
-audio.src = trackList[0].source
+let i = 0;
+audio.src = trackList[i].source
 /*variable to track if audio is playing or should be stopped*/
 let isPlay = false; 
 
@@ -48,7 +52,6 @@ const playPauseRotation = () => {
 
 /*play my audio or pause*/
 const playAudio = () => {
-
     if (!isPlay) {
         audio.play();
         isPlay = true;
@@ -92,21 +95,21 @@ const calcTrackCurrTime = () => {
 }
 
 /*track cover */
-const changeCover = () => {
-    trackCover.style.background = `url(${trackList[0].cover})`;
+const changeCover = (i) => {
+    trackCover.style.background = `url(${trackList[i].cover})`;
     trackCover.style.backgroundSize = 'contain';
     trackCover.style.backgroundRepeat = 'no-repeat';
 
 }
 
 /*track author change */
-const changeAuthor = () => {
-    trackAuthor.innerText = trackList[0].author;
+function changeAuthor(i) {
+    trackAuthor.innerText = trackList[i].author;
 }
 
 /*track name change */
-const changeTrackName = () => {
-    trackName.innerText = trackList[0].track;
+const changeTrackName = (i) => {
+    trackName.innerText = trackList[i].track;
 }
 
 /*progressbar update*/
@@ -117,19 +120,72 @@ const changeProgress = () => {
 }
 
 /*progressbar jump */
-
 const pbJump = (e) => {
 const jumpTime = (e.offsetX / progress.offsetWidth) * audio.duration;
 audio.currentTime = jumpTime;
+}
+
+/*clear track info */
+const clearInfo = () => {
+    trackCover.style.background =  '#424245';
+    trackAuthor.innerText = '--';
+    trackName.innerText ='--';
+    trackDuration.innerText = '-:-'
+    trackCT.innerText = '-:-'
+}
+
+/*clear tracks info on page load */
+window.onload = () => {
+    clearInfo();
+}
+
+/*find index of current track */
+const findIndex = () => {
+    const currTrack = (element) => element.track == trackName.innerText;
+    return trackList.findIndex(currTrack);
+}
+
+/*next track*/
+const toNext = () => {
+    i = findIndex();
+    listLength = trackList.length;
+    if (i < listLength) {
+        i += 1;
+    }
+    if (i == listLength) {
+        i = 0;
+    }
+    audio.src = trackList[i].source
+    changeAuthor(i);
+    changeTrackName(i);
+    changeCover(i);
+    audio.play();
+}
+
+/*prev track */
+const toPrev = () => {
+    i = findIndex();
+    listLength = trackList.length;
+    if (i == 0) {
+        i = listLength - 1;
+    }
+    else {
+        i = i -1;
+    }
+    audio.src = trackList[i].source
+    changeAuthor(i);
+    changeTrackName(i);
+    changeCover(i);
+    audio.play();
 }
 
 /*listen button click - change icon, start playing, update progressbar*/
 playPause.addEventListener('click', () => {
     playPauseRotation();
     playAudio();
-    changeCover();
-    changeAuthor();
-    changeTrackName();
+    changeCover(i);
+    changeAuthor(i);
+    changeTrackName(i);
     trackDuration.innerText = calcTrackDuration();
     audio.addEventListener('timeupdate', () => {
         trackCT.innerText = calcTrackCurrTime();
@@ -144,3 +200,15 @@ audio.addEventListener('ended', () => {
 /*listener for jump on progress bar */
 progress.addEventListener('click', pbJump)
 
+/*progressbar drag and drop */
+let mousedown = false;
+progress.addEventListener('mousemove', (e) => mousedown && pbJump(e));
+progress.addEventListener('mousedown', () => mousedown = true);
+progress.addEventListener('mouseup', () => mousedown = false);
+
+
+/*listener next track button */
+nextTrack.addEventListener('click', toNext)
+
+/*listener prev track button */
+prevTrack.addEventListener('click', toPrev)
