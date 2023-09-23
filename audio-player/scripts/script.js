@@ -5,6 +5,7 @@ const trackCover = document.getElementById('cover'); /*select div for track cove
 const trackAuthor = document.getElementById('track-author'); /*select div for track author */
 const trackName = document.getElementById('track-name'); /*select div for track author */
 const progBar = document.getElementById('progr'); /*select div for progressbar */
+const progress = document.getElementById('duration-bar'); /*select div for progressbar outer */
 
 
 const audio = new Audio (); /*create audio element*/
@@ -35,10 +36,10 @@ const trackList = [
         "cover": "./img/covers/Track4.jpg",
     },
 ]
-
-audio.src = trackList[0].source /*'./mp3/05%20Love%20Sux.flac'set source for audio*/
-let isPlay = false; /*variable to track if audio is playing or should be stopped*/
-let playingTime = 0;
+/*'./mp3/05%20Love%20Sux.flac'set source for audio*/
+audio.src = trackList[0].source
+/*variable to track if audio is playing or should be stopped*/
+let isPlay = false; 
 
 /*change play pause icon*/
 const playPauseRotation = () => {
@@ -108,14 +109,21 @@ const changeTrackName = () => {
     trackName.innerText = trackList[0].track;
 }
 
-/*progressbar */
+/*progressbar update*/
 const changeProgress = () => {
     adjPorgress = (audio.currentTime/audio.duration)*100;
     adjPorgress = `${adjPorgress}%`;
     progBar.style.flexBasis = adjPorgress;
 }
 
-/*listen button click - change icon, start playing*/
+/*progressbar jump */
+
+const pbJump = (e) => {
+const jumpTime = (e.offsetX / progress.offsetWidth) * audio.duration;
+audio.currentTime = jumpTime;
+}
+
+/*listen button click - change icon, start playing, update progressbar*/
 playPause.addEventListener('click', () => {
     playPauseRotation();
     playAudio();
@@ -128,8 +136,11 @@ playPause.addEventListener('click', () => {
         changeProgress();
     })
 });
-
+/*listener change icon when audio ended */
 audio.addEventListener('ended', () => {
     playPauseRotation();
     isPlay = false;
 })
+/*listener for jump on progress bar */
+progress.addEventListener('click', pbJump)
+
