@@ -35,8 +35,8 @@ html {
 }
 
 .cover {
-    width: 90%;
-    height: 83%;
+    width: 87%;
+    height: 80%;
     background: url('img/covers/Track1.jpg') no-repeat;
     background-size: contain;
     border-radius: 5%;
@@ -72,6 +72,14 @@ html {
     width: 80%;
     height: 25%;
     background-color: black;
+    display: flex;
+}
+
+.progr {
+    display: flex;
+    height: 100%;
+    flex-basis: 0%;
+    background-color: #949494;
 }
 
 .player-bottom {

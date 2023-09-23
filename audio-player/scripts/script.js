@@ -4,6 +4,8 @@ const trackCT = document.getElementById('track-current-time'); /*select track's 
 const trackCover = document.getElementById('cover'); /*select div for track cover */
 const trackAuthor = document.getElementById('track-author'); /*select div for track author */
 const trackName = document.getElementById('track-name'); /*select div for track author */
+const progBar = document.getElementById('progr'); /*select div for progressbar */
+
 
 const audio = new Audio (); /*create audio element*/
 /*array with track objects */
@@ -106,6 +108,13 @@ const changeTrackName = () => {
     trackName.innerText = trackList[0].track;
 }
 
+/*progressbar */
+const changeProgress = () => {
+    adjPorgress = (audio.currentTime/audio.duration)*100;
+    adjPorgress = `${adjPorgress}%`;
+    progBar.style.flexBasis = adjPorgress;
+}
+
 /*listen button click - change icon, start playing*/
 playPause.addEventListener('click', () => {
     playPauseRotation();
@@ -116,6 +125,7 @@ playPause.addEventListener('click', () => {
     trackDuration.innerText = calcTrackDuration();
     audio.addEventListener('timeupdate', () => {
         trackCT.innerText = calcTrackCurrTime();
+        changeProgress();
     })
 });
 
