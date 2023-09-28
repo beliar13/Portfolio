@@ -4,11 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <h1>hello</h1>
+<header class="header">
+    <div class="header-logo">
+        <svg class="header-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z" fill="#ffffff" fill-rule="nonzero"/>
+          </svg>
+          <span class="header-text">Unsplash API</span>
+    </div>
+    <div class="header-search">
+        <div class="searchbar">
+            <div class="query">
+                <input type="text" class="insert-query" id="insert-query" name="query" rows="1" cols="30" autocomplete="off" spellcheck="false" autocapitalize="off" autocorrect="off"></input>
+            </div>
+            <div class="find-clear" id="find-clear">
+
+            </div>
+        </div>
+    </div>
+</header>
+<main class="images-go-here">
+
+</main>
+<footer class="footer">
+    <div>
+      <a href="https://github.com/beliar13">
+        <img
+          width="60"
+          src="img/GitHub_Logo_White.png"
+          alt="github-logo"
+        />
+      </a>
+    </div>
+    <div>2023</div>
+    <div>
+      <a href="https://rs.school/js/">
+        <img
+          alt="rs logo"
+          width="60"
+          src="https://rs.school/images/rs_school_js.svg"
+        />
+      </a>
+    </div>
+  </footer>
+
     <script src="index.js"></script>
 </body>
 </html>
