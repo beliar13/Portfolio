@@ -6,9 +6,11 @@ const searchButton = document.getElementById('find-clear');
 const galleryContainer = document.getElementById('image-container');
 /*query for api */
 let queryForApi = "memes";
+
 /*forming url */
 const urlBegin = 'https://api.unsplash.com/search/photos?query='
 const urlEnd = '&per_page=15&client_id=Rqj2EJ2QAotWRPt2eTpg9qHOGgkc5y-ljYMVwiD7gpw'
+url = urlBegin+queryForApi+urlEnd;
 
 /*grab input from search bar when pressing Enter*/
 queryText.addEventListener('keydown', (e) => {
@@ -67,4 +69,9 @@ const clearImageContainer = () => {
         galleryContainer.removeChild(mylastChild);
         mylastChild = galleryContainer.lastChild;
     }
+}
+
+window.onload = () => {
+    queryText.focus();
+    getData();
 }
