@@ -5,7 +5,7 @@ const searchButton = document.getElementById('find-clear');
 /*set image container*/
 const galleryContainer = document.getElementById('image-container');
 /*query for api */
-let queryForApi = "";
+let queryForApi = "memes";
 /*forming url */
 const urlBegin = 'https://api.unsplash.com/search/photos?query='
 const urlEnd = '&per_page=15&client_id=Rqj2EJ2QAotWRPt2eTpg9qHOGgkc5y-ljYMVwiD7gpw'
@@ -15,6 +15,8 @@ queryText.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         queryForApi = queryText.value
         url = urlBegin+queryForApi+urlEnd;
+        mylastChild = galleryContainer.lastChild;
+        clearImageContainer();
         getData();
         searchButton.classList.add('clear-query')
     }
@@ -29,6 +31,8 @@ searchButton.addEventListener('click', () => {
     else {
     queryForApi = queryText.value
     url = urlBegin+queryForApi+urlEnd;
+    mylastChild = galleryContainer.lastChild;
+    clearImageContainer();
     getData();
     searchButton.classList.add('clear-query')
 }
@@ -38,20 +42,29 @@ searchButton.addEventListener('click', () => {
 async function getData() {
     const res = await fetch(url);
     const data = await res.json();
-    showData(data);
+     showData(data);
   }
 
 /*create img object to fill image-container */
 const showData = (data) => {
+    
     for (i=0;i < data.results.length; i++) {
         imgSrc = data.results[i].urls.regular
         const img = `<img class="gallery-image" src="${imgSrc}" alt="image">`;
         galleryContainer.insertAdjacentHTML('beforeend', img);
     }
 }
-
+/*change button icon to lense, when clearing input*/
 queryText.addEventListener('keydown', (e) => {
     if (e.key === 'Backspace' && queryText.value.length === 1) {
                 searchButton.classList.remove('clear-query')
         }
 })
+
+/*clear image container */
+const clearImageContainer = () => {
+    while (mylastChild) {
+        galleryContainer.removeChild(mylastChild);
+        mylastChild = galleryContainer.lastChild;
+    }
+}

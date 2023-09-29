@@ -80,6 +80,8 @@ body {
 
 .images-go-here {
   display: flex;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .image-container {
@@ -90,7 +92,8 @@ body {
 }
 
 .gallery-image {
-  width: 19%;
+  width: 372px;
+  height: 278px;
   padding-top: 0.3%;
   object-fit: cover;
 }
