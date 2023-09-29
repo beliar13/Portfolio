@@ -70,9 +70,29 @@ body {
   background-size: 30%;
 }
 
+.clear-query {
+  background: url('./img/close.png');
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: center;
+  background-size: 30%;
+}
 
 .images-go-here {
   display: flex;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3%;
+  justify-content: center;
+}
+
+.gallery-image {
+  width: 19%;
+  padding-top: 0.3%;
+  object-fit: cover;
 }
 
 .footer {
