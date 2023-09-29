@@ -8,22 +8,30 @@ const galleryContainer = document.getElementById('image-container');
 let queryForApi = "";
 /*forming url */
 const urlBegin = 'https://api.unsplash.com/search/photos?query='
-const urlEnd = '&client_id=Rqj2EJ2QAotWRPt2eTpg9qHOGgkc5y-ljYMVwiD7gpw'
+const urlEnd = '&per_page=15&client_id=Rqj2EJ2QAotWRPt2eTpg9qHOGgkc5y-ljYMVwiD7gpw'
 
 /*grab input from search bar when pressing Enter*/
-queryText.addEventListener('keypress', (e) => {
+queryText.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         queryForApi = queryText.value
         url = urlBegin+queryForApi+urlEnd;
         getData();
+        searchButton.classList.add('clear-query')
     }
 })
 
-/*grab input from searchbar when hit search button */
+/*grab input from searchbar when hit search button and change icon to close or lense*/
 searchButton.addEventListener('click', () => {
+    if (searchButton.classList.contains('clear-query')) {
+        queryText.value ='';
+        searchButton.classList.remove('clear-query');
+    }
+    else {
     queryForApi = queryText.value
     url = urlBegin+queryForApi+urlEnd;
     getData();
+    searchButton.classList.add('clear-query')
+}
 })
 
 /*fetch data from API and load images to image-container */
@@ -42,6 +50,8 @@ const showData = (data) => {
     }
 }
 
-queryText.addEventListener('onchange', () => {
-    searchButton.classList.add()
+queryText.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace' && queryText.value.length === 1) {
+                searchButton.classList.remove('clear-query')
+        }
 })
