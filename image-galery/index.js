@@ -4,6 +4,8 @@ const queryText = document.getElementById('insert-query');
 const searchButton = document.getElementById('find-clear');
 /*set image container*/
 const galleryContainer = document.getElementById('image-container');
+/*select background for zoom in */
+const overlay = document.getElementById('overlay');
 /*query for api */
 let queryForApi = "memes";
 
@@ -37,6 +39,7 @@ searchButton.addEventListener('click', () => {
     clearImageContainer();
     getData();
     searchButton.classList.add('clear-query')
+
 }
 })
 
@@ -45,6 +48,7 @@ async function getData() {
     const res = await fetch(url);
     const data = await res.json();
      showData(data);
+     zoomImage();
   }
 
 /*create img object to fill image-container */
@@ -71,7 +75,25 @@ const clearImageContainer = () => {
     }
 }
 
+/*focus on search bar & pre-load some images */
 window.onload = () => {
     queryText.focus();
     getData();
+
+}
+const imgPlace = document.getElementById('img-place')
+/*when click on image - its zoom in, click again - overlay change state to hidden*/
+const zoomImage = () => {
+    galleryContainer.querySelectorAll('img').forEach(el => el.addEventListener('click', (e) => {      
+        overlay.classList.remove('overlay-hidden');
+        myImg = document.createElement('img');
+        myImg.src = e.target.currentSrc
+        imgPlace.appendChild(myImg);
+        document.addEventListener('mouseup', (e) => {
+            if (!imgPlace.contains(e.target)) {
+                overlay.classList.add('overlay-hidden');
+                imgPlace.removeChild(myImg);
+            }
+        } )
+    }))
 }
