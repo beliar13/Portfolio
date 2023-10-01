@@ -7,8 +7,11 @@ const galleryContainer = document.getElementById('image-container');
 /*select background for zoom in */
 const overlay = document.getElementById('overlay');
 /*query for api */
-let queryForApi = "memes";
-
+let queryForApi = "fallout%20shelter";
+/*set div for append child object (img) */
+const imgPlace = document.getElementById('img-place')
+/*selet close button */
+const closeButton = document.getElementById('close-img');
 /*forming url */
 const urlBegin = 'https://api.unsplash.com/search/photos?query='
 const urlEnd = '&per_page=15&client_id=Rqj2EJ2QAotWRPt2eTpg9qHOGgkc5y-ljYMVwiD7gpw'
@@ -81,19 +84,28 @@ window.onload = () => {
     getData();
 
 }
-const imgPlace = document.getElementById('img-place')
+
 /*when click on image - its zoom in, click again - overlay change state to hidden*/
 const zoomImage = () => {
     galleryContainer.querySelectorAll('img').forEach(el => el.addEventListener('click', (e) => {      
+        imgLS = imgPlace.lastChild;
+        while (imgLS) {
+            imgPlace.removeChild(imgLS);
+            imgLS = imgPlace.lastChild;
+        }
         overlay.classList.remove('overlay-hidden');
         myImg = document.createElement('img');
         myImg.src = e.target.currentSrc
         imgPlace.appendChild(myImg);
         document.addEventListener('mouseup', (e) => {
             if (!imgPlace.contains(e.target)) {
-                overlay.classList.add('overlay-hidden');
-                imgPlace.removeChild(myImg);
+                overlay.classList.add('overlay-hidden');             
             }
         } )
     }))
 }
+
+/*hide overlay when hitting close button */
+closeButton.addEventListener('click', () => {
+    overlay.classList.add('overlay-hidden');
+})

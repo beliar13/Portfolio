@@ -96,6 +96,7 @@ body {
   height: 278px;
   padding-top: 0.3%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 #overlay {
@@ -114,6 +115,19 @@ body {
   display: none;
 }
 
+.close-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: url('./img/delete-button.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  cursor: pointer;
+}
 
 .footer {
     display: flex;
