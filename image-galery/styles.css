@@ -1,24 +1,24 @@
 body {
-    scroll-behavior: smooth;
-    font-family: "Roboto";
+  scroll-behavior: smooth;
+  font-family: "Roboto";
 }
 
 .header {
-    display: flex;
-    background-color: #424245;
-    height: 40px;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
+  display: flex;
+  background-color: #424245;
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 .header-logo {
-    width: 75%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 1%;
+  width: 75%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1%;
 }
 
 .header-svg {
@@ -31,10 +31,10 @@ body {
 }
 
 .header-search {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .searchbar {
@@ -63,7 +63,7 @@ body {
   width: 10%;
   height: 80%;
   display: flex;
-  background: url('./img/search.png');
+  background: url("./img/search.png");
   background-repeat: no-repeat;
   background-color: white;
   background-position: center;
@@ -71,7 +71,7 @@ body {
 }
 
 .clear-query {
-  background: url('./img/close.png');
+  background: url("./img/close.png");
   background-repeat: no-repeat;
   background-color: white;
   background-position: center;
@@ -121,7 +121,7 @@ body {
   right: 0;
   width: 20px;
   height: 20px;
-  background: url('./img/delete-button.png');
+  background: url("./img/delete-button.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -130,19 +130,19 @@ body {
 }
 
 .footer {
-    display: flex;
-    height: 40px;
-    width: 100%;
-    background-color: #424245;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    color: #f0f0f0;
-    font-weight: 700;
-  }
-  
-  .footer > a:hover {
-    cursor: pointer;
-  }
+  display: flex;
+  height: 40px;
+  width: 100%;
+  background-color: #424245;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  color: #f0f0f0;
+  font-weight: 700;
+}
+
+.footer > a:hover {
+  cursor: pointer;
+}
