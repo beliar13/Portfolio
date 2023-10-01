@@ -21,7 +21,7 @@ url = urlBegin+queryForApi+urlEnd;
 queryText.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         queryForApi = queryText.value
-        formatQuery(queryForApi);
+        queryForApi = formatQuery(queryForApi);
         url = urlBegin+queryForApi+urlEnd;
         mylastChild = galleryContainer.lastChild;
         clearImageContainer();
@@ -38,6 +38,7 @@ searchButton.addEventListener('click', () => {
     }
     else {
     queryForApi = queryText.value
+    queryForApi = formatQuery(queryForApi);
     url = urlBegin+queryForApi+urlEnd;
     mylastChild = galleryContainer.lastChild;
     clearImageContainer();
@@ -124,4 +125,6 @@ const formatQuery = (queryForApi) => {
         }
         a += b
     }
+    queryForApi = a;
+    return queryForApi;
 }
