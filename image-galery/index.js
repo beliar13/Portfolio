@@ -21,6 +21,7 @@ url = urlBegin+queryForApi+urlEnd;
 queryText.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         queryForApi = queryText.value
+        formatQuery(queryForApi);
         url = urlBegin+queryForApi+urlEnd;
         mylastChild = galleryContainer.lastChild;
         clearImageContainer();
@@ -109,3 +110,18 @@ const zoomImage = () => {
 closeButton.addEventListener('click', () => {
     overlay.classList.add('overlay-hidden');
 })
+
+/*format query if it has space */
+const formatQuery = (queryForApi) => {
+    a = '';
+    b = '';
+    for (i=0;i < queryForApi.length;i++) {
+        if (queryForApi[i] === ' ') {
+            b = '%20';
+        }
+        else {
+            b = queryForApi[i];
+        }
+        a += b
+    }
+}
