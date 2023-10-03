@@ -1,3 +1,52 @@
 html {
     scroll-behavior: smooth;
 }
+
+.header {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    background-color: #424245;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: #f0f0f0;
+    font-weight: 700;
+}
+
+.manure {
+    width: 30px;
+    height: 30px;
+    background: url('./img/ico/paint.png') no-repeat;
+    background-size: contain;
+    display: flex;
+    position: relative;
+    left: 130px;
+    z-index: 2;
+}
+
+h1 {
+    display: flex;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.footer {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    background-color: #424245;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: #f0f0f0;
+    font-weight: 700;
+  }
+  
+  .footer > a:hover {
+    cursor: pointer;
+  }
