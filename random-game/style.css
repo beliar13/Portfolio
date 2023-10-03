@@ -1,5 +1,11 @@
 html {
     scroll-behavior: smooth;
+
+}
+
+body {
+    margin: 0 auto;
+    height: 100%;
 }
 
 .header {
@@ -9,7 +15,7 @@ html {
     background-color: #424245;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: relative;
     left: 0;
     top: 0;
     color: #f0f0f0;
@@ -31,6 +37,41 @@ h1 {
     display: flex;
     text-transform: uppercase;
     z-index: 1;
+    margin: 0; 
+}
+
+.game-container {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 360px;
+    z-index: 10;
+    margin: 0 auto;
+    gap: 15%
+}
+
+.door {
+    display: flex;
+    background: url('./img/game/open-door-with-bg.png') no-repeat;
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+    z-index: initial;
+    overflow: hidden;
+    position: relative;
+}
+
+.target {
+    display: flex;
+    width: 60%;
+    height: 60%;
+    background: url('./img/game/Expert.svg') no-repeat;
+    background-size: contain;
+    z-index: -1;
+    position: relative;
+    left: 62%;
+    top: 35%;
 }
 
 .footer {
@@ -50,3 +91,112 @@ h1 {
   .footer > a:hover {
     cursor: pointer;
   }
+
+@media screen and (max-width: 1746px) {
+    .game-container {
+        gap: 8%;
+    }    
+}
+
+@media screen and (max-width:1316px) {
+    .game-container {
+        gap: 3%;
+        height: 320px;
+    }    
+}
+
+@media screen and (max-width:1055px) {
+    .door {
+        width: 90px;
+        height: 90px;
+    }    
+    .game-container {
+        gap: 5%;
+        height: 250px;
+    } 
+}
+
+@media screen and (max-width:848px) {
+    .door {
+        width: 75px;
+        height: 75px;
+    }    
+    .game-container {
+        gap: 5%;
+        height: 200px;
+    } 
+}
+
+@media screen and (max-width:706px) {
+    .door {
+        width: 75px;
+        height: 75px;
+    }    
+    .game-container {
+        gap: 3%;
+    } 
+}
+
+@media screen and (max-width:660px) {
+    .door {
+        width: 65px;
+        height: 65px;
+    }    
+    .game-container {
+        gap: 3%;
+        height: 170px;
+    } 
+}
+
+@media screen and (max-width:572px) {
+    .door {
+        width: 55px;
+        height: 55px;
+    }    
+    .game-container {
+        gap: 3%;
+        height: 140px;
+    } 
+}
+
+@media screen and (max-width:484px) {
+    .door {
+        width: 45px;
+        height: 45px;
+    }    
+    .game-container {
+        gap: 2%;
+        height: 115px;
+    } 
+}
+
+@media screen and (max-width:435px) {
+    h1 {
+        font-size: 26px;
+    } 
+}
+
+@media screen and (max-width:383px) {
+    .door {
+        width: 35px;
+        height: 35px;
+    }    
+    .game-container {
+        gap: 3%;
+    } 
+}
+
+@media screen and (max-width:362px) {
+    h1 {
+        font-size: 23px;
+    } 
+    .game-container {
+        height: 90px;
+    } 
+}
+
+@media screen and (max-width:330px) {
+    h1 {
+        font-size: 20px;
+    } 
+}
